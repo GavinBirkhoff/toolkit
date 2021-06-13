@@ -1,0 +1,28 @@
+{
+  "name": "@gavinbirkhoff/util",
+  "version": "1.0.0",
+  "description": "A common util collection",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "module": "esm/index.js",
+  "files": [
+    "src",
+    "package.json",
+    "esm",
+    "lib",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "npm run clean && run-p build:*",
+    "build:esm": "tsc -p tsconfig.json --target ES5 --module ESNext --outDir esm",
+    "build:cjs": "tsc -p tsconfig.json --target ES5 --module commonjs --outDir lib",
+    "clean": "rm -rf lib && rm -rf esm",
+    "tsc": "tsc --noEmit"
+  },
+  "keywords": ["util"],
+  "author": "Gavin Birkhoff <gavinbirkhoff@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GavinBirkhoff/util/issues"
+  }
+}

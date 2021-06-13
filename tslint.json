@@ -1,0 +1,15 @@
+{
+  "extends": "tslint-config-airbnb",
+  "linterOptions": {
+    "exclude": [
+      "**/node_modules/**",
+      "**/.git/**",
+      "**/lib/**",
+      "**/esm/**",
+      "**/dist/**"
+    ]
+  },
+    "jsRules": {},
+    "rules": {},
+    "rulesDirectory": []
+}
