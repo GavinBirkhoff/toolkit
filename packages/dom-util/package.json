@@ -1,0 +1,24 @@
+{
+  "name": "@gavinbirkhoff/dom-util",
+  "version": "1.0.0",
+  "description": "A common util collection",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "module": "esm/index.js",
+  "files": [
+    "src",
+    "package.json",
+    "esm",
+    "lib",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Gavin Birkhoff <gavinbirkhoff@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GavinBirkhoff/util/issues"
+  }
+}
