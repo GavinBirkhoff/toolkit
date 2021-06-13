@@ -1,0 +1,23 @@
+{
+  "name": "my-util",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GavinBirkhoff/util.git"
+  },
+  "keywords": ["util"],
+  "author": "Gavin Birkhoff <gavinbirkhoff@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GavinBirkhoff/util/issues"
+  },
+  "homepage": "https://github.com/GavinBirkhoff/util#readme",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
