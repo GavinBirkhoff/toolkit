@@ -1,0 +1,16 @@
+{
+ "editor.detectIndentation": false,
+ "editor.formatOnType": true,
+//  "editor.formatOnSave": true,
+ "editor.formatOnPaste": true,
+ "eslint.autoFixOnSave": true,
+ "editor.useTabStops": false,
+ "editor.highlightActiveIndentGuide": true,
+ "eslint.enable": true,
+ "eslint.validate": [
+     "javascript",
+ ],
+ "[typescript]": {
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+ },
+}

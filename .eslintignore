@@ -2,4 +2,4 @@ build
 dist
 lib
 esm
-node_modules
+**/node_modules/**
