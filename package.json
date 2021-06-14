@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "eslint": "eslint --ext .js,.ts --fix ./packages/**/src"
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
+    "eslint": "eslint --ext .js,.ts --fix ./packages/**/src",
+    "tslint": "tslint ./packages/**/*.ts",
+    "tslint-fix": "tslint ./packages/**/*.ts --fix"
   },
   "husky": {
     "hooks": {
