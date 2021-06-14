@@ -1,7 +1,7 @@
 {
  "editor.detectIndentation": false,
  "editor.formatOnType": true,
-//  "editor.formatOnSave": true,
+ "editor.formatOnSave": true,
  "editor.formatOnPaste": true,
  "eslint.autoFixOnSave": true,
  "editor.useTabStops": false,
