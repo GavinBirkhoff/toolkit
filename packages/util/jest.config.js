@@ -5,6 +5,7 @@ module.exports = {
   },
   testRegex: '(/__test__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  collectCoverageFrom: ['src/**/!(*.d).{js,ts}'],
   reporters: [
     'default',
     [
