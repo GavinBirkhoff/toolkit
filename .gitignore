@@ -110,3 +110,9 @@ yarn.lock
 # packages
 packages/util/**/lib
 packages/util/**/esm
+
+# MAC
+*.DS_Store
+
+#Jest
+**/test-report.html

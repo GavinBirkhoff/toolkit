@@ -18,7 +18,8 @@
     "build:cjs": "tsc -p tsconfig.json --target ES5 --module commonjs --outDir lib",
     "clean": "rm -rf lib && rm -rf esm",
     "tsc": "tsc --noEmit",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "keywords": [
     "util"

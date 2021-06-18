@@ -4,5 +4,5 @@
       "outDir": "lib"
     },
     "include": ["src"],
-    "exclude": ["**/__test__/**"]
+    // "exclude": ["**/__test__/**"]
   }

@@ -1,7 +1,18 @@
 module.exports = {
   transform: {
-    '^.+\\.tsx?$': 'ts-jest'
+    '^.+\\.tsx?$': 'ts-jest',
+    '\\.[j]sx?$': 'babel-jest'
   },
   testRegex: '(/__test__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node']
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  reporters: [
+    'default',
+    [
+      '../../node_modules/jest-html-reporter',
+      {
+        pageTitle: 'Util Report',
+        includeFailureMsg: true
+      }
+    ]
+  ]
 }
