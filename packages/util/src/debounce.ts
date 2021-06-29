@@ -1,4 +1,4 @@
-export default (func: () => void, wait: number | undefined, immediate: any): (() => void) => {
+export default (func: () => void, wait: number | undefined, immediate?: boolean): (() => void) => {
   let timer: NodeJS.Timeout | null
   // eslint-disable-next-line @typescript-eslint/no-this-alias
   const context = this
