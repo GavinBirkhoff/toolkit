@@ -116,3 +116,6 @@ packages/util/**/esm
 
 #Jest
 **/test-report.html
+
+# doc
+**/out
