@@ -1,27 +1,33 @@
 /**
+ * @description generate array
+ * @param {number} start The start of the range.
+ * @param {number|undefined} end The end of the range.
+ * @param {number|undefined} [step=1] The value to increment or decrement by.
+ * @returns {Array} Returns the range of numbers.
+ * @example
  * range(4)
- * // => [0, 1, 2, 3]
+ * // [0, 1, 2, 3]
  *
  * range(-4)
- * // => [0, -1, -2, -3]
+ * // [0, -1, -2, -3]
  *
  * range(1, 5)
- * // => [1, 2, 3, 4]
+ * // [1, 2, 3, 4]
  *
  * range(0, 20, 5)
- * // => [0, 5, 10, 15]
+ * // [0, 5, 10, 15]
  *
  * range(0, -4, -1)
- * // => [0, -1, -2, -3]
+ * // [0, -1, -2, -3]
  *
  * range(1, 4, 0)
- * // => [1, 1, 1]
+ * // [1, 1, 1]
  *
  * range(0)
- * // => []
+ * // []
  */
 
-export default (start: number, end?: number, step?: number): number[] => {
+const range = (start: number, end?: number, step?: number): number[] => {
   if (end === undefined) {
     end = start
     start = 0
@@ -39,3 +45,5 @@ export default (start: number, end?: number, step?: number): number[] => {
   }
   return result
 }
+
+export default range
