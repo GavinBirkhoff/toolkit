@@ -19,7 +19,8 @@
     "clean": "rm -rf lib && rm -rf esm",
     "tsc": "tsc --noEmit",
     "test": "jest",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "script:gen-index": "node ./scripts/generate-index.js"
   },
   "keywords": [
     "util"

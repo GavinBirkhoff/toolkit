@@ -5,23 +5,27 @@ const hyphen2Hump = function (sName) {
   })
 }
 let components = []
-const files = fs.readdirSync('../src/')
+const files = fs.readdirSync('./src/')
 files.forEach(function (item, index) {
-  const stat = fs.lstatSync('../src/' + item)
+  const stat = fs.lstatSync('./src/' + item)
   if (stat.isFile() === true) {
     components.push(item)
   }
 })
 
-components = components.map((item) => {
-  const fileName = item.replace('.ts', '')
-  const str = `export { default as ${hyphen2Hump(fileName)} } from './${fileName}'`
-  return str
-})
+components = components
+  .filter((el) => el !== 'index.ts')
+  .map((item) => {
+    const fileName = item.replace('.ts', '')
+    const str = `export { default as ${hyphen2Hump(fileName)}${
+      fileName === 'contains' ? ', default as includes' : ''
+    } } from './${fileName}'`
+    return str
+  })
 
-let str = JSON.stringify(components)
+let str = components.join('\n') + '\n'
 
-fs.writeFile('./index.js', str, function (err) {
+fs.writeFile('./src/index.ts', str, function (err) {
   if (err) {
     res.status(500).send('Server is error...')
   }

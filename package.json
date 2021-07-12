@@ -9,7 +9,8 @@
     "eslint": "eslint --ext .js,.ts --fix ./packages/**/src",
     "tslint": "tslint ./packages/**/*.ts",
     "tslint-fix": "tslint ./packages/**/*.ts --fix",
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "script:gen-index": "lerna run script:gen-index"
   },
   "husky": {
     "hooks": {
