@@ -27,5 +27,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/GavinBirkhoff/util/issues"
+  },
+  "dependencies": {
+    "@gavinbirkhoff/util": "^1.0.0"
   }
 }

@@ -108,8 +108,8 @@ package-lock.json
 yarn.lock
 
 # packages
-packages/util/**/lib
-packages/util/**/esm
+packages/**/**/lib
+packages/**/**/esm
 
 # MAC
 *.DS_Store
