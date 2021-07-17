@@ -1,4 +1,4 @@
-import { debounce } from '../../index'
+import { debounce } from '../src'
 
 describe('debounce', () => {
   test('default', (done) => {

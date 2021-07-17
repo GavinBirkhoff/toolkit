@@ -1,4 +1,4 @@
-import { contains } from '../../../src/index'
+import { contains } from '../src'
 describe('test array string contains', () => {
   test('Array [1, 5] contains 5', () => {
     expect(contains([1, 5], 5)).toBeTruthy()
