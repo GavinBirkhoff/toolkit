@@ -1,5 +1,5 @@
 import { contains } from '../src'
-describe('test array string contains', () => {
+describe('contains', () => {
   test('Array [1, 5] contains 5', () => {
     expect(contains([1, 5], 5)).toBeTruthy()
   })
@@ -14,5 +14,8 @@ describe('test array string contains', () => {
   })
   test('number return false', () => {
     expect(contains(123 as any, 2)).toBeFalsy()
+  })
+  test('Array [1,2,3] contains 2 fromIndex 2', () => {
+    expect(contains([1, 2, 3], 2, 2)).toBeFalsy()
   })
 })

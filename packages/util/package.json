@@ -20,7 +20,8 @@
     "tsc": "tsc --noEmit",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "script:gen-index": "node ./scripts/generate-index.js"
+    "script:gen-index": "node ./scripts/generate-index.js",
+    "docs": "jsdoc -c jsdoc.json"
   },
   "keywords": [
     "util"
@@ -29,5 +30,8 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/GavinBirkhoff/util/issues"
+  },
+  "devDependencies": {
+    "docdash": "^1.2.0"
   }
 }

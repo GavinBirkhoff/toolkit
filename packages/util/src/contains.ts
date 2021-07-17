@@ -1,8 +1,27 @@
 import isArrayLike from './is-array-like'
-
-export default (arr: any[] | string, value: any): boolean => {
+/**
+ * @description Check whether the array contains a value
+ * @param {array | string} arr target array
+ * @param {*} value target value
+ * @returns {boolean}
+ * @example
+ * contains([1,2,3],2)
+ * // true
+ *
+ * contains("hello",'h')
+ * // true
+ *
+ * contains([1,2,3],2,2)
+ * // false
+ */
+const contains = (arr: any[] | string, value: any, position?: number): boolean => {
+  const positionValue = position || -1
   if (isArrayLike(arr)) {
-    return arr.indexOf(value) > -1
+    if (arr.includes !== undefined) {
+      return arr.includes(value, position)
+    }
+    return arr.indexOf(value) > positionValue
   }
   return false
 }
+export default contains

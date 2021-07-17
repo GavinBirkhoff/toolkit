@@ -1,15 +1,23 @@
 /**
+ * @description Put a num in a certain boundary
+ * @category Number
+ * @param {number} num The value to clamp
+ * @param {number} min The min bound
+ * @param {number} max The max bound
+ * @returns {number}
+ * @example
  * clamp(-10, -5, 5)
- * // => -5
+ * // -5
  *
  * clamp(10, -5, 5)
- * // => 5
+ * // 5
  */
-export default (a: number, min: number, max: number): number => {
-  if (a < min) {
+const clamp = (num: number, min: number, max: number): number => {
+  if (num < min) {
     return min
-  } else if (a > max) {
+  } else if (num > max) {
     return max
   }
-  return a
+  return num
 }
+export default clamp

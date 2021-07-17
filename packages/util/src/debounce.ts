@@ -1,4 +1,13 @@
-export default (func: () => void, wait: number | undefined, immediate?: boolean): (() => void) => {
+/**
+ * Creates a debounced function that delays invoking `func` until after `wait`
+ * @param {Function} func The function to debounce
+ * @param {number} wait waiting time
+ * @param {boolean} immediate Is it implemented immediately
+ * @returns {Function}
+ * @example
+ * debounce(()=>{console.log},1000)
+ */
+const debounce = (func: () => void, wait = 0, immediate?: boolean): (() => void) => {
   let timer: NodeJS.Timeout | null
   // eslint-disable-next-line @typescript-eslint/no-this-alias
   const context = this
@@ -17,3 +26,5 @@ export default (func: () => void, wait: number | undefined, immediate?: boolean)
     }
   }
 }
+
+export default debounce
