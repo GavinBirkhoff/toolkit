@@ -13,3 +13,5 @@ const getStyle = (el: XHTMLElement, style: any): string => {
 
   return value === 'auto' ? null : value
 }
+
+export default getStyle

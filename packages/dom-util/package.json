@@ -18,7 +18,10 @@
     "build:cjs": "tsc -p tsconfig.json --target ES5 --module commonjs --outDir lib",
     "clean": "rm -rf lib && rm -rf esm",
     "tsc": "tsc --noEmit",
-    "script:gen-index": "node ./scripts/generate-index.js"
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "script:gen-index": "node ./scripts/generate-index.js",
+    "docs": "jsdoc -c jsdoc.json"
   },
   "keywords": [],
   "author": "Gavin Birkhoff <gavinbirkhoff@gmail.com>",
