@@ -4,6 +4,11 @@ type DomAttrs = {
   container?: HTMLElement
   node?: HTMLElement | string
 }
+/**
+ * create a dom
+ * @param {DomAttrs} domAttrs tagName create tag name, container parent node,node child node
+ * @returns {HTMLElement}
+ */
 const createDom = (domAttrs: DomAttrs): HTMLElement => {
   const { tagName = 'div', container, node } = domAttrs
   const el = document.createElement(tagName)

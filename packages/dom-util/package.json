@@ -21,6 +21,7 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "script:gen-index": "node ./scripts/generate-index.js",
+    "a-i": "run script:gen-index",
     "docs": "jsdoc -c jsdoc.json"
   },
   "keywords": [],

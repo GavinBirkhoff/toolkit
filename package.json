@@ -10,7 +10,8 @@
     "tslint": "tslint ./packages/**/*.ts",
     "tslint-fix": "tslint ./packages/**/*.ts --fix",
     "test": "lerna run test",
-    "script:gen-index": "lerna run script:gen-index"
+    "script:gen-index": "lerna run script:gen-index",
+    "a-i": "lerna run script:gen-index"
   },
   "husky": {
     "hooks": {

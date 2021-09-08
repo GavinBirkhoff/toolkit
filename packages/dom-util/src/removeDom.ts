@@ -1,3 +1,8 @@
+/**
+ * removeDom
+ * @param {HTMLElement} el
+ * @returns {Boolean}
+ */
 const removeDom = (el: HTMLElement): boolean => {
   const parent = el.parentNode
   if (parent) {

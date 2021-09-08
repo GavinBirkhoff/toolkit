@@ -1,3 +1,9 @@
+/**
+ * get with from text by pixel
+ * @param {String} text
+ * @param {CSSStyleDeclaration} font
+ * @returns {number}
+ */
 const getTextPixelWith = (text: string, font: CSSStyleDeclaration): number => {
   const { fontStyle, fontVariant, fontWeight, fontSize, fontFamily } = font
   const ctx = document.createElement('canvas').getContext('2d')

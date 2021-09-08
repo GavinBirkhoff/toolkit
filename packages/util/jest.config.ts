@@ -4,16 +4,16 @@ export default {
     '\\.[j]sx?$': 'babel-jest'
   },
   testRegex: '(/__test__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  collectCoverageFrom: ['src/**/!(*.d).{js,ts}'],
-  reporters: [
-    'default',
-    [
-      '../../node_modules/jest-html-reporter',
-      {
-        pageTitle: 'Util Report',
-        includeFailureMsg: true
-      }
-    ]
-  ]
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node']
+  // collectCoverageFrom: ['src/**/!(*.d).{js,ts}'],
+  // reporters: [
+  //   'default',
+  //   [
+  //     '../../node_modules/jest-html-reporter',
+  //     {
+  //       pageTitle: 'Util Report',
+  //       includeFailureMsg: true
+  //     }
+  //   ]
+  // ]
 }

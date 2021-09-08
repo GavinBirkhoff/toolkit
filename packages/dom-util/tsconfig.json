@@ -3,6 +3,10 @@
     "compilerOptions": {
       "outDir": "lib"
     },
+    // "lib": [
+    //   "DOM",
+    //   "ES6"
+    // ],
     "include": ["src"],
     // "exclude": ["**/__test__/**"]
   }

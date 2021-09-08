@@ -6,6 +6,7 @@
 const requestAnimationFrame = (fn: FrameRequestCallback): any => {
   const method =
     window.requestAnimationFrame ||
+    // @ts-ignore
     window.webkitRequestAnimationFrame ||
     // @ts-ignore
     window.mozRequestAnimationFrame ||
