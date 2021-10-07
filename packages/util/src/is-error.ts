@@ -5,7 +5,7 @@ import isType from './is-type'
  * @return {Boolean}
  */
 const isError = function (value: any): value is Error {
-  return isType(value, 'Error')
+  return isType('Error', value)
 }
 
 export default isError

@@ -5,6 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "module": "esm/index.js",
+  "exports": "./lib/index.js",
   "files": [
     "src",
     "package.json",

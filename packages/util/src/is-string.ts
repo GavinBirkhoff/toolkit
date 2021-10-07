@@ -1,5 +1,5 @@
 import isType from './is-type'
 
-export default (str: any): str is string => {
-  return isType(str, 'String')
+export default (value: any): value is string => {
+  return isType('String', value)
 }

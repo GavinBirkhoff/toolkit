@@ -1,2 +1,2 @@
-export default (value: unknown, type: string): boolean =>
+export default (type: string, value: unknown): boolean =>
   Object.prototype.toString.call(value) === '[object ' + type + ']'

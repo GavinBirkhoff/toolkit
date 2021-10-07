@@ -5,5 +5,5 @@ import isType from './is-type'
  * @return {Boolean}
  */
 export default (value: any): value is () => void => {
-  return isType(value, 'Function')
+  return isType('Function', value)
 }
