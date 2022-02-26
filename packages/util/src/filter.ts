@@ -1,6 +1,11 @@
 import isArrayLike from './is-array-like'
-
-export default <T>(arr: T[], func: (v: T, idx?: number, arr?: T[]) => boolean): T[] => {
+/**
+ * @description
+ * @param arr
+ * @param func
+ * @returns
+ */
+const filter = <T>(arr: T[], func: (v: T, idx?: number, arr?: T[]) => boolean): T[] => {
   if (!isArrayLike(arr)) {
     return arr
   }
@@ -13,3 +18,5 @@ export default <T>(arr: T[], func: (v: T, idx?: number, arr?: T[]) => boolean): 
   }
   return result
 }
+
+export default filter

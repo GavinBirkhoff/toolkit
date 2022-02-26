@@ -1,7 +1,13 @@
 import isArray from './is-array'
 import isObject from './is-object'
 
-export default (elements: unknown[] | Record<string, unknown>, func: (v: unknown, k: unknown) => unknown): void => {
+/**
+ * @description each array and object
+ * @param {Array|Object} elements target
+ * @param {Function} func a callback for item of elements
+ */
+
+const each = (elements: unknown[] | Record<string, unknown>, func: (v: unknown, k: unknown) => unknown): void => {
   if (!elements) {
     return
   }
@@ -24,3 +30,5 @@ export default (elements: unknown[] | Record<string, unknown>, func: (v: unknown
     }
   }
 }
+
+export default each

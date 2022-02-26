@@ -1,7 +1,7 @@
 import { ObjectType } from './types'
 /**
- * freeze obj and keys
- * @param obj need to freeze target
+ * @description freeze obj and keys
+ * @param {Object} obj need to freeze target
  */
 const constantize = (obj: ObjectType<any>): void => {
   Object.freeze(obj)

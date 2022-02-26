@@ -4,30 +4,31 @@ import getType from './get-type'
 import isPrototype from './is-prototype'
 
 const hasOwnProperty = Object.prototype.hasOwnProperty
-
-function isEmpty(value: any): boolean {
-  /**
-   * Checks if `value` is an empty object, collection, map, or set.
-   * @example
-   *
-   * isEmpty(null)
-   * // => true
-   *
-   * isEmpty(true)
-   * // => true
-   *
-   * isEmpty(1)
-   * // => true
-   *
-   * isEmpty([1, 2, 3])
-   * // => false
-   *
-   * isEmpty('abc')
-   * // => false
-   *
-   * isEmpty({ 'a': 1 })
-   * // => false
-   */
+/**
+ * @description Checks if `value` is an empty object, collection, map, or set.
+ * @param value
+ * @returns
+ * @example
+ *
+ * isEmpty(null)
+ * // => true
+ *
+ * isEmpty(true)
+ * // => true
+ *
+ * isEmpty(1)
+ * // => true
+ *
+ * isEmpty([1, 2, 3])
+ * // => false
+ *
+ * isEmpty('abc')
+ * // => false
+ *
+ * isEmpty({ 'a': 1 })
+ * // => false
+ */
+const isEmpty = (value: any): boolean => {
   if (isNil(value)) {
     return true
   }

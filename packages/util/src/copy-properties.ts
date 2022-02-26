@@ -1,5 +1,5 @@
 /**
- * copy properties
+ * @description copy properties
  * @param {Object} target
  * @param {Object} source
  */

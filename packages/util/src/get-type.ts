@@ -1,6 +1,11 @@
 const toString = Object.prototype.toString
 
-export default (value: any): string => {
+/**
+ * @description
+ * @param value
+ * @returns
+ */
+const getType = (value: any): string => {
   let val
   if (value == null) {
     val = value === undefined ? '[object Undefined]' : '[object Null]'
@@ -9,3 +14,5 @@ export default (value: any): string => {
   }
   return val.replace(/^\[object /, '').replace(/]$/, '')
 }
+
+export default getType

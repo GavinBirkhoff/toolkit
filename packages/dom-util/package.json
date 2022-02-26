@@ -1,6 +1,6 @@
 {
-  "name": "@gavinbirkhoff/dom-util",
-  "version": "1.0.0",
+  "name": "dom-util",
+  "version": "0.0.1",
   "description": "A common util collection",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

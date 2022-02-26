@@ -1,6 +1,11 @@
 import isString from './is-string'
 
 /**
+ * @description
+ * @param {String} string
+ * @param {String} target
+ * @param {Number} position
+ * @example
  * endsWith('abc', 'c')
  * // => true
  *
@@ -13,7 +18,7 @@ import isString from './is-string'
  * endsWith('abc', 'bc')
  * // => true
  */
-export default (string: string, target: string, position?: number): boolean => {
+const endsWith = (string: string, target: string, position?: number): boolean => {
   if (!isString(string)) {
     return false
   }
@@ -28,3 +33,5 @@ export default (string: string, target: string, position?: number): boolean => {
   position -= target.length
   return position >= 0 && string.slice(position, end) == target
 }
+
+export default endsWith

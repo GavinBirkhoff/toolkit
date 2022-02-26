@@ -1,3 +1,8 @@
 import isType from './is-type'
-
-export default (value: any): boolean => isType('Arguments', value)
+/**
+ * @description
+ * @param value
+ * @returns {Boolean}
+ */
+const isArguments = (value: any): boolean => isType('Arguments', value)
+export default isArguments

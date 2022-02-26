@@ -4,6 +4,8 @@ import isType from './is-type'
  * @param  {*} value The value checked
  * @return {Boolean}
  */
-export default (value: any): value is () => void => {
+const isFunction = (value: any): value is () => void => {
   return isType('Function', value)
 }
+
+export default isFunction

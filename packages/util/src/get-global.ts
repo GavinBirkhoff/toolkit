@@ -1,5 +1,5 @@
 /**
- * get global this
+ * @description get global this
  * @returns global this
  */
 const getGlobal = (): unknown => {

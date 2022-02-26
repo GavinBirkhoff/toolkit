@@ -1,3 +1,8 @@
 import isType from './is-type'
-
-export default (value: any): value is number => isType('Number', value)
+/**
+ * @description
+ * @param value
+ * @returns
+ */
+const isNumber = (value: any): value is number => isType('Number', value)
+export default isNumber

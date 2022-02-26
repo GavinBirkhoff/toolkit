@@ -1,5 +1,11 @@
 import isString from './is-string'
 /**
+ * @description
+ * @param string
+ * @param target
+ * @param position
+ * @returns
+ * @example
  * startsWith('abc', 'a')
  * // => true
  *
@@ -9,7 +15,7 @@ import isString from './is-string'
  * startsWith('abc', 'b', 1)
  * // => true
  */
-export default (string: string, target: string, position?: number): boolean => {
+const startsWith = (string: string, target: string, position?: number): boolean => {
   if (!isString(string)) {
     return false
   }
@@ -23,3 +29,4 @@ export default (string: string, target: string, position?: number): boolean => {
   target = `${target}`
   return string.slice(position, position + target.length) == target
 }
+export default startsWith
