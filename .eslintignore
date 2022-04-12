@@ -4,3 +4,4 @@ lib
 esm
 **/node_modules/**
 **/scripts/**
+.eslintigore

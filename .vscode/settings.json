@@ -3,7 +3,7 @@
  "editor.formatOnType": true,
  "editor.formatOnSave": true,
  "editor.formatOnPaste": true,
- "eslint.autoFixOnSave": true,
+ "editor.codeActionsOnSave": true,
  "editor.useTabStops": false,
  "editor.highlightActiveIndentGuide": true,
  "eslint.enable": true,

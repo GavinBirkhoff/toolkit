@@ -1,6 +1,6 @@
 {
   "name": "util4js",
-  "version": "0.0.1",
+  "version": "1.0.0-alpha.1",
   "description": "A common util collection",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
