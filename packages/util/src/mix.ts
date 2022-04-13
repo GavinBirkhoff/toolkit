@@ -6,9 +6,11 @@ function _mix<Base, Source>(dist: Base & Source, obj: Source): void {
   }
 }
 
-export default function mix<Base, Source>(dist: Base & Source, ...args: Source[]): Base & Source {
+const mix = <Base, Source>(dist: Base & Source, ...args: Source[]): Base & Source => {
   args.forEach((arg) => {
     _mix(dist, arg)
   })
   return dist
 }
+
+export default mix

@@ -8,3 +8,5 @@ function schonfinkelize(fn) {
     return fn.apply(null, args)
   }
 }
+
+export default schonfinkelize

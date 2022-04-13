@@ -1,8 +1,10 @@
-interface ISource {
-  [key: string | number | symbol]: any
-}
-const deepClone = (obj: ISource) => {
-  const objClone = Array.isArray(obj) ? [] : {}
+/**
+ * @description deep clone obj
+ * @param obj
+ * @returns obj
+ */
+const deepClone = <T>(obj: T): Partial<T> => {
+  const objClone: any = Array.isArray(obj) ? [] : {}
   if (obj && typeof obj === 'object') {
     for (const key in obj) {
       if (Object.prototype.hasOwnProperty.call(obj, key)) {

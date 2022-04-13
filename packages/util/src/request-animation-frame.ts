@@ -3,7 +3,7 @@
  * @param fn
  * @returns
  */
-const requestAnimationFrame = (fn: FrameRequestCallback) => {
+const requestAnimationFrame = (fn: FrameRequestCallback): number => {
   const method =
     window.requestAnimationFrame ||
     // @ts-ignore
