@@ -1,9 +1,9 @@
 /**
- * Compatibility requestAnimationFrame function
- * @param {FrameRequestCallback} fn The function to requestAnimationFrame
- * @returns {Function}
+ * @description
+ * @param fn
+ * @returns
  */
-const requestAnimationFrame = (fn: FrameRequestCallback): any => {
+const requestAnimationFrame = (fn: FrameRequestCallback): number => {
   const method =
     window.requestAnimationFrame ||
     // @ts-ignore

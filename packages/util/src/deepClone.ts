@@ -1,3 +1,5 @@
+import hasOwnProperty from './hasOwnProperty'
+
 /**
  * @description deep clone obj
  * @param obj
@@ -7,7 +9,7 @@ const deepClone = <T>(obj: T): Partial<T> => {
   const objClone: any = Array.isArray(obj) ? [] : {}
   if (obj && typeof obj === 'object') {
     for (const key in obj) {
-      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      if (hasOwnProperty.call(obj, key)) {
         if (obj[key] && typeof obj[key] === 'object') {
           objClone[key] = deepClone(obj[key])
         } else {

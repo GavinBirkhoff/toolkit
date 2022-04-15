@@ -1,3 +1,4 @@
+import hasOwnProperty from './hasOwnProperty'
 import isArray from './is-array'
 import isObject from './is-object'
 
@@ -7,7 +8,7 @@ import isObject from './is-object'
  * @param {Function} func a callback for item of elements
  */
 
-const each = (elements: unknown[] | Record<string, unknown>, func: (v: unknown, k: unknown) => unknown): void => {
+const each = (elements: any[] | Record<string, any>, func: (v: any, k: any) => any): void => {
   if (!elements) {
     return
   }
@@ -21,7 +22,7 @@ const each = (elements: unknown[] | Record<string, unknown>, func: (v: unknown, 
     }
   } else if (isObject(elements)) {
     for (const k in elements) {
-      if (Object.prototype.hasOwnProperty.call(elements, k)) {
+      if (hasOwnProperty.call(elements, k)) {
         rst = func(elements[k], k)
         if (rst === false) {
           break

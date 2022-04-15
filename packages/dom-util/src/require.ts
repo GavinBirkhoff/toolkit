@@ -1,6 +1,12 @@
-function require(file, callback) {
-  const script = document.getElementsByTagName('script')[0],
-    newjs = document.createElement('script')
+/**
+ * @since 1.0.0
+ * @description web require
+ * @param file
+ * @param callback
+ */
+const _require = (file: string, callback: () => any) => {
+  const script = document.getElementsByTagName('script')[0]
+  const newjs: any = document.createElement('script')
 
   // IE
   newjs.onreadystatechange = function () {
@@ -16,5 +22,7 @@ function require(file, callback) {
   }
 
   newjs.src = file
-  script.parentNode.insertBefore(newjs, script)
+  script?.parentNode?.insertBefore(newjs, script)
 }
+
+export default _require

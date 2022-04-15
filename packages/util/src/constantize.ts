@@ -1,5 +1,6 @@
 import { ObjectType } from './types'
 /**
+ * @since 1.0.0
  * @description freeze obj and keys
  * @param {Object} obj need to freeze target
  */

@@ -1,5 +1,5 @@
 {
-  "name": "dom-util",
+  "name": "util4dom",
   "version": "1.0.0-alpha.1",
   "description": "A common util collection",
   "main": "lib/index.js",
@@ -22,7 +22,6 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "script:gen-index": "node ./scripts/generate-index.js",
-    "a-i": "run script:gen-index",
     "docs": "jsdoc -c jsdoc.json"
   },
   "keywords": [],

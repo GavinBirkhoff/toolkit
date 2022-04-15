@@ -1,4 +1,5 @@
 /**
+ * @since 1.0.0
  * @description Put a num in a certain boundary
  * @param {Number} num The value to clamp
  * @param {Number} min The min bound

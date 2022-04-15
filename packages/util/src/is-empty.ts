@@ -2,8 +2,8 @@ import isNil from './is-nil'
 import isArrayLike from './is-array-like'
 import getType from './get-type'
 import isPrototype from './is-prototype'
+import hasOwnProperty from './hasOwnProperty'
 
-const hasOwnProperty = Object.prototype.hasOwnProperty
 /**
  * @description Checks if `value` is an empty object, collection, map, or set.
  * @param value
