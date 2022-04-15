@@ -31,6 +31,6 @@
     "url": "https://github.com/GavinBirkhoff/util/issues"
   },
   "dependencies": {
-    "@gavinbirkhoff/util": "^1.0.0"
+    "util4js": "^1.0.0-alpha.1"
   }
 }

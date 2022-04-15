@@ -1,10 +1,12 @@
 {
-  "name": "my-util",
+  "name": "utils",
   "version": "1.0.0",
-  "description": "",
+  "description": "Store more front-end related tool Libraries",
   "main": "index.js",
   "scripts": {
+    "prebuild": "npm install && lerna bootstrap",
     "bootstrap": "lerna bootstrap",
+    "clean": "lerna clean",
     "build": "lerna run build",
     "eslint": "eslint --ext .js,.ts --fix ./packages/**/src",
     "tslint": "tslint ./packages/**/*.ts",

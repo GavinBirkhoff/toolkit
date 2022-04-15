@@ -1,4 +1,4 @@
-import { isElement, isString } from '@gavinbirkhoff/util'
+import { isElement, isString } from 'util4js'
 type DomAttrs = {
   tagName?: string
   container?: HTMLElement
