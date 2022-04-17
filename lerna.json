@@ -3,5 +3,20 @@
     "packages/*"
   ],
   "npmClient": "npm",
-  "version": "independent"
+  "version": "independent",
+  "command": {
+    "publish": {
+      "ignoreChanges": [
+        ".gitignore",
+        "*.log",
+        "*.md"
+      ]
+    },
+    "bootstrap": {
+      "ignore": "npm-*",
+      "npmClientArgs": [
+        "--no-package-lock"
+      ]
+    }
+  }
 }
