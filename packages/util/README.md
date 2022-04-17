@@ -3,4 +3,4 @@
 util for js
 ## usage
 
-npm i util4js
+npm i util4j
