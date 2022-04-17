@@ -16,7 +16,7 @@
     "script:gen-index": "lerna run script:gen-index",
     "gi": "lerna run script:gen-index",
     "docs": "lerna run docs",
-    "pb": "lerna publish --canary"
+    "pb": "lerna publish from-package"
   },
   "husky": {
     "hooks": {
