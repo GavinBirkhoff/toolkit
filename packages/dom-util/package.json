@@ -1,6 +1,6 @@
 {
   "name": "util4dom",
-  "version": "1.0.2-alpha.0",
+  "version": "1.0.3-alpha.0",
   "description": "A common util collection",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
