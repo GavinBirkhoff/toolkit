@@ -7,8 +7,6 @@
   "module": "esm/index.js",
   "exports": "./lib/index.js",
   "files": [
-    "src",
-    "package.json",
     "esm",
     "lib",
     "README.md"
