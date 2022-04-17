@@ -2,8 +2,8 @@ const toString = Object.prototype.toString
 
 /**
  * @description
- * @param value
- * @returns
+ * @param  {any} value
+ * @returns string
  */
 const getType = (value: any): string => {
   let val

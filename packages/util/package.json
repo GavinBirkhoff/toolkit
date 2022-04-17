@@ -14,7 +14,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "npm run clean && run-p build:*",
+    "build": "npm run clean && npm run script:gen-index && run-p build:* && npm run docs",
     "build:esm": "tsc -p tsconfig.json --target ES5 --module ESNext --outDir esm",
     "build:cjs": "tsc -p tsconfig.json --target ES5 --module commonjs --outDir lib",
     "clean": "rm -rf lib && rm -rf esm",
@@ -22,7 +22,8 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "script:gen-index": "node ./scripts/generate-index.js",
-    "docs": "jsdoc -c jsdoc.json"
+    "docs": "jsdoc -c jsdoc.json",
+    "md": "node ./scripts/jsdoc2md.js"
   },
   "keywords": [
     "util"
@@ -33,6 +34,7 @@
     "url": "https://github.com/GavinBirkhoff/util/issues"
   },
   "devDependencies": {
-    "docdash": "^1.2.0"
+    "docdash": "^1.2.0",
+    "jsdoc-to-markdown": "^7.1.1"
   }
 }

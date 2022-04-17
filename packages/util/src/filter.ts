@@ -1,10 +1,11 @@
 import isArrayLike from './is-array-like'
 /**
  * @description
- * @param arr
- * @param func
- * @returns
+ * @param  {T[]} arr
+ * @param  {(v:T,idx?:number,arr?:T[])=>boolean} func
+ * @returns T
  */
+
 const filter = <T>(arr: T[], func: (v: T, idx?: number, arr?: T[]) => boolean): T[] => {
   if (!isArrayLike(arr)) {
     return arr

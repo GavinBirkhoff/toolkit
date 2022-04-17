@@ -1,8 +1,8 @@
 import toString from './to-string'
 /**
- * @description
- * @param value
- * @returns
+ * @description The first letter should be capitalized
+ * @param {string} value
+ * @returns {string} value
  */
 const upperFirst = (value: string): string => {
   const str = toString(value)

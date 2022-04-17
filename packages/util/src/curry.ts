@@ -1,7 +1,7 @@
 /**
- *
- * @param {*} fn
- * @returns
+ * @param  {(...rest:any[])=>any} fn
+ * @param  {any[]} ...rest
+ * @returns {((...rest: any[]) => any)}
  */
 const curry = (fn: (...rest: any[]) => any, ...rest: any[]): ((...rest: any[]) => any) => {
   // const slice = Array.prototype.slice,
