@@ -1,8 +1,8 @@
 const objectProto = Object.prototype
 /**
- * @description
- * @param value
- * @returns
+ * @description isPrototype
+ * @param {any} value
+ * @returns {boolean}
  */
 const isPrototype = (value: any): boolean => {
   const Ctor = value && value.constructor

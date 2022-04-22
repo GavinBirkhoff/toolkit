@@ -2,7 +2,7 @@
  * @description Creates a debounced function that delays invoking `func` until after `wait`
  * @param {Function} func The function to debounce
  * @param {Number} wait waiting time
- * @param {Boolean} immediate Is it implemented immediately
+ * @param {boolean} immediate Is it implemented immediately
  * @returns {Function}
  * @example
  * debounce(()=>{console.log},1000)

@@ -1,9 +1,9 @@
 const toString = Object.prototype.toString
 
 /**
- * @description
+ * @description getType
  * @param  {any} value
- * @returns string
+ * @returns {sting}
  */
 const getType = (value: any): string => {
   let val

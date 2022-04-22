@@ -1,6 +1,6 @@
 /**
  * @description check a value typeof is object
- * @param {*} value The value to check
+ * @param {any} value The value to check
  * @returns {boolean}
  * @example
  * isObjectLike({})

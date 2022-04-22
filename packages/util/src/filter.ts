@@ -1,6 +1,6 @@
 import isArrayLike from './is-array-like'
 /**
- * @description
+ * @description filter
  * @param  {T[]} arr
  * @param  {(v:T,idx?:number,arr?:T[])=>boolean} func
  * @returns T

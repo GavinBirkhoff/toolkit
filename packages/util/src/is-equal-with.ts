@@ -2,8 +2,8 @@ import isFunction from './is-function'
 import isEqual from './is-equal'
 /**
  * @description More complex types
- * @param {*} value The value to compare.
- * @param {*} other The other value to compare.
+ * @param {any} value The value to compare.
+ * @param {any} other The other value to compare.
  * @param {Function} [fn] The function to customize comparisons.
  * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
  * @example

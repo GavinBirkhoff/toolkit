@@ -1,8 +1,8 @@
 import copyProperties from './copy-properties'
 /**
- *
- * @param mixins
- * @returns
+ * @description mixin
+ * @param {*[]} mixins
+ * @returns {any}
  * @example
  * class DistributedEdit extends mixin(Loggable, Serializable) {
  * //

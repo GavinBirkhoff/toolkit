@@ -2,8 +2,8 @@ import isArrayLike from './is-array-like'
 /**
  * @description Check whether the array contains a value
  * @param {Array | String} arr target array
- * @param {*} value target value
- * @returns {Boolean}
+ * @param {any} value target value
+ * @returns {boolean}
  * @example
  * contains([1,2,3],2)
  * // true

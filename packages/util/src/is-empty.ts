@@ -6,8 +6,8 @@ import hasOwnProperty from './hasOwnProperty'
 
 /**
  * @description Checks if `value` is an empty object, collection, map, or set.
- * @param value
- * @returns
+ * @param {any} value
+ * @returns {boolean}
  * @example
  *
  * isEmpty(null)

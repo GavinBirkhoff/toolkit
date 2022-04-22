@@ -1,10 +1,10 @@
 import isString from './is-string'
 /**
- * @description
+ * @description Whether a string starts with a character
  * @param string
  * @param target
  * @param position
- * @returns
+ * @returns {boolean}
  * @example
  * startsWith('abc', 'a')
  * // => true

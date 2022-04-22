@@ -12,7 +12,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "npm run clean && run-p build:*",
+    "build": "npm run clean && npm run script:gen-index && run-p build:*",
     "build:esm": "tsc -p tsconfig.json --target ES5 --module ESNext --outDir esm",
     "build:cjs": "tsc -p tsconfig.json --target ES5 --module commonjs --outDir lib",
     "clean": "rm -rf lib && rm -rf esm",
@@ -20,7 +20,7 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "script:gen-index": "node ./scripts/generate-index.js",
-    "docs": "jsdoc -c jsdoc.json"
+    "docs": "npm run build:esm && jsdoc -c jsdoc.json"
   },
   "keywords": [],
   "author": "Gavin Birkhoff <gavinbirkhoff@gmail.com>",
@@ -31,5 +31,8 @@
   "dependencies": {
     "util4j": "^1.0.2-alpha.0"
   },
-  "gitHead": "8066f445929a03bc27070f7eb4caea274ae2f92c"
+  "gitHead": "8066f445929a03bc27070f7eb4caea274ae2f92c",
+  "devDependencies": {
+    "docdash": "^1.2.0"
+  }
 }

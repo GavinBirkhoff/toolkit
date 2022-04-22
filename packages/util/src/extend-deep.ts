@@ -3,10 +3,10 @@ import isArray from './is-array'
 import { ObjectType } from './types'
 
 /**
- * @description
+ * @description extendDeep
  * @param  {ObjectType<any>} parent
  * @param  {ObjectType<any>={}} child
- * @returns ObjectType
+ * @returns {ObjectType}
  */
 const extendDeep = (parent: ObjectType<any>, child: ObjectType<any> = {}): ObjectType<any> => {
   for (const i in parent) {

@@ -1,11 +1,11 @@
 import isString from './is-string'
 
 /**
- * @description
+ * @description endsWith
  * @param  {string} string
  * @param  {string} target
  * @param  {number} position?
- * @returns boolean
+ * @returns {boolean}
  * @example
  * endsWith('abc', 'c')
  * // => true

@@ -3,7 +3,7 @@ import getClass from './getClass'
  * @description Check whether the element contains class name
  * @param {HTMLElement} el target dom
  * @param {String} name class name
- * @returns {Boolean}
+ * @returns {boolean}
  */
 const hasClass = (el: HTMLElement, name: string): boolean => {
   if (el.classList !== undefined) {

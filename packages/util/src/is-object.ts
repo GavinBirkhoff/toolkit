@@ -1,7 +1,7 @@
 /**
- * @description
- * @param value
- * @returns
+ * @description isObject
+ * @param {any} value
+ * @returns {boolean}
  */
 const isObject = (value: unknown): value is Record<string, unknown> => {
   const type = typeof value

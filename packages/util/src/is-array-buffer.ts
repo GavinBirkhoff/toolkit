@@ -1,8 +1,8 @@
 import isType from './is-type'
 /**
- * @description
- * @param value
- * @returns
+ * @description isArrayBuffer
+ * @param {any} value
+ * @returns {boolean}
  */
 
 const isArrayBuffer = (value: unknown): value is Array<unknown> =>

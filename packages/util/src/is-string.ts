@@ -1,9 +1,10 @@
 import isType from './is-type'
 /**
- * @description
- * @param value
- * @returns
+ * @description isSting
+ * @param {any} value
+ * @returns {boolean}
  */
+
 const isString = (value: any): value is string => {
   return isType('String', value)
 }

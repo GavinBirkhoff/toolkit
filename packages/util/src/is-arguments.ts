@@ -1,6 +1,6 @@
 import isType from './is-type'
 /**
- * @description
+ * @description isArguments
  * @param {any} value
  * @returns {boolean}
  */

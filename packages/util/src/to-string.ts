@@ -1,8 +1,8 @@
 import isNil from './is-nil'
 /**
- * @description
- * @param value
- * @returns
+ * @description to string
+ * @param {any} value
+ * @returns {string}
  */
 const toString = (value: any): string => {
   if (isNil(value)) return ''

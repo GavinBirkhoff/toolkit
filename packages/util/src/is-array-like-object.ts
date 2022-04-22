@@ -2,9 +2,9 @@ import isArrayLike from './is-array-like'
 import isObject from './is-object'
 
 /**
- * @description
- * @param value
- * @returns
+ * @description isArrayLikeObject
+ * @param {any} value
+ * @returns {boolean}
  * @example
  * isArrayLike([1, 2, 3])
  * // => true

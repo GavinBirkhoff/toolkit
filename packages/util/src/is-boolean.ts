@@ -1,8 +1,8 @@
 import isType from './is-type'
 /**
- * @description
- * @param {*} value
- * @returns {Boolean}
+ * @description isBoolean
+ * @param {any} value
+ * @returns {boolean}
  */
-const isBoolean = (value: any): value is boolean => value === true || value === false || isType('Boolean', value)
+const isBoolean = (value: any): value is boolean => value === true || value === false || isType('boolean', value)
 export default isBoolean

@@ -1,6 +1,6 @@
 /**
  * @description check value like array
- * @param {*} value The value to check
+ * @param {any} value The value to check
  * @returns {boolean}
  * @example
  * isArrayLike([1, 2, 3])

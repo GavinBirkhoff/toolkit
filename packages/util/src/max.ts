@@ -1,8 +1,8 @@
 import isArray from './is-array'
 /**
- * @description
- * @param arr
- * @returns
+ * @description max
+ * @param {number[]} arr
+ * @returns {number | undefined}
  */
 const max = (arr: number[]): number | undefined => {
   if (!isArray(arr)) {

@@ -1,9 +1,10 @@
 import isType from './is-type'
 /**
- * @description
- * @param str
- * @returns
+ * @description isRegExp
+ * @param  {any} str
+ * @returns {boolean}
  */
+
 const isRegExp = (str: any): str is RegExp => {
   return isType(str, 'RegExp')
 }

@@ -1,8 +1,8 @@
 import isNumber from './is-number'
 /**
- * @description
- * @param {*} num
- *
+ * @description isInteger
+ * @param {any} num
+ * @returns {boolean}
  */
 const isInteger = Number.isInteger
   ? Number.isInteger

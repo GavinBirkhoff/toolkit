@@ -1,7 +1,7 @@
 /**
- * @description
- * @param value
- * @returns
+ * @description isNil
+ * @param {any} value
+ * @returns {boolean}
  * @example
  * isNil(null)
  * // => true
