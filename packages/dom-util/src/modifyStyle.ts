@@ -1,5 +1,5 @@
 /**
- * modifyStyle
+ * @description modifyStyle
  * @param {HTMLElement} dom
  * @param {Object} style
  * @returns {HTMLElement} dom

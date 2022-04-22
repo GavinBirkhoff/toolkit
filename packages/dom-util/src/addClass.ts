@@ -1,7 +1,11 @@
 import getClass from './getClass'
 import setClass from './setClass'
 import hasClass from './hasClass'
-
+/**
+ * @description add class name
+ * @param  {HTMLElement} el
+ * @param  {string} name
+ */
 const addClass = (el: HTMLElement, name: string): void => {
   if (el.classList !== undefined) {
     const cloneName = name

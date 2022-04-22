@@ -1,7 +1,7 @@
 import setClass from './setClass'
 import getClass from './getClass'
 /**
- * removeClass
+ * @description remove class name
  * @param {HTMLElement} el target val
  * @param {String} name class name
  */

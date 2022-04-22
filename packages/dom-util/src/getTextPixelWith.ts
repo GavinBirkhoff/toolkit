@@ -6,7 +6,7 @@ interface Ifont {
   fontFamily?: string
 }
 /**
- * get with from text by pixel
+ * @description get with from text by pixel
  * @param {String} text
  * @param {Object} font
  * @returns {number}

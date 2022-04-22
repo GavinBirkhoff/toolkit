@@ -2,12 +2,12 @@ interface XHTMLElement extends HTMLElement {
   currentStyle?: any
 }
 /**
- *
+ * @description get style from ele
  * @param {XHTMLElement} el
- * @param {unknown} style
+ * @param {any} style
  * @returns
  */
-const getStyle = (el: XHTMLElement, style: unknown): string => {
+const getStyle = (el: XHTMLElement, style: any): string => {
   //IE: currentStyle
   //firefox: defaultView
   let value = el.style[style as any] || (el.currentStyle && el.currentStyle[style as any])

@@ -1,6 +1,6 @@
 /**
  * @since 1.0.0
- * @description
+ * @description add ele to front
  * @param {HTMLElement} el
  */
 const toFront = (el: HTMLElement): void => {

@@ -1,5 +1,5 @@
 /**
- *
+ * @description get bounding of client
  * @param {HTMLElement} ele
  * @returns {{ x: number; y: number } | undefined}
  */

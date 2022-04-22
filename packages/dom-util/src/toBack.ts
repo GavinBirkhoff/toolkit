@@ -1,6 +1,6 @@
 /**
  * @since 1.0.0
- * @description
+ * @description add ele to back
  * @param {HTMLElement} el
  */
 const toBack = (el: HTMLElement): void => {

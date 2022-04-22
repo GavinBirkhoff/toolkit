@@ -1,7 +1,7 @@
 /**
  * @since 1.0.0
- * @description
- * @param {*} element
+ * @description set css props
+ * @param {HTMLElement} element
  * @param {*} props
  * @returns
  */

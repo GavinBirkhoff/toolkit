@@ -1,6 +1,6 @@
 import getClass from './getClass'
 /**
- * Check whether the element contains class name
+ * @description Check whether the element contains class name
  * @param {HTMLElement} el target dom
  * @param {String} name class name
  * @returns {Boolean}

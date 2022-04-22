@@ -1,5 +1,5 @@
 /**
- * removeDom
+ * @description removeDom
  * @param {HTMLElement} el
  * @returns {Boolean}
  */

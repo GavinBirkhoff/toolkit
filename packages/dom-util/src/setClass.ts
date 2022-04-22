@@ -1,5 +1,5 @@
 /**
- * setClass
+ * @description setClass
  * @param {HTMLElement} el target dom
  * @param {String} name The value of class
  */

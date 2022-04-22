@@ -1,5 +1,5 @@
 /**
- * emptyDom
+ * @description emptyDom
  * @param {HTMLElement} el
  */
 const emptyDom = (el: HTMLElement): void => {

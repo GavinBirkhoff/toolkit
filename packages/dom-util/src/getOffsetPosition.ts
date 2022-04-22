@@ -1,5 +1,5 @@
 /**
- * getBoundingClientRect
+ * @description get offset position
  * @param {HTMLElement} ele
  * @returns {Object} { left: number; top: number }
  */

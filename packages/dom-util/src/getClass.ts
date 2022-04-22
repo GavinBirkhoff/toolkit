@@ -1,5 +1,5 @@
 /**
- * getClass
+ * @description get classnames
  * @param {HTMLElement} el
  * @returns {String}
  */
