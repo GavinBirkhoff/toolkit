@@ -1,19 +1,19 @@
 {
- "editor.detectIndentation": false,
- "editor.formatOnType": true,
- "editor.formatOnSave": true,
- "editor.formatOnPaste": true,
- "editor.codeActionsOnSave": true,
- "editor.useTabStops": false,
- "editor.highlightActiveIndentGuide": true,
- "eslint.enable": true,
- "eslint.validate": [
-     "javascript",
- ],
- "[typescript]": {
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
-},
-"editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-},
+    "editor.detectIndentation": false,
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.codeActionsOnSave": true,
+    "editor.useTabStops": false,
+    "eslint.enable": true,
+    "eslint.validate": [
+        "javascript",
+    ],
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.guides.highlightActiveIndentation": true,
 }

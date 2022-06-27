@@ -10,7 +10,7 @@
     "build": "lerna run build",
     "eslint": "eslint --ext .js,.ts --fix ./packages/**/src",
     "tslint": "tslint ./packages/**/*.ts",
-    "tslint-fix": "tslint ./packages/**/*.ts --fix",
+    "tslint:fix": "tslint ./packages/**/*.ts --fix",
     "test": "lerna run test",
     "test:coverage": "lerna run test:coverage",
     "script:gen-index": "lerna run script:gen-index",
