@@ -16,5 +16,5 @@ const curry = (fn: (...rest: any[]) => any, ...rest: any[]): ((...rest: any[]) =
     return fn(...args)
   }
 }
-
+// TODO
 export default curry

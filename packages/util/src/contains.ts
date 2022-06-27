@@ -1,6 +1,6 @@
 import isArrayLike from './is-array-like'
 /**
- * @description Check whether the array contains a value
+ * @description Check whether the array or array like contains a value
  * @param {Array | String} arr target array
  * @param {any} value target value
  * @returns {boolean}
@@ -15,13 +15,14 @@ import isArrayLike from './is-array-like'
  * // false
  */
 const contains = (arr: any[] | string, value: any, position?: number): boolean => {
-  const positionValue = position || -1
-  if (isArrayLike(arr)) {
-    if (arr.includes !== undefined) {
-      return arr.includes(value, position)
-    }
-    return arr.indexOf(value) > positionValue
-  }
-  return false
+   const positionValue = position || -1
+   if (isArrayLike(arr)) {
+      if (arr.includes !== undefined) {
+         return arr.includes(value, position)
+      }
+      return arr.indexOf(value) > positionValue
+   }
+   return false
 }
+
 export default contains

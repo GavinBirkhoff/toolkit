@@ -6,10 +6,11 @@
  */
 
 interface IItem<T> {
+  // [key: string]: any
   children?: T[]
 }
 
-const treeToArray = <T extends IItem<T>>(tree: T[], newArr = [] as T[]): T[] => {
+const treeToList = <T extends IItem<T>>(tree: T[], newArr = [] as T[]): T[] => {
   tree.forEach((item: T) => {
     const { children } = item
     if (children) {
@@ -17,7 +18,7 @@ const treeToArray = <T extends IItem<T>>(tree: T[], newArr = [] as T[]): T[] => 
 
       if (children.length) {
         newArr.push(item)
-        return treeToArray(children, newArr)
+        return treeToList(children, newArr)
       }
     }
     newArr.push(item)
@@ -25,4 +26,4 @@ const treeToArray = <T extends IItem<T>>(tree: T[], newArr = [] as T[]): T[] => 
   return newArr
 }
 
-export default treeToArray
+export default treeToList
