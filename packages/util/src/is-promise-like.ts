@@ -1,0 +1,11 @@
+/**
+ * @description Promise or not
+ * @param {*} obj Accept an type
+ * @returns {boolean}
+ */
+
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-explicit-any
+const isPromiseLike = (obj: any): boolean =>
+  obj !== null && (typeof obj === 'object' || typeof obj === 'function') && typeof obj.then === 'function'
+
+export default isPromiseLike
