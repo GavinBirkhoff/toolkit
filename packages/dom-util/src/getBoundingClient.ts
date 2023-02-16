@@ -3,8 +3,19 @@
  * @param {HTMLElement} ele
  * @returns {{ x: number; y: number } | undefined}
  */
-const getBoundingClient = (ele: HTMLElement): { x: number; y: number } | undefined => {
-  if (!ele) return
+interface ClientXy {
+  x: number
+  y: number
+}
+const getBoundingClient = (ele: HTMLElement): ClientXy => {
+  if (!ele) return { x: 0, y: 0 }
+  if (ele.getBoundingClientRect) {
+    const domRect = ele.getBoundingClientRect()
+    return {
+      x: domRect.x ?? domRect.left,
+      y: domRect.y ?? domRect.top
+    }
+  }
   let top = ele.offsetTop
   let left = ele.offsetLeft
 
