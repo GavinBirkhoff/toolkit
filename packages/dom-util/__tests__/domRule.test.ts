@@ -3,8 +3,8 @@ import * as DOMUtil from '../src'
 describe('DOMUtil', () => {
   const dom = document.createElement('div')
   dom.classList.add('box')
-  test('getStyle', () => {
-    expect(DOMUtil.getStyle(dom, 'display')).toBe('block')
+  test('getStyleProps', () => {
+    expect(DOMUtil.getStyleProps(dom, 'display')).toBe('block')
   })
   test('hasClass', () => {
     expect(DOMUtil.hasClass(dom, 'box')).toBeTruthy()
