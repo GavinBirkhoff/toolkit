@@ -2,9 +2,12 @@ import getClass from './getClass'
 import setClass from './setClass'
 import hasClass from './hasClass'
 /**
- * @description add class name
- * @param  {HTMLElement} el
- * @param  {string} name
+ * @description Add class name
+ * @param  {HTMLElement} el target
+ * @param  {string} name class name
+ * @example
+ * addClass(el,'name')
+ * addClass(el,'name1 name2 name3')
  */
 const addClass = (el: HTMLElement, name: string): void => {
   if (el.classList !== undefined) {
