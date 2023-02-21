@@ -7,7 +7,8 @@
  * @example
  * debounce(()=>{console.log},1000)
  */
-const debounce = (func: () => void, wait = 0, immediate?: boolean): (() => void) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const debounce = (func: (...rest: any[]) => any, wait = 0, immediate?: boolean): ((...rest: any[]) => any) => {
   let timer: NodeJS.Timeout | null
   // eslint-disable-next-line @typescript-eslint/no-this-alias
   const context = this
