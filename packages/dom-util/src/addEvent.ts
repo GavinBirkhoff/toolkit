@@ -6,13 +6,20 @@ interface EventOptions {
   useDebounce?: boolean
   useOnce?: boolean
 }
-
+/**
+ * @description Add event listener for target element
+ * @param {HTMLElement | SVGElement} ele Target element
+ * @param {string} type Type of event
+ * @param {EventListenerOrEventListenerObject} eventHandle Response execution function
+ * @param {EventOptions} options
+ * @returns {Function} Returns function provide removeEvent to remove listener from element
+ */
 const addEvent = (
   ele: HTMLElement | SVGElement,
   type: string,
   eventHandle: EventListenerOrEventListenerObject,
   options?: EventOptions
-): void => {
+): any => {
   if (!ele) return
   const { useCapture = false, useThrottle, useDebounce, useOnce } = options ?? {}
 
@@ -42,6 +49,7 @@ const addEvent = (
     //@ts-ignore
     ele['on' + type] = callBack
   }
+  return callBack
 }
 
 export default addEvent
