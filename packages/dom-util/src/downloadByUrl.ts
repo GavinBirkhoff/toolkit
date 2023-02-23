@@ -4,8 +4,6 @@
  * @param {string} type MIME(Multipurpose Internet Mail Extensions) //https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
  */
 
-import createDom from './createDom'
-
 const downloadByUrl = (Url: string, type = 'application/octet-stream'): void => {
   const blob = new Blob([''], { type })
   const url = URL.createObjectURL(blob)
