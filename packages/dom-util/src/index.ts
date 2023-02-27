@@ -1,4 +1,5 @@
 export { default as addClass } from './addClass'
+export { default as addCss } from './addCss'
 export { default as addEvent } from './addEvent'
 export { default as canUseDom } from './canUseDom'
 export { default as clearAnimationFrame } from './clearAnimationFrame'
