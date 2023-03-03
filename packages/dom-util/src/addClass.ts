@@ -2,7 +2,7 @@ import getClass from './getClass'
 import setClass from './setClass'
 import hasClass from './hasClass'
 /**
- * @description Add class name
+ * Add class name
  * @param  {HTMLElement} el target
  * @param  {string} name class name
  * @example

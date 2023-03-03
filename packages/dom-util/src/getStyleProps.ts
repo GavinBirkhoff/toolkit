@@ -1,4 +1,4 @@
-type StylePropsKey = Omit<
+type StylePropsKeys = Omit<
   CSSStyleDeclaration,
   | 'getPropertyPriority'
   | 'getPropertyValue'
@@ -12,13 +12,15 @@ type StylePropsKey = Omit<
 interface XHTMLElement extends HTMLElement {
   currentStyle?: CSSStyleDeclaration
 }
+
+type StyleProp = string | null
 /**
  * @description Get style from XHTMLElement by key of CSSStyleDeclaration
  * @param {XHTMLElement} el target element
  * @param {keyof CSSStyleDeclaration} key key of CSSStyleDeclaration
  * @returns {string}
  */
-const getStyleProps = (el: XHTMLElement, key: keyof StylePropsKey): string | null => {
+const getStyleProps = (el: XHTMLElement, key: keyof StylePropsKeys): StyleProp => {
   //IE: currentStyle
   //firefox: defaultView
   let value = el.style[key] || (el.currentStyle && el.currentStyle[key]) || null
@@ -29,7 +31,7 @@ const getStyleProps = (el: XHTMLElement, key: keyof StylePropsKey): string | nul
     value = style ? style[key] : null
   }
 
-  return value === 'auto' ? null : value
+  return value === 'auto' ? null : (value as StyleProp)
 }
 
 export default getStyleProps

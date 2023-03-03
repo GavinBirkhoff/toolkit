@@ -14,10 +14,13 @@ export interface DomAttrs<T> {
  * // returns <div></div>
  * createDom()
  * @example
- * / returns <body><a>link</a></body>
+ * // returns <body><a>link</a></body>
  * createDom({tagName:'a', container:body, node: 'link'})
  */
-const createDom = <K extends keyof HTMLElementTagNameMap>(domAttrs: DomAttrs<K>): HTMLElementTagNameMap[K] => {
+const createDom = <K extends keyof HTMLElementTagNameMap>(domAttrs?: DomAttrs<K>): HTMLElementTagNameMap[K] => {
+  if (!domAttrs || isString(domAttrs)) {
+    return document.createElement((domAttrs ?? 'div') as K)
+  }
   const { tagName, container, node } = domAttrs
   const el = document.createElement(tagName ?? 'div')
   if (node) {

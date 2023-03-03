@@ -13,6 +13,21 @@ interface EventOptions {
  * @param {EventListenerOrEventListenerObject} eventHandle Response execution function
  * @param {EventOptions} options
  * @returns {Function} Returns function provide removeEvent to remove listener from element
+ * @example
+ * // returns callback of listener
+ * addEvent(dom, 'click', (e) => {
+ *  console.log(e)
+ * })
+ * @example
+ * // returns callback of listener
+ * addEvent(
+ * dom,
+ *  'click',
+ *   (e) => {
+ *    console.log('useDebounce')
+ * },
+ * { useDebounce: true }
+ * )
  */
 const addEvent = (
   ele: HTMLElement | SVGElement,
@@ -28,7 +43,7 @@ const addEvent = (
     callBack = throttle(callBack as any, 300, 1)
   }
   if (useDebounce) {
-    callBack = debounce(callBack as any)
+    callBack = debounce(callBack as any, 300)
   }
   if (ele.addEventListener) {
     if (useOnce) {

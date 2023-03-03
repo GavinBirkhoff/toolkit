@@ -1,6 +1,13 @@
 import { hasOwnProperty } from 'util4j'
 import { StylePropsKeys } from './types'
-
+/**
+ * Add style sheet
+ * @param {string} selector Css selector must be valid selector for css
+ * @param {object} cssRules A object about css rules
+ * @param {string} title default sheet, that is link style title
+ * @example
+ * addCss('.item', { backgroundColor: 'green' })
+ */
 const addCss = (
   selector: string,
   cssRules: Partial<{ [key in keyof StylePropsKeys]: number | string }>,
@@ -32,7 +39,6 @@ const addCss = (
       })}:${cssRules[prop as keyof StylePropsKeys]};`
     }
   }
-
   if (styleSheet.insertRule) {
     styleSheet.insertRule(`${selector}{${str}}`, styleSheet.cssRules.length)
   } else {

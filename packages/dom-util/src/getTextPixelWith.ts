@@ -1,4 +1,4 @@
-interface Ifont {
+interface FontSheet {
   fontStyle?: string
   fontVariant?: string
   fontWeight?: string
@@ -10,9 +10,12 @@ interface Ifont {
  * @param {String} text
  * @param {Object} font
  * @returns {number}
+ * @example
+ * // returns number
+ * getTextPixelWith('hello word')
  */
-const getTextPixelWith = (text: string, font: Ifont): number => {
-  const { fontStyle, fontVariant, fontWeight, fontSize = '16px', fontFamily = 'Arial' } = font
+const getTextPixelWith = (text: string, font?: FontSheet): number => {
+  const { fontStyle, fontVariant, fontWeight, fontSize = '16px', fontFamily = 'Arial' } = font ?? {}
   const ctx = document.createElement('canvas')?.getContext('2d')
   if (ctx === null) return 0
   ctx.font = `${fontStyle !== undefined ? fontStyle : ''} ${fontVariant !== undefined ? fontVariant : ''} ${
