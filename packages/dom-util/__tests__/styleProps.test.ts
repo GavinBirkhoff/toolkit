@@ -3,6 +3,7 @@ import { setStyleProps, getStyleProps, getC3Var, createDom } from '../src'
 describe('setStyleProps getStyleProps', () => {
   test('defult', () => {
     const mydiv = createDom({
+      tagName: 'div',
       container: document.body
     })
     mydiv.style.height = '10px'

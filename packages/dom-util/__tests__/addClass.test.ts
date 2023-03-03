@@ -9,7 +9,7 @@ describe('addClass', () => {
   test('add exist className and classNames', () => {
     const dom = createDom()
     const name = 'myClassName'
-    const name2 = 'myClassName a b c'
+    const name2 = 'myClassName1 a b c'
     addClass(dom, name)
     addClass(dom, name2)
     expect(getClass(dom)).toBe(name + ' ' + name2)

@@ -1,8 +1,9 @@
 import { getTextPixelWith } from '../src'
-// TODO
 describe('getTextPixelWith', () => {
   test('default', () => {
-    const w = getTextPixelWith('abc', {})
+    const w = getTextPixelWith('hello word')
+    // TODO
+    // Effective in real environment
     expect(w).toBe(0)
   })
 })
