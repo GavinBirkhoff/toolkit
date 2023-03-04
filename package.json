@@ -14,7 +14,7 @@
     "test": "lerna run test",
     "test:coverage": "lerna run test:coverage",
     "script:gen-index": "lerna run script:gen-index",
-    "gi": "lerna run script:gen-index",
+    "gen": "npm run script:gen-index",
     "docs": "lerna run docs",
     "pb": "lerna publish from-package",
     "dev": "webpack-dev-server --progress"
