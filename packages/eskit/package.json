@@ -29,7 +29,7 @@
   "author": "Gavin Birkhoff <gavinbirkhoff@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/GavinBirkhoff/util/issues"
+    "url": "https://github.com/GavinBirkhoff/toolkit/issues"
   },
   "devDependencies": {
     "docdash": "^1.2.0",
