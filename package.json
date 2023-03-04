@@ -1,6 +1,6 @@
 {
-  "name": "utils",
-  "version": "1.0.0",
+  "name": "toolkit",
+  "version": "1.0.0-beta.0",
   "description": "Store more front-end related tool Libraries",
   "main": "index.js",
   "scripts": {
