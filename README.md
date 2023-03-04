@@ -1,9 +1,9 @@
-# Util
+# Toolkit
 
-**All util modules**
+**All kit modules**
 
-- util Tool library of TS / JS that can be used in browser and nodejs
-- dom-util The JS tool library used in the browser mainly operates DOM related APIs
+- eskit Tool library of TS / JS that can be used in browser and nodejs
+- domkit The JS tool library used in the browser mainly operates DOM related APIs
 
 ## Lerna
 

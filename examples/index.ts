@@ -7,7 +7,7 @@ import {
   removeEvent,
   canUseDom,
   getTextPixelWith
-} from '@/dom-util/src'
+} from '@/domkit/src'
 
 const dom = createDom({ tagName: 'div', container: document.body, node: `Hey Guys, I'm Gavin!` })
 
