@@ -1,6 +1,6 @@
-# util
+# eskit
 
-util for js
-## usage
+A  toolkit for javascript as well as typescript
+## Usage
 
-npm i util4j
+npm i eskit

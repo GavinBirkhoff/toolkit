@@ -1,6 +1,6 @@
 {
-  "name": "util4j",
-  "version": "1.1.0",
+  "name": "tskit",
+  "version": "1.0.0-Alpha",
   "description": "A common util collection",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
