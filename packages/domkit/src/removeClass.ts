@@ -1,9 +1,10 @@
 import setClass from './setClass'
 import getClass from './getClass'
 /**
- * @description remove class name
+ * remove class name
  * @param {HTMLElement} el target val
  * @param {String} name class name
+ * @since 1.0.0
  */
 const removeClass = (el: HTMLElement, name: string): void => {
   if (el.classList !== undefined) {

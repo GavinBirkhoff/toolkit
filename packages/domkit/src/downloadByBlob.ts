@@ -1,7 +1,9 @@
 /**
- * @description Download resources thought Blob
+ * Download resources thought Blob
  * @param {BlobPart} dataStream
  * @param {string} fileName
+ * @since 1.0.0
+ * @todo jest
  */
 const downloadByBlob = (dataStream: BlobPart, fileName = 'unknown'): void => {
   const blob = new Blob([dataStream])

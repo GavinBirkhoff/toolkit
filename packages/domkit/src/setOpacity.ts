@@ -1,7 +1,8 @@
 /**
- * @description setOpacity
+ * setOpacity
  * @param {HTMLElement} el target dom
  * @param {number} value setOpacity of value
+ * @since 1.0.0
  */
 const setOpacity = (el: HTMLElement, value: number): void => {
   if ('opacity' in el.style) {

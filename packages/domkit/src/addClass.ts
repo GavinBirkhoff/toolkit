@@ -5,6 +5,7 @@ import hasClass from './hasClass'
  * Add class name
  * @param  {HTMLElement} el target
  * @param  {string} name class name
+ * @since 1.0.0
  * @example
  * addClass(el,'name')
  * addClass(el,'name1 name2 name3')

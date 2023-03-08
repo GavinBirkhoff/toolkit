@@ -1,13 +1,16 @@
 /**
- * @description get bounding of client
+ * Get bounding of client
  * @param {HTMLElement} ele
- * @returns {{ x: number; y: number } | undefined}
+ * @returns {ClientXY}
+ * @since 1.0.0
+ * @example
+ * getBoundingClient(dom)
  */
-interface ClientXy {
+interface ClientXY {
   x: number
   y: number
 }
-const getBoundingClient = (ele: HTMLElement): ClientXy => {
+const getBoundingClient = (ele: HTMLElement): ClientXY => {
   if (!ele) return { x: 0, y: 0 }
   if (ele.getBoundingClientRect) {
     const domRect = ele.getBoundingClientRect()

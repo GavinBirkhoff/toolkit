@@ -15,10 +15,13 @@ interface XHTMLElement extends HTMLElement {
 
 type StyleProp = string | null
 /**
- * @description Get style from XHTMLElement by key of CSSStyleDeclaration
+ * Get style from XHTMLElement by key of CSSStyleDeclaration
  * @param {XHTMLElement} el target element
  * @param {keyof CSSStyleDeclaration} key key of CSSStyleDeclaration
  * @returns {string}
+ * @since 1.0.0
+ * @example
+ * getStyleProps(dom, 'width')
  */
 const getStyleProps = (el: XHTMLElement, key: keyof StylePropsKeys): StyleProp => {
   //IE: currentStyle

@@ -1,8 +1,11 @@
 /**
+ * Web require
  * @since 1.0.0
- * @description web require
  * @param file
  * @param callback
+ * @since 1.0.0
+ * @example
+ * require('https://cdn.bootcdn.net/ajax/libs/react/18.2.0/umd/react.development.js', function () {})
  */
 const _require = (file: string, callback: () => any) => {
   const script = document.getElementsByTagName('script')[0]

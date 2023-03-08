@@ -1,10 +1,11 @@
 /**
- * @description Remove event from target element
+ * Remove event from target element
  * @param ele target element
  * @param type type of event
  * @param callBack listener callback
  * @param useCapture capture default false
  * @returns {void}
+ * @since 1.0.0
  * @example
  * const callBack = addEvent(element, 'click', ()=>{})
  * removeEvent(element, 'click', callBack)

@@ -6,10 +6,11 @@ interface FontSheet {
   fontFamily?: string
 }
 /**
- * @description get with from text by pixel
+ * Get with from text by pixel
  * @param {String} text
  * @param {Object} font
  * @returns {number}
+ * @since 1.0.0
  * @example
  * // returns number
  * getTextPixelWith('hello word')

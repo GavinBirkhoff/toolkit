@@ -1,9 +1,9 @@
 /**
- * @since 1.0.0
- * @description Set style props
+ * Set style props
  * @param {HTMLElement} element target element
  * @param {{ [key: string]: string }} props props of style
  * @returns {void}
+ * @since 1.0.0
  */
 import { each, isEmpty, hasOwnProperty } from 'util4j'
 

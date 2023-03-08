@@ -1,7 +1,8 @@
 /**
- * @description Set class name, but overwrite the previous class name
+ * Set class name, but overwrite the previous class name
  * @param {HTMLElement} el target dom
  * @param {string} name The value of class
+ * @since 1.0.0
  * @example
  * setClass(el, 'name')
  * setClass(el, 'name1 name2')

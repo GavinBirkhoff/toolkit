@@ -1,7 +1,8 @@
 /**
- * @description get offset position
+ * Get offset position
  * @param {HTMLElement} ele
  * @returns {Object} { left: number; top: number }
+ * @since 1.0.0
  */
 const getOffsetPosition = (ele: HTMLElement): { left: number; top: number } => {
   if (!ele) return { left: 0, top: 0 }

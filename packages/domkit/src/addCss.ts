@@ -5,6 +5,7 @@ import { StylePropsKeys } from './types'
  * @param {string} selector Css selector must be valid selector for css
  * @param {object} cssRules A object about css rules
  * @param {string} title default sheet, that is link style title
+ * @since 1.0.0
  * @example
  * addCss('.item', { backgroundColor: 'green' })
  */

@@ -1,7 +1,10 @@
 /**
- * @description requestAnimationFrame
- * @param fn
- * @returns
+ * requestAnimationFrame
+ * @param {FrameRequestCallback} fn
+ * @returns {number}
+ * @since 1.0.0
+ * @example
+ * requestAnimationFrame(changeHeight)
  */
 const requestAnimationFrame = (fn: FrameRequestCallback): number => {
   const method =

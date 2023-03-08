@@ -1,7 +1,8 @@
 /**
- * @since 1.0.0
- * @description add ele to back
+ * Add ele to back
  * @param {HTMLElement} el
+ * @since 1.0.0
+ *
  */
 const toBack = (el: HTMLElement): void => {
   const parent = el.parentNode

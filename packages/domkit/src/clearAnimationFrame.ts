@@ -1,6 +1,11 @@
 /**
- * @description cancel animation frame
- * @param {Number} handler
+ * Cancel animation frame
+ * @param {Number} handler The return that requestAnimationFrame back
+ * @since 1.0.0
+ * @example
+ * let animation = requestAnimationFrame(changeHeight)
+ * setTimeout(() => clearAnimationFrame(animation), 3000)
+ * @todo jest
  */
 const cancelAnimationFrame = (handler: number): void => {
   const method =

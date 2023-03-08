@@ -1,6 +1,9 @@
 /**
- * @description emptyDom
- * @param {HTMLElement} el
+ * emptyDom
+ * @param {HTMLElement} el Target element
+ * @since 1.0.0
+ * @example
+ * emptyDom(dom)
  */
 const emptyDom = (el: HTMLElement): void => {
   while (el.firstChild) {

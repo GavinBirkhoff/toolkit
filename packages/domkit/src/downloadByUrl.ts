@@ -1,7 +1,9 @@
 /**
- * @description Download resources thought url
+ * Download resources thought url
  * @param {string} Url Resource url
  * @param {string} type MIME(Multipurpose Internet Mail Extensions) //https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
+ * @since 1.0.0
+ * @todo jest
  */
 
 const downloadByUrl = (Url: string, type = 'application/octet-stream'): void => {

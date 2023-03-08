@@ -1,9 +1,9 @@
 /**
+ * getPreload
+ * @returns {Function}
  * @since 1.0.0
- * @description getPreload
- * @returns {(file: string) => void}
  * @example
- * getPreload()('my_web_worker.js');
+ * getPreload('my_web_worker.js');
  *
  */
 const getPreload = (): ((file: string) => void) => {
@@ -28,4 +28,4 @@ const getPreload = (): ((file: string) => void) => {
   return preload
 }
 
-export default getPreload
+export default getPreload()

@@ -7,12 +7,13 @@ interface EventOptions {
   useOnce?: boolean
 }
 /**
- * @description Add event listener for target element
+ * Add event listener for target element
  * @param {HTMLElement | SVGElement} ele Target element
  * @param {string} type Type of event
  * @param {EventListenerOrEventListenerObject} eventHandle Response execution function
  * @param {EventOptions} options
  * @returns {Function} Returns function provide removeEvent to remove listener from element
+ * @since 1.0.0
  * @example
  * // returns callback of listener
  * addEvent(dom, 'click', (e) => {
@@ -28,6 +29,7 @@ interface EventOptions {
  * },
  * { useDebounce: true }
  * )
+ * @todo jest
  */
 const addEvent = (
   ele: HTMLElement | SVGElement,
