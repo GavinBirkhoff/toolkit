@@ -1,9 +1,12 @@
 /**
+ * Add two numbers
+ * @param {number} a First target
+ * @param {number} b Second target
+ * @returns {number} A new number
  * @since 1.0.0
- * @description Add two numbers
- * @param {Number} a
- * @param {Number} b
- * @returns {Number}
+ * @example
+ * // returns 0.3
+ * add(0.1, 0.2)
  */
 const add = (a: number, b: number): number => {
   let r1, r2

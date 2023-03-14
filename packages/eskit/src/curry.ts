@@ -1,20 +1,15 @@
 /**
- * @param  {Function} fn
- * @param  {any[]} ...rest
- * @returns {((...rest: any[]) => any)}
+ * Curry a function
+ * @param fn Target function
+ * @returns A curried function
+ * @since 1.0.0
+ * @example
+ * // returns 3
+ * curry(add).(1).(2)
  */
-const curry = (fn: (...rest: any[]) => any, ...rest: any[]): ((...rest: any[]) => any) => {
-  // const slice = Array.prototype.slice,
-  //   stored_args = slice.call(arguments, 1)
-  const stored_args = [...rest]
-  return (...subRest: any[]) => {
-    // const new_args = slice.call(arguments),
-    //   args = stored_args.concat(new_args)
-    const new_args = [...subRest]
-    const args = stored_args.concat(new_args)
-    // return fn.apply(null, args)
-    return fn(...args)
+function curry(fn: (...args: any[]) => any) {
+  return function curried(...args: any[]): (...args: any[]) => any {
+    return args.length >= fn.length ? fn(...args) : (...moreArgs: any[]) => curried(...args, ...moreArgs)
   }
 }
-// TODO
 export default curry
