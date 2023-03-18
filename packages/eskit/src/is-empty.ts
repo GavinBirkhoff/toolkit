@@ -5,28 +5,28 @@ import isPrototype from './is-prototype'
 import hasOwnProperty from './hasOwnProperty'
 
 /**
- * @description Checks if `value` is an empty object, collection, map, or set.
- * @param {any} value
- * @returns {boolean}
+ * Determine whether an object is of type Empty
+ * @param {any} value Checks if `value` is an empty object, collection, map, or set.
+ * @returns {boolean}  Is it of type Empty
+ * @since 1.0.0
  * @example
- *
+ * // returns true
  * isEmpty(null)
- * // => true
- *
+ * @example
+ * // returns true
  * isEmpty(true)
- * // => true
- *
+ * @example
+ * // returns true
  * isEmpty(1)
- * // => true
- *
+ * @example
+ * // returns false
  * isEmpty([1, 2, 3])
- * // => false
- *
+ * @example
+ * // returns false
  * isEmpty('abc')
- * // => false
- *
+ * @example
+ * // returns false
  * isEmpty({ 'a': 1 })
- * // => false
  */
 const isEmpty = (value: any): boolean => {
   if (isNil(value)) {

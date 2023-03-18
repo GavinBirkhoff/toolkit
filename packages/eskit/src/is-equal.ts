@@ -2,10 +2,13 @@ import isObjectLike from './is-object-like'
 import isArrayLike from './is-array-like'
 import isString from './is-string'
 /**
- * @description isEqual
- * @param {any} value
- * @param {any} other
+ * Are the two values equal?
+ * @param {*} value  Target value
+ * @param {*} other  Target value
  * @returns {boolean}
+ * @since 1.0.0
+ * @example
+ * isEqual(val1, val2)
  */
 const isEqual = (value: any, other: any): boolean => {
   if (value === other) {

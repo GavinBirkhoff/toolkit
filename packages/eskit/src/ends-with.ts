@@ -1,21 +1,21 @@
 import isString from './is-string'
 
 /**
- * @description endsWith
- * @param  {string} string
- * @param  {string} target
+ * Determine whether a string ends with the target characters
+ * @param  {string} string A string
+ * @param  {string} target Target characters
  * @param  {number} position?
  * @returns {boolean}
  * @example
  * endsWith('abc', 'c')
  * // => true
- *
+ * @example
  * endsWith('abc', 'b')
  * // => false
- *
+ * @example
  * endsWith('abc', 'b', 2)
  * // => true
- *
+ * @example
  * endsWith('abc', 'bc')
  * // => true
  */

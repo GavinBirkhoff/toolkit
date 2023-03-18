@@ -1,6 +1,9 @@
 /**
- * @description get global this
+ * Get global this
  * @returns global this
+ * @since 1.0.0
+ * @example
+ * getGlobal()
  */
 const getGlobal = (): unknown => {
   if (typeof self !== 'undefined') {

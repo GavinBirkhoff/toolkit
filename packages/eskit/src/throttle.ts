@@ -1,8 +1,12 @@
 /**
- * @desc throttle function
- * @param func function
+ * Throttle function
+ * @param {Function} func function
  * @param wait Delay in milliseconds
  * @param type 1 time stamp, 2 timer
+ * @since 1.0.0
+ * @example
+ * // returns throttleFn
+ * throttle(fn, 200, 1)
  */
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 // eslint-disable-next-line @typescript-eslint/ban-types

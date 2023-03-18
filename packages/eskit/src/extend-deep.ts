@@ -3,10 +3,14 @@ import isArray from './is-array'
 import { ObjectType } from './types'
 
 /**
- * @description extendDeep
- * @param  {ObjectType<any>} parent
- * @param  {ObjectType<any>={}} child
- * @returns {ObjectType}
+ * Extend an object deeply
+ * @param  {Object} parent
+ * @param  {Object} child
+ * @returns {Object}
+ * @since 1.0.0
+ * @example
+ * // returns object
+ * extendDeep(obj, sub)
  */
 const extendDeep = (parent: ObjectType<any>, child: ObjectType<any> = {}): ObjectType<any> => {
   for (const i in parent) {

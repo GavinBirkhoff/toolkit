@@ -1,9 +1,13 @@
 import isArrayLike from './is-array-like'
 /**
- * @description filter
- * @param  {T[]} arr
- * @param  {(v:T,idx?:number,arr?:T[])=>boolean} func
- * @returns T
+ * Call the function to execute each item of the array, filter out unnecessary items, and return a new array.
+ * @param  {Array} arr
+ * @param  {Function} func
+ * @returns {Array}
+ * @since 1.0.0
+ * @example
+ * // returns [3]
+ * filter([1, 2, 3], (item) => item > 2)
  */
 
 const filter = <T>(arr: T[], func: (v: T, idx?: number, arr?: T[]) => boolean): T[] => {

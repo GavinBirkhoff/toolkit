@@ -1,13 +1,19 @@
 /**
- * @description JS digit thousandth formatting code
+ * JS digit thousandth formatting code
  * @param {number} value Numeric value to format
  * @param {string} separator Thousandth sign
  * @param {number} digitNum Keep several decimal places
  * @returns {string}
+ * @since 1.0.0
  * @example
- * formatNumber(1000, ',', 2) => '1,000.00'
- * formatNumber(10, ',', 1) => '10.0'
- * formatNumber(10, ',') => '10'
+ * // returns '1,000.00'
+ * formatNumber(1000, ',', 2)
+ * @example
+ * // returns '10.0'
+ * formatNumber(10, ',', 1)
+ * @example
+ * // returns '10'
+ * formatNumber(10, ',')
  */
 const formatNumber = (val: number, separator: string, digitNum = 0): string => {
   let value: any = val

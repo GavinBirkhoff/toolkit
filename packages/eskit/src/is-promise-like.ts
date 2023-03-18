@@ -1,5 +1,5 @@
 /**
- * @description Promise or not
+ * Determine whether an object is of type PromiseLike
  * @param {*} obj Accept an type
  * @returns {boolean}
  */

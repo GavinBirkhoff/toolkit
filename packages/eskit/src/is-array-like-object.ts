@@ -2,24 +2,25 @@ import isArrayLike from './is-array-like'
 import isObject from './is-object'
 
 /**
- * @description isArrayLikeObject
- * @param {any} value
- * @returns {boolean}
+ * Determine whether an object is of type ArrayLikeObject
+ * @param {*} value Target object
+ * @returns {boolean} Is it of type ArrayLikeObject
+ * @since 1.0.0
  * @example
+ * // returns true
  * isArrayLike([1, 2, 3])
- * // => true
- *
+ * @example
+ * // returns true
  * isArrayLike(document.body.children)
- * // => true
- *
+ * @example
+ * // returns false
  * isArrayLike('abc')
- * // => false
- *
+ * @example
+ * // returns false
  * isArrayLike(Function)
- * // => false
  */
 
-const isArrayLikeObject = (value: any): boolean => {
+const isArrayLikeObject = (value: unknown): boolean => {
   return isObject(value) && isArrayLike(value)
 }
 

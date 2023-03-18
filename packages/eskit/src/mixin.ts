@@ -1,25 +1,26 @@
 import copyProperties from './copy-properties'
 /**
- * @description mixin
- * @param {*[]} mixins
+ * Mixin
+ * @param {Array} mixins
  * @returns {any}
  * @example
  * class DistributedEdit extends mixin(Loggable, Serializable) {
  * //
  * }
+ * @todo Optimization Type
  */
 const mixin = function (...mixins: any[]): any {
   class Mixin {
     constructor() {
       for (const mixin of mixins) {
-        copyProperties(this, new mixin()) // 拷贝实例属性
+        copyProperties(this, new mixin()) // Copy Instance Properties
       }
     }
   }
 
   for (const mixin of mixins) {
-    copyProperties(Mixin, mixin) // 拷贝静态属性
-    copyProperties(Mixin.prototype, mixin.prototype) // 拷贝原型属性
+    copyProperties(Mixin, mixin) // Copy static properties
+    copyProperties(Mixin.prototype, mixin.prototype) // Copy prototype properties
   }
 
   return Mixin

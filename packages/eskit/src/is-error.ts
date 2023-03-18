@@ -1,10 +1,14 @@
 import isType from './is-type'
 /**
- * @description Check whether the value type is error
- * @param {Object} value test of value
+ * Determine whether an object is of type Error
+ * @param {*} value Target value
  * @return {boolean}
+ * @since 1.0.0
+ * @example
+ * // return true
+ * isError(new Error())
  */
-const isError = function (value: any): value is Error {
+const isError = function (value: unknown): value is Error {
   return isType('Error', value)
 }
 

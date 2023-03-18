@@ -1,8 +1,12 @@
 const objectProto = Object.prototype
 /**
- * @description isPrototype
- * @param {any} value
- * @returns {boolean}
+ * Determine whether an object is of type Prototype
+ * @param {*} value Target value
+ * @returns {boolean}  Is it of type Prototype
+ * @since 1.0.0
+ * @example
+ * // returns true
+ * isPrototype(Reflect.getPrototypeOf({}))
  */
 const isPrototype = (value: any): boolean => {
   const Ctor = value && value.constructor

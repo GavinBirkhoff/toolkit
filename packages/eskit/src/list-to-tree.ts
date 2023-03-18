@@ -1,8 +1,13 @@
 /**
- * @description: create array tree from list
+ * Create array tree from list
  * @param {Array} list
- * @param {String|Number|null} pid
+ * @param {PidType} pid
  * @return {Array}
+ * @since 1.0.0
+ * @example
+ * // returns tree
+ * listToTree(list)
+ * @todo Optimization algorithm
  */
 type PidType = number | string | null
 interface IItem<T> {

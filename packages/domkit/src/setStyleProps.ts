@@ -1,7 +1,7 @@
 /**
  * Set style props
  * @param {HTMLElement} element target element
- * @param {{ [key: string]: string }} props props of style
+ * @param {Object} props props of style
  * @returns {void}
  * @since 1.0.0
  */

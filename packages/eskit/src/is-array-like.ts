@@ -1,19 +1,20 @@
 /**
- * @description check value like array
- * @param {any} value The value to check
- * @returns {boolean}
+ * Determine whether an object is of type ArrayLike
+ * @param {*} value The value to check
+ * @returns {boolean} Is it of type ArrayLike
+ * @since 1.0.0
  * @example
+ * // returns true
  * isArrayLike([1, 2, 3])
- * // true
- *
+ * @example
+ * // returns true
  * isArrayLike(document.body.children)
- * // true
- *
+ * @example
+ * // returns true
  * isArrayLike('abc')
- * // true
- *
+ * @example
+ * // returns false
  * isArrayLike(Function)
- * // false
  */
 const isArrayLike = (value: any): boolean => {
   return value !== null && typeof value !== 'function' && isFinite(value.length)

@@ -1,16 +1,17 @@
 /**
- * @description isNil
- * @param {any} value
- * @returns {boolean}
+ * Determine whether an object is of type Nil
+ * @param {*} value Target value
+ * @returns {boolean}  Is it of type Nil
+ * @since 1.0.0
  * @example
+ * // returns true
  * isNil(null)
- * // => true
- *
+ * @example
+ * // returns true
  * isNil(void 0)
- * // => true
- *
+ * @example
+ * // returns false
  * isNil(NaN)
- * // => false
  */
-const isNil = (value: any): value is null | undefined => value === null || value === undefined
+const isNil = (value: unknown): value is null | undefined => value === null || value === undefined
 export default isNil

@@ -1,11 +1,15 @@
 import isType from './is-type'
 /**
- * @description isSting
- * @param {any} value
- * @returns {boolean}
+ * Determine whether an object is of type String
+ * @param {*} value  Target value
+ * @returns {boolean}  Is it of type String
+ * @since 1.0.0
+ * @example
+ * // returns true
+ * isString('')
  */
 
-const isString = (value: any): value is string => {
+const isString = (value: unknown): value is string => {
   return isType('String', value)
 }
 export default isString

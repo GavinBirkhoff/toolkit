@@ -1,6 +1,6 @@
 /**
  * Cancel animation frame
- * @param {Number} handler The return that requestAnimationFrame back
+ * @param {number} handler The return that requestAnimationFrame back
  * @since 1.0.0
  * @example
  * let animation = requestAnimationFrame(changeHeight)

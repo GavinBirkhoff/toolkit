@@ -1,8 +1,13 @@
 /**
- * @description:Tree to array
+ * Tree to array
  * @param {Array} tree
  * @param {Array} newArr
  * @return {Array} newArr
+ * @since 1.0.0
+ * @example
+ * // returns newTree
+ * treeToList<any>(arrTree)
+ * @todo Optimize Algorithm
  */
 
 interface IItem<T> {

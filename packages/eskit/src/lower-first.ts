@@ -1,8 +1,12 @@
 import toString from './to-string'
 /**
- * @description lowerFirst
- * @param  {string} value
+ * Make first letters lower
+ * @param  {string} value Target value
  * @returns {string}
+ * @since 1.0.0
+ * @example
+ * // returns 'aB'
+ * lowerFirst('AB')
  */
 
 const lowerFirst = (value: string): string => {

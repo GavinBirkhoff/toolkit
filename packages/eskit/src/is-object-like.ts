@@ -1,19 +1,23 @@
 /**
- * @description check a value typeof is object
- * @param {any} value The value to check
- * @returns {boolean}
+ * Determine whether an object is of type ObjectLike
+ * @param {*} value Target value
+ * @returns {boolean}  Is it of type ObjectLike
+ * @since 1.0.0
  * @example
+ * // returns true
  * isObjectLike({})
- * // true
- * isObjectLike([1, 2, 3]) //
- * // true
+ * @example
+ * // returns true
+ * isObjectLike([1, 2, 3])
+ * @example
+ * // returns false
  * isObjectLike(Function)
- * // false
+ * @example
+ * // returns false
  * isObjectLike(null)
- * // false
  */
 
-const isObjectLike = (value: any): boolean => {
+const isObjectLike = (value: unknown): boolean => {
   return value !== null && typeof value === 'object'
 }
 

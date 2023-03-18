@@ -1,9 +1,10 @@
 /**
- * @description Creates a debounced function that delays invoking `func` until after `wait`
+ * Creates a debounced function that delays invoking `func` until after `wait`
  * @param {Function} func The function to debounce
- * @param {Number} wait waiting time
+ * @param {number} wait waiting time
  * @param {boolean} immediate Is it implemented immediately
  * @returns {Function}
+ * @since 1.0.0
  * @example
  * debounce(()=>{console.log},1000)
  */

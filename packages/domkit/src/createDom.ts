@@ -9,7 +9,7 @@ export interface DomAttrs<T> {
 /**
  * Create a dom
  * @param {DomAttrs} domAttrs tagName create tag name, container parent node,node child node
- * @returns {HTMLElementTagNameMap[K]}
+ * @returns {HTMLElement}
  * @since 1.0.0
  * @example
  * // returns <div></div>

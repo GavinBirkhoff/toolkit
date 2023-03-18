@@ -6,6 +6,7 @@
   "scripts": {
     "prebuild": "npm install && lerna bootstrap",
     "bootstrap": "lerna bootstrap",
+    "link": "lerna link",
     "clean": "lerna clean",
     "build": "lerna run build",
     "eslint": "eslint --ext .js,.ts --fix ./packages/**/src",

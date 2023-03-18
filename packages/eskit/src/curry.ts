@@ -6,6 +6,7 @@
  * @example
  * // returns 3
  * curry(add).(1).(2)
+ * @todo Type optimization
  */
 function curry(fn: (...args: any[]) => any) {
   return function curried(...args: any[]): (...args: any[]) => any {

@@ -1,10 +1,12 @@
 /**
- * @description Get a range of random int number
+ * Get a range of random int number
  * @category Number
- * @param {Number} min
- * @param {Number} max
- * @returns {Number}
+ * @param {number} min
+ * @param {number} max
+ * @returns {number}
+ * @since 1.0.0
  * @example
+ * // returns [1-5]
  * getRandomInt(1,5)
  */
 

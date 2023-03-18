@@ -1,19 +1,19 @@
 import isString from './is-string'
 /**
- * @description Whether a string starts with a character
- * @param string
- * @param target
- * @param position
+ * Whether a string starts with a character
+ * @param {string} string
+ * @param {string} target
+ * @param {number} position
  * @returns {boolean}
  * @example
+ * // returns => true
  * startsWith('abc', 'a')
- * // => true
- *
+ * @example
+ * // returns => false
  * startsWith('abc', 'b')
- * // => false
- *
+ * @example
+ * // returns => true
  * startsWith('abc', 'b', 1)
- * // => true
  */
 const startsWith = (string: string, target: string, position?: number): boolean => {
   if (!isString(string)) {

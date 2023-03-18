@@ -1,11 +1,14 @@
 import isType from './is-type'
 /**
- * @description isArrayBuffer
- * @param {any} value
+ * Determine whether an object is of type ArrayBuffer
+ * @param {*} value
  * @returns {boolean}
+ * @since 1.0.0
+ * @example
+ * // returns true or false
+ * isArrayBuffer(ab)
  */
 
-const isArrayBuffer = (value: unknown): value is Array<unknown> =>
-  Array.isArray ? Array.isArray(value) : isType('ArrayBuffer', value)
+const isArrayBuffer = (value: unknown): value is Array<unknown> => isType('ArrayBuffer', value)
 
 export default isArrayBuffer
