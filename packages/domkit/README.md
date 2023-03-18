@@ -1,9 +1,9 @@
-# domkit
+# dom-copilot
 
 A toolkit for dom
-## usage
+## Usage
 
-`npm i util4dom`
+`npm i dom-copilot`
 
 
 ```ts
@@ -26,7 +26,7 @@ import {
   hasClass,
   rem,
   removeDom
-} from 'domkit'
+} from 'dom-copilot'
 
 const dom = createDom({ tagName: 'div', container: document.body, node: `Hey Guys, I'm Gavin!` })
 ```

@@ -1,4 +1,4 @@
-import { isElement, isString } from 'util4j'
+import { isElement, isString } from 'ts-copilot'
 
 export interface DomAttrs<T> {
   tagName: T

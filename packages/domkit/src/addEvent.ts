@@ -1,4 +1,4 @@
-import { throttle, debounce } from 'util4j'
+import { throttle, debounce } from 'ts-copilot'
 
 interface EventOptions {
   useCapture?: boolean

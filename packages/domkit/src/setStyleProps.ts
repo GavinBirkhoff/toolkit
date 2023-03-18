@@ -5,7 +5,7 @@
  * @returns {void}
  * @since 1.0.0
  */
-import { each, isEmpty, hasOwnProperty } from 'util4j'
+import { each, isEmpty, hasOwnProperty } from 'ts-copilot'
 
 const setStyleProps = (element: HTMLElement, props: Partial<{ [key: string]: string }>): void => {
   if (element == null && isEmpty(props)) return

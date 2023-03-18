@@ -1,7 +1,7 @@
 {
-  "name": "util4dom",
-  "version": "1.1.0",
-  "description": "A common util collection",
+  "name": "dom-copilot",
+  "version": "1.0.0-Alpha",
+  "description": "A rich and colorful toolkit about DOM.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "module": "esm/index.js",
@@ -22,14 +22,22 @@
     "script:gen-index": "node ./scripts/generate-index.js",
     "docs": "npm run build:esm && jsdoc -c jsdoc.json"
   },
-  "keywords": [],
+  "keywords": [
+    "dom",
+    "domkit",
+    "jsdom",
+    "util",
+    "dom-util",
+    "toolkit",
+    "tool"
+  ],
   "author": "Gavin Birkhoff <gavinbirkhoff@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/GavinBirkhoff/toolkit/issues"
   },
   "dependencies": {
-    "util4j": "^1.1.0"
+    "ts-copilot": "^1.0.0-Alpha"
   },
   "gitHead": "8066f445929a03bc27070f7eb4caea274ae2f92c",
   "devDependencies": {

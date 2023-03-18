@@ -1,7 +1,7 @@
 {
-  "name": "tskit",
+  "name": "ts-copilot",
   "version": "1.0.0-Alpha",
-  "description": "A common util collection",
+  "description": "A rich and colorful toolkit about typescript and javascript.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "module": "esm/index.js",
@@ -24,7 +24,14 @@
     "md": "node ./scripts/jsdoc2md.js"
   },
   "keywords": [
-    "util"
+    "util",
+    "eskit",
+    "tskit",
+    "toolkit",
+    "js-util",
+    "ts-util",
+    "js-toolkit",
+    "ts-toolkit"
   ],
   "author": "Gavin Birkhoff <gavinbirkhoff@gmail.com>",
   "license": "MIT",

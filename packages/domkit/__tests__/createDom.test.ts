@@ -1,5 +1,5 @@
 import { createDom } from '../src'
-import { isElement } from 'util4j'
+import { isElement } from 'ts-copilot'
 describe('createDom', () => {
   test('default', () => {
     const dom = createDom({ tagName: 'div' })

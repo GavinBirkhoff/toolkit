@@ -1,4 +1,4 @@
-import { hasOwnProperty } from 'util4j'
+import { hasOwnProperty } from 'ts-copilot'
 import { StylePropsKeys } from './types'
 /**
  * Add style sheet
