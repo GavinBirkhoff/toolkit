@@ -1,27 +1,26 @@
 /**
- * Add two numbers
- * @param {number} a First target
- * @param {number} b Second target
- * @returns {number} A new number
- * @since 1.0.0
+ * Add two numbers with fixed precision.
+ * @param {number} a The first number to add.
+ * @param {number} b The second number to add.
+ * @returns {number} The result of adding the two numbers.
  * @example
- * // returns 0.3
- * add(0.1, 0.2)
+ *
+ * add(0.1, 0.2) // returns 0.3
  */
 const add = (a: number, b: number): number => {
-  let r1, r2
-  try {
-    r1 = a.toString().split('.')[1].length
-  } catch (e) {
-    r1 = 0
+  /**
+   * Get the number of decimal places in a number.
+   *
+   * @param {number} num - A number to find the decimal places of.
+   * @returns {number} The number of decimal places in the number.
+   */
+  const getDecimalPlaces = (num: number): number => {
+    const decimalPart = String(num).split('.')[1]
+    return decimalPart ? decimalPart.length : 0
   }
-  try {
-    r2 = b.toString().split('.')[1].length
-  } catch (e) {
-    r2 = 0
-  }
-  const m = Math.pow(10, Math.max(r1, r2))
-  return (a * m + b * m) / m
+
+  const m = Math.pow(10, Math.max(getDecimalPlaces(a), getDecimalPlaces(b)))
+  return Math.round(((a * m + b * m) / m) * 1000000) / 1000000
 }
 
 export default add
