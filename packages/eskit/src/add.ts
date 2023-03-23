@@ -3,6 +3,7 @@
  * @param {number} a The first number to add.
  * @param {number} b The second number to add.
  * @returns {number} The result of adding the two numbers.
+ * @since 1.0.0
  * @example
  *
  * add(0.1, 0.2) // returns 0.3
