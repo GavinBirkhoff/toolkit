@@ -1,4 +1,4 @@
-import { throttle, debounce } from 'ts-copilot'
+import { throttle, debounced } from 'ts-copilot'
 
 interface EventOptions {
   useCapture?: boolean
@@ -45,7 +45,7 @@ const addEvent = (
     callBack = throttle(callBack as any, 300, 1)
   }
   if (useDebounce) {
-    callBack = debounce(callBack as any, 300)
+    callBack = debounced(callBack as any, 300)
   }
   if (ele.addEventListener) {
     if (useOnce) {

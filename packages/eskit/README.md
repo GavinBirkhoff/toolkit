@@ -20,3 +20,4 @@ isArrayBuffer(new ArrayBuffer(2))
 ## API documentation
 
 Read jsdoc of files or run `npm run docs` then open folder docs
+
