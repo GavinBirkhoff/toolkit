@@ -1,5 +1,6 @@
 export { default as add } from './add'
 export { default as clamp } from './clamp'
+export { default as compose } from './compose'
 export { default as constantize } from './constantize'
 export { default as contains, default as includes } from './contains'
 export { default as copyProperties } from './copy-properties'
