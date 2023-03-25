@@ -1,0 +1,46 @@
+{
+  "name": "path-copilot",
+  "version": "1.0.0-Alpha",
+  "description": "A rich and colorful toolkit about Path.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "module": "esm/index.js",
+  "exports": "./lib/index.js",
+  "files": [
+    "esm",
+    "lib",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "npm run clean && npm run script:gen-index && run-p build:*",
+    "build:esm": "tsc -p tsconfig.json --target ES5 --module ESNext --outDir esm",
+    "build:cjs": "tsc -p tsconfig.json --target ES5 --module commonjs --outDir lib",
+    "clean": "rm -rf lib && rm -rf esm",
+    "tsc": "tsc --noEmit",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "script:gen-index": "node ./scripts/generate-index.js",
+    "docs": "npm run build:esm && jsdoc -c jsdoc.json"
+  },
+  "keywords": [
+    "path",
+    "domkit",
+    "jsdom",
+    "util",
+    "path-util",
+    "toolkit",
+    "tool"
+  ],
+  "author": "Gavin Birkhoff <gavinbirkhoff@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GavinBirkhoff/toolkit/issues"
+  },
+  "dependencies": {
+    "ts-copilot": "^1.0.0-Alpha"
+  },
+  "gitHead": "8066f445929a03bc27070f7eb4caea274ae2f92c",
+  "devDependencies": {
+    "docdash": "^1.2.0"
+  }
+}
