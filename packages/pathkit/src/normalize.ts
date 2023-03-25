@@ -1,3 +1,5 @@
+import isAbsolute from './isAbsolute'
+
 /**
  * Normalize a file system path by removing any unnecessary "." and ".." segments
  * and resolving any directory separators to match the host operating system.
@@ -11,7 +13,7 @@
  * @since 1.0.0
  */
 const normalize = (path: string): string => {
-  const isAbsolutePath = path.startsWith('/')
+  const isAbsolutePath = isAbsolute(path)
   let trailingSlash = path.endsWith('/') ? '/' : ''
   const segments = path.split(/\/|\\/).filter((segment) => segment !== '.' && segment !== '')
 
