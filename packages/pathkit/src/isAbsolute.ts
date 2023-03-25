@@ -10,6 +10,8 @@
  * isAbsolute('https://example.com')   // true
  * isAbsolute('ftp://example.com')     // true
  * isAbsolute('relative/path')  // false
+ *
+ * @since 1.0.0
  */
 function isAbsolute(path: string): boolean {
   return (
