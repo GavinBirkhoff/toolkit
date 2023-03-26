@@ -42,7 +42,7 @@ const addEvent = (
 
   let callBack: any = eventHandle
   if (useThrottle) {
-    callBack = throttle(callBack as any, 300, 1)
+    callBack = throttle(callBack as any, 300)
   }
   if (useDebounce) {
     callBack = debounced(callBack as any, 300)
