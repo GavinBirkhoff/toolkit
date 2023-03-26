@@ -1,21 +1,11 @@
 import { hasOwnProperty } from 'ts-copilot'
 
 /**
- * @interface UrlObject
+ * Parses the query or hash parameter string.
  *
- * @property {Record<string, string|string[]>} query - Key-value pairs of the query string parameters of the URL.
- * @property {Record<string, string|string[]>} hash - Key-value pairs of the hash string parameters of the URL.
- */
-interface UrlObject {
-  query: Record<string, string | string[]>
-  hash: Record<string, string | string[]>
-}
-/**
- * Parses the query or hash parameter string in the form of "key1=value1&key2=value2&..." into an object.
+ * @param str - The query or hash parameter string to parse.
  *
- * @param {string} str - The query or hash parameter string to parse.
- *
- * @returns {{ [key: string]: string | string[] }} An object representing the parsed parameters.
+ * @returns An object representing the parsed parameters.
  */
 const parseQueryString = (str: string): { [key: string]: string | string[] } => {
   const result: { [key: string]: string | string[] } = {}
@@ -42,14 +32,15 @@ const parseQueryString = (str: string): { [key: string]: string | string[] } => 
 }
 
 /**
- * Parses the query and hash parameters from a URL string.
+ * Parses the query and hash parameters of the specified URL string.
  *
- * @param {string} url - The URL to parse.
+ * @param url - The URL string to parse.
  *
- * @returns {UrlObject} An object containing the query and hash parameters of the URL.
+ * @returns An object containing the query and hash parameters of the URL.
  *
  * @example
  *
+ * ```ts
  * // Basic usage
  * const url = 'http://example.com/path/to/page?a=1&b=2#section1';
  * const { query, hash } = parseUrl(url);
@@ -67,8 +58,12 @@ const parseQueryString = (str: string): { [key: string]: string | string[] } => 
  * const { query: query3, hash: hash3 } = parseUrl(url3);
  * console.log(query3); // { color: ['red', 'green', 'blue'] }
  * console.log(hash3); // {}
+ * ```
+ * @since 1.0.0
  */
-const parseUrl = (url: string): UrlObject => {
+const parseUrl = (
+  url: string
+): { query: Record<string, string | string[]>; hash: Record<string, string | string[]> } => {
   // eslint-disable-next-line no-useless-escape
   const [baseUrl, queryStr, hashStr] = url.split(/[\?#]/)
 

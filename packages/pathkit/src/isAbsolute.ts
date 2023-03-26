@@ -1,7 +1,11 @@
 /**
  * Determine whether the given path string is an absolute path.
- * @param {string} path - The path string to be determined.
- * @returns {boolean} - True if it's an absolute path, false otherwise.
+ *
+ * @since 1.0.0
+ *
+ * @param path - The path string to be determined.
+ * @returns True if it's an absolute path, false otherwise.
+ *
  * @example
  * isAbsolute('/')      // true
  * isAbsolute('/path')  // true
@@ -10,8 +14,6 @@
  * isAbsolute('https://example.com')   // true
  * isAbsolute('ftp://example.com')     // true
  * isAbsolute('relative/path')  // false
- *
- * @since 1.0.0
  */
 function isAbsolute(path: string): boolean {
   return (
