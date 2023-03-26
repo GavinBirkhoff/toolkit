@@ -1,12 +1,22 @@
 {
-    "extends": "../../tsconfig.json",
-    "compilerOptions": {
-      "outDir": "lib"
-    },
-    // "lib": [
-    //   "DOM",
-    //   "ES6"
-    // ],
-    "include": ["src"],
-    // "exclude": ["**/__test__/**"]
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "lib"
+  },
+  // "lib": [
+  //   "DOM",
+  //   "ES6"
+  // ],
+  "include": ["src"],
+  // "exclude": ["**/__test__/**"]
+  "typedocOptions": {
+    "entryPoints": ["src/index.ts"],
+    "includes": ["src/*.ts"],
+    "exclude": ["**/*.test.ts"],
+    "out": "docs",
+    "readme": "none",
+    "includeVersion": true,
+    "disableSources": false,
+    "plugin": ["typedoc-plugin-markdown"]
   }
+}
