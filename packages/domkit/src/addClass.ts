@@ -1,26 +1,22 @@
 import getClass from './getClass'
 import setClass from './setClass'
-import hasClass from './hasClass'
 /**
- * Add class name
- * @param  {HTMLElement} el target
- * @param  {string} name class name
- * @since 1.0.0
+ * Adds one or more classes to an element's class attribute, excluding classes that already exist, including SVG elements.
+ *
+ * @param el - The element to add class names to
+ * @param classes - One or more classes to add to the element, passing one or multiple class names in each argument
+ *
  * @example
- * addClass(el,'name')
- * addClass(el,'name1 name2 name3')
+ * const el = document.querySelector('.example-class')!;
+ * addClass(el, 'new-class-1', 'new-class-2', 'example-class');
+ *
+ * @since 1.0.0
  */
-const addClass = (el: HTMLElement, name: string): void => {
-  if (el.classList !== undefined) {
-    const cloneName = name
-    const classes = cloneName.replace(/\s+/g, ' ').split(' ')
-    for (let i = 0, len = classes.length; i < len; i++) {
-      el.classList.add(classes[i])
-    }
-  } else if (!hasClass(el, name)) {
-    const className = getClass(el)
-    setClass(el, (className ? className + ' ' : '') + name)
-  }
+const addClass = (el: HTMLElement | SVGElement, ...classes: string[]): void => {
+  const currentClassList = getClass(el).split(' ')
+  const filteredClassNames = [...new Set(classes)].filter((className) => !currentClassList.includes(className))
+  const newClassList = [...currentClassList, ...filteredClassNames]
+  setClass(el, newClassList.join(' '))
 }
 
 export default addClass

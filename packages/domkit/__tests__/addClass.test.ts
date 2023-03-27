@@ -1,17 +1,16 @@
-import { addClass, createDom, getClass } from '../src'
+import { addClass, getClass } from '../src'
 describe('addClass', () => {
-  test('default', () => {
-    const dom = document.createElement('div')
-    const name = 'myClassName'
-    addClass(dom, name)
-    expect(dom.className).toBe(name)
+  it('should add unique class names to the SVG Element', () => {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+    svg.setAttribute('class', 'existing-class-1 existing-class-2')
+    addClass(svg, 'new-class-1', 'new-class-2', 'existing-class-1', 'new-class-1')
+    expect(svg.getAttribute('class')).toBe('existing-class-1 existing-class-2 new-class-1 new-class-2')
   })
-  test('add exist className and classNames', () => {
-    const dom = createDom()
-    const name = 'myClassName'
-    const name2 = 'myClassName1 a b c'
-    addClass(dom, name)
-    addClass(dom, name2)
-    expect(getClass(dom)).toBe(name + ' ' + name2)
+
+  it('should add unique class names to the HTMLElement', () => {
+    const div = document.createElement('div')
+    div.setAttribute('class', 'existing-class-1 existing-class-2')
+    addClass(div, 'new-class-1', 'new-class-2', 'existing-class-1', 'new-class-1')
+    expect(getClass(div)).toBe('existing-class-1 existing-class-2 new-class-1 new-class-2')
   })
 })
