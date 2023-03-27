@@ -1,19 +1,21 @@
 import getClass from './getClass'
 /**
- * Check whether the element contains class name
- * @param {HTMLElement} el target dom
- * @param {String} name class name
- * @returns {boolean}
- * @since 1.0.0
+ * Checks if an element has a specified CSS class, including SVG elements.
+ *
  * @example
- * hasClass(dom, 'my-class')
+ * const el = document.querySelector('.example-class')!;
+ * if (hasClass(el, 'example-class')) {
+ *   console.log('Element has class "example-class".');
+ * }
+ *
+ * @param el - The element to check
+ * @param className - The CSS class to check for
+ * @returns If the element has the specified CSS class, returns true; otherwise, returns false.
+ *
+ * @since 1.0.0
  */
-const hasClass = (el: HTMLElement, name: string): boolean => {
-  if (el.classList !== undefined) {
-    return el.classList.contains(name)
-  }
-  const className = getClass(el)
-  return className.length > 0 && new RegExp('(^|\\s)' + name + '(\\s|$)').test(className)
+const hasClass = (el: HTMLElement | SVGElement, className: string): boolean => {
+  return getClass(el).includes(className)
 }
 
 export default hasClass
