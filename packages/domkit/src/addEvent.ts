@@ -1,72 +1,43 @@
 import { throttle, debounced } from 'ts-copilot'
-
-interface EventOptions {
-  useCapture?: boolean
-  useThrottle?: boolean
-  useDebounce?: boolean
-  useOnce?: boolean
-}
 /**
- * Add event listener for target element
- * @param {HTMLElement | SVGElement} ele Target element
- * @param {string} type Type of event
- * @param {EventListenerOrEventListenerObject} eventHandle Response execution function
- * @param {EventOptions} options
- * @returns {Function} Returns function provide removeEvent to remove listener from element
+ * Adds an event listener to a given element.
+ *
+ * @example
+ * const button = document.querySelector('button');
+ * addEvent(button, 'click', () => console.log('Button clicked!'));
+ *
+ * @param ele - The element to which the event listener should be added.
+ * @param type - The type of event to listen for.
+ * @param eventHandle - The function to be called when the event occurs.
+ * @param options - Additional options to modify the behavior of the event listener.
+ * @param options.useCapture - A boolean indicating whether events of this type should be dispatched to the registered listener before being dispatched to any EventTarget beneath it in the DOM tree.
+ * @param options.useThrottle - A boolean indicating whether the event handler should be throttled.
+ * @param options.useDebounce - A boolean indicating whether the event handler should be debounced.
+ * @returns A function to remove the event listener.
  * @since 1.0.0
- * @example
- * // returns callback of listener
- * addEvent(dom, 'click', (e) => {
- *  console.log(e)
- * })
- * @example
- * // returns callback of listener
- * addEvent(
- * dom,
- *  'click',
- *   (e) => {
- *    console.log('useDebounce')
- * },
- * { useDebounce: true }
- * )
- * @todo jest
  */
-const addEvent = (
-  ele: HTMLElement | SVGElement,
-  type: string,
-  eventHandle: EventListenerOrEventListenerObject,
-  options?: EventOptions
-): any => {
-  if (!ele) return
-  const { useCapture = false, useThrottle, useDebounce, useOnce } = options ?? {}
-
-  let callBack: any = eventHandle
+const addEvent = <T extends HTMLElement | SVGElement>(
+  ele: T,
+  type: keyof HTMLElementEventMap,
+  eventHandle: (ev: HTMLElementEventMap[keyof HTMLElementEventMap]) => void,
+  { useCapture = false, useThrottle = false, useDebounce = false } = {}
+): (() => void) | undefined => {
+  if (!ele) return undefined
+  let callback = eventHandle
   if (useThrottle) {
-    callBack = throttle(callBack as any, 300)
+    callback = throttle(eventHandle, 201)
   }
   if (useDebounce) {
-    callBack = debounced(callBack as any, 300)
+    callback = debounced(eventHandle, 201)
   }
-  if (ele.addEventListener) {
-    if (useOnce) {
-      ele.addEventListener(type, callBack, {
-        once: useOnce,
-        capture: useCapture
-      })
-    } else {
-      // Capture is default
-      ele.addEventListener(type, callBack, useCapture)
-    }
 
-    //@ts-ignore
-  } else if (ele.attachEvent) {
-    //@ts-ignore
-    ele.attachEvent('on' + type, callBack)
+  if (ele.addEventListener) {
+    ele.addEventListener(type, callback, useCapture)
+    return () => ele.removeEventListener(type, callback, useCapture)
   } else {
-    //@ts-ignore
-    ele['on' + type] = callBack
+    console.warn('addEventListener is not supported in this browser')
+    return undefined
   }
-  return callBack
 }
 
 export default addEvent
