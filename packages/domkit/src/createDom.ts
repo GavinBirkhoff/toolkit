@@ -5,18 +5,21 @@ export interface DomAttrs<T> {
   container?: HTMLElement
   node?: HTMLElement | string
 }
-
 /**
- * Create a dom
- * @param {DomAttrs} domAttrs tagName create tag name, container parent node,node child node
- * @returns {HTMLElement}
+ * Creates a new DOM element based on the provided attributes.
+ * @param domAttrs Optional attributes for the new element.
+ * @returns The newly created element.
+ *
+ * @example
+ * // Creating a new div with some text content and adding it to the document body
+ * const myDiv = createDom({
+ *   tagName: 'div',
+ *   node: 'Hello, world!',
+ *   container: document.body
+ * });
+ *
  * @since 1.0.0
- * @example
- * // returns <div></div>
- * createDom()
- * @example
- * // returns <body><a>link</a></body>
- * createDom({tagName:'a', container:body, node: 'link'})
+ *
  */
 const createDom = <K extends keyof HTMLElementTagNameMap>(domAttrs?: DomAttrs<K>): HTMLElementTagNameMap[K] => {
   if (!domAttrs || isString(domAttrs)) {

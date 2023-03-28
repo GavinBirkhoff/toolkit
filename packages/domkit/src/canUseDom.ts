@@ -1,10 +1,7 @@
 /**
- * Know wether we can use dom.
- * @returns {boolean}
- * @since 1.0.0
- * @example
- * canUseDom() => boolean
+ * Returns a boolean indicating if the current environment is a browser environment.
  */
-const canUseDom = (): boolean => !!(typeof window !== 'undefined' && window.document && window.document.createElement)
+const canUseDom = (): boolean =>
+  typeof window !== 'undefined' && typeof document !== 'undefined' && typeof document.createElement === 'function'
 
 export default canUseDom

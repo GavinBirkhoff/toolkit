@@ -1,13 +1,14 @@
 /**
- * emptyDom
- * @param {HTMLElement} el Target element
- * @since 1.0.0
+ * Removes all child nodes from the specified DOM element.
+ *
  * @example
- * emptyDom(dom)
+ * // clear the contents of a div with id "my-div"
+ * const el = document.getElementById('my-div')
+ * emptyDom(el)
+ *
+ * @param el The DOM element to empty.
  */
 const emptyDom = (el: HTMLElement): void => {
-  while (el.firstChild) {
-    el.removeChild(el.firstChild)
-  }
+  el.textContent = ''
 }
 export default emptyDom

@@ -1,15 +1,37 @@
 import { emptyDom } from '../src'
+
 describe('emptyDom', () => {
-  test('default', () => {
-    const parentNode = document.createElement('div')
-    const childNode1 = document.createElement('p')
-    const childNode2 = document.createElement('p')
-    const textNode1 = document.createTextNode('hell')
-    childNode1.appendChild(textNode1)
-    parentNode.appendChild(childNode1)
-    parentNode.appendChild(childNode2)
-    expect(parentNode.innerHTML).toBe('<p>hell</p><p></p>')
-    emptyDom(parentNode)
-    expect(parentNode.innerHTML).toBe('')
+  let container: HTMLElement
+
+  beforeEach(() => {
+    container = document.createElement('div')
+    document.body.appendChild(container)
+  })
+
+  afterEach(() => {
+    document.body.removeChild(container)
+  })
+
+  test('removes all child nodes from the specified element', () => {
+    const child1 = document.createElement('span')
+    const child2 = document.createTextNode('Hello')
+    const child3 = document.createElement('button')
+    container.appendChild(child1)
+    container.appendChild(child2)
+    container.appendChild(child3)
+    expect(container.childNodes.length).toBe(3)
+    emptyDom(container)
+    expect(container.childNodes.length).toBe(0)
+  })
+
+  test('does not throw an error when called with an element with no child nodes', () => {
+    expect(() => emptyDom(container)).not.toThrow()
+  })
+
+  test('updates the text content of the element', () => {
+    container.appendChild(document.createTextNode('Hello, world!'))
+    expect(container.textContent).toBe('Hello, world!')
+    emptyDom(container)
+    expect(container.textContent).toBe('')
   })
 })

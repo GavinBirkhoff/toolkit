@@ -1,21 +1,17 @@
 /**
- * Download resources thought url
- * @param {string} Url Resource url
- * @param {string} type MIME(Multipurpose Internet Mail Extensions) //https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
- * @since 1.0.0
- * @todo jest
+ * Downloads a file from a URL by creating a temporary object URL and clicking a link with a download attribute.
+ * @param Url - The URL of the file to download.
+ * @param type - The MIME type of the file. Defaults to 'application/octet-stream'.
+ * @example
+ * downloadByUrl('https://example.com/my-file.xlsx', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
  */
-
 const downloadByUrl = (Url: string, type = 'application/octet-stream'): void => {
   const blob = new Blob([''], { type })
   const url = URL.createObjectURL(blob)
-  const a = document.createElement('a')
-  // createDom({ tagName: 'a' })
-  a.href = Url
-  a.download = Url.replace(/(.*\/)*([^.]+.*)/gi, '$2').split('?')[0]
-  const e = document.createEvent('MouseEvents')
-  e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
-  a.dispatchEvent(e)
+  const downloadLink = document.createElement('a')
+  downloadLink.href = Url
+  downloadLink.download = Url.replace(/(.*\/)*([^.]+.*)/gi, '$2').split('?')[0]
+  downloadLink.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }))
   URL.revokeObjectURL(url)
 }
 
