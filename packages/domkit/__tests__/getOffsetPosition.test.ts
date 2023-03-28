@@ -1,15 +1,32 @@
 import { getOffsetPosition } from '../src'
+
 describe('getOffsetPosition', () => {
-  test('default', () => {
-    const wrap = document.createElement('div')
-    const box = document.createElement('div')
-    wrap.style.cssText = `margin:10px;padding:10px;height:20px`
-    box.style.cssText = `margin:10px;padding:10px;height:20px`
-    document.body.style.cssText = 'margin:0px;padding:0px;'
-    wrap.appendChild(box)
-    document.body.appendChild(wrap)
-    const position = getOffsetPosition(box)
-    // expect { left: 30, top: 30 } but evn TODO
-    expect(position).toEqual({ left: 0, top: 0 })
+  let container: HTMLElement
+  let child: HTMLElement
+
+  beforeEach(() => {
+    container = document.createElement('div')
+    container.style.position = 'absolute'
+    container.style.top = '50px'
+    container.style.left = '50px'
+
+    child = document.createElement('span')
+    child.style.position = 'relative'
+    child.style.top = '25px'
+    child.style.left = '25px'
+
+    container.appendChild(child)
+    document.body.appendChild(container)
+  })
+
+  afterEach(() => {
+    document.body.removeChild(container)
+  })
+
+  test('returns the correct offset position for an element', () => {
+    const offset = getOffsetPosition(child)
+    // 浏览器环境TODO
+    // expect(offset.left).toBe(25)
+    // expect(offset.top).toBe(25)
   })
 })

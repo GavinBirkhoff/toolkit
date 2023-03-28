@@ -1,32 +1,28 @@
-/**
- * Get bounding of client
- * @param {HTMLElement} ele
- * @returns {ClientXY}
- * @since 1.0.0
- * @example
- * getBoundingClient(dom)
- */
 interface ClientXY {
   x: number
   y: number
 }
+
+/**
+ * Gets the client (x, y) coordinates of the specified element relative to the viewport.
+ *
+ * @example
+ * // get the bounding client of the element with id "my-ele"
+ * const el = document.getElementById('my-ele')
+ * const bounds = getBoundingClient(el)
+ * console.log(bounds.x, bounds.y)
+ *
+ * @param ele The element to get the bounding client for.
+ * @returns The client (x, y) coordinates of the element.
+ */
 const getBoundingClient = (ele: HTMLElement): ClientXY => {
   if (!ele) return { x: 0, y: 0 }
-  if (ele.getBoundingClientRect) {
-    const domRect = ele.getBoundingClientRect()
-    return {
-      x: domRect.x ?? domRect.left,
-      y: domRect.y ?? domRect.top
-    }
+  const domRect = ele.getBoundingClientRect()
+  const matrix = window?.visualViewport?.scale || 1 // use visual viewport scaling if available
+  return {
+    x: domRect.x * matrix + window.scrollX,
+    y: domRect.y * matrix + window.scrollY
   }
-  let top = ele.offsetTop
-  let left = ele.offsetLeft
-
-  while ((ele = ele.offsetParent as HTMLElement)) {
-    top += ele.offsetTop
-    left += ele.offsetLeft
-  }
-  return { x: left, y: top }
 }
 
 export default getBoundingClient
