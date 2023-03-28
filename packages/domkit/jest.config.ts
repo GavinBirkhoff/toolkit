@@ -19,4 +19,5 @@ export default {
   //     }
   //   ]
   // ]
+  // setupFiles: ['jest-canvas-mock']
 }

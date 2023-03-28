@@ -1,49 +1,51 @@
-import { hasOwnProperty } from 'ts-copilot'
-import { StylePropsKeys } from './types'
+interface StyleProps {
+  [key: string]: string | number
+}
+
+interface StyleSheetCache {
+  [key: string]: CSSStyleSheet
+}
+
+const styleSheetCache: StyleSheetCache = {}
+
 /**
- * Add style sheet
- * @param {string} selector Css selector must be valid selector for css
- * @param {object} cssRules A object about css rules
- * @param {string} title default sheet, that is link style title
- * @since 1.0.0
+ * Add CSS rules to a stylesheet with a given title.
+ * If a stylesheet with that title does not exist, it will be created.
+ * @param selector The CSS selector to which to apply the rules.
+ * @param cssRules An object containing CSS rules to apply.
+ * @param title The title of the stylesheet.
+ *
  * @example
- * addCss('.item', { backgroundColor: 'green' })
+ * addCss('.my-class', { color: 'red', backgroundColor: 'blue' }, 'my-stylesheet')
+ *
+ * @since 1.0.0
  */
-const addCss = (
-  selector: string,
-  cssRules: Partial<{ [key in keyof StylePropsKeys]: number | string }>,
-  title = 'sheet'
-): void => {
-  const styleSheets = Array.from(document.styleSheets)
+function addCss(selector: string, cssRules: StyleProps, title = 'sheet'): void {
+  let styleSheet = styleSheetCache[title]
 
-  const head = document.head || document.getElementsByTagName('head')[0]
-
-  let styleSheet = styleSheets.find((item: CSSStyleSheet) => item.title === title)
   if (!styleSheet) {
     const sty = document.createElement('style')
     sty.title = title
-    head.appendChild(sty)
+    document.head.appendChild(sty)
+
     //@ts-ignore
     if (!window.createPopup) {
       /* For Safari */
-      head.appendChild(document.createTextNode(''))
+      document.head.appendChild(document.createTextNode(''))
     }
-    // get new styleSheet
+
     styleSheet = document.styleSheets[document.styleSheets.length - 1]
+    styleSheetCache[title] = styleSheet
   }
 
-  let str = ''
-  for (const prop in cssRules) {
-    if (hasOwnProperty.call(cssRules, prop)) {
-      str += `${prop.replace(/[A-Z]/g, function (value) {
-        return '-' + value.toLowerCase()
-      })}:${cssRules[prop as keyof StylePropsKeys]};`
-    }
-  }
+  const ruleStr = Object.entries(cssRules)
+    .map(([prop, value]) => `${prop.replace(/[A-Z]/g, (value) => '-' + value.toLowerCase())}:${value}`)
+    .join(';')
+
   if (styleSheet.insertRule) {
-    styleSheet.insertRule(`${selector}{${str}}`, styleSheet.cssRules.length)
+    styleSheet.insertRule(`${selector}{${ruleStr}}`, styleSheet.cssRules.length)
   } else {
-    styleSheet.addRule(selector, str, styleSheet.cssRules.length)
+    styleSheet.addRule(selector, ruleStr, styleSheet.cssRules.length)
   }
 }
 
