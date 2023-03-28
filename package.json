@@ -74,6 +74,7 @@
     "html-webpack-plugin": "^5.5.0",
     "husky": "^6.0.0",
     "jest": "^27.0.4",
+    "jest-canvas-mock": "^2.5.0",
     "jest-html-reporter": "^3.4.1",
     "jsdoc": "^3.6.10",
     "jsdoc-to-markdown": "^7.1.1",
