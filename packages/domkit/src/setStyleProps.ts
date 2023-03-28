@@ -1,24 +1,36 @@
-/**
- * Set style props
- * @param {HTMLElement} element target element
- * @param {Object} props props of style
- * @returns {void}
- * @since 1.0.0
- */
 import { each, isEmpty, hasOwnProperty } from 'ts-copilot'
 
-const setStyleProps = (element: HTMLElement, props: Partial<{ [key: string]: string }>): void => {
-  if (element == null && isEmpty(props)) return
-  each(props, (value: string, key: string) => {
-    let newKey = key
+/**
+ * Sets the style properties of an HTML element.
+ *
+ * @param element - The element to set style properties on.
+ * @param props - The style properties to set, in the form of an object of key-value pairs.
+ *
+ * @example
+ * ```ts
+ * const el = document.getElementById('myElement')
+ * setStyleProps(el, { color: 'red', fontSize: '14px' })
+ * ```
+ *
+ * @returns void
+ * @since 1.0.0
+ */
+const setStyleProps = <T extends HTMLElement>(element: T | null, props: Partial<{ [key: string]: string }>): void => {
+  if (!element || isEmpty(props)) {
+    return
+  }
 
-    if (hasOwnProperty.call(element.style, newKey)) {
-      element.style.setProperty(newKey, value)
+  each(props, (value: string, key: string) => {
+    let cssName = key.replace(/([A-Z])/g, '-$1').toLowerCase()
+    const { style } = element
+    if (cssName in style) {
+      // Set value of the corresponding style attribute
+      element.style.setProperty(cssName, value)
     } else {
-      newKey = newKey.replace(/([A-Z])/g, '-$1').toLowerCase()
-      element.style.setProperty(`--${newKey}`, value)
+      // If the style attribute is not present, set a custom CSS variable
+      cssName = `--${cssName}`
+      element.style.setProperty(cssName, value)
     }
   })
 }
-// gavin
 export default setStyleProps
