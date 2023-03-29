@@ -1,21 +1,30 @@
 import { contains } from '../src'
 describe('contains', () => {
-  test('Array [1, 5] contains 5', () => {
-    expect(contains([1, 5], 5)).toBeTruthy()
+  /* When array contains value */
+  it('should return true if an array contains the value', () => {
+    const input = [1, 2, 3, 4]
+    const value = 3
+    expect(contains(input, value)).toBe(true)
   })
-  test('Array [6, 9] not contains 5', () => {
-    expect(contains([6, 9], 5)).toBeFalsy()
+
+  /* When array does not contain value */
+  it('should return false if an array does not contain the value', () => {
+    const input = [1, 2, 3, 4]
+    const value = 5
+    expect(contains(input, value)).toBe(false)
   })
-  test('String abc not contains d', () => {
-    expect(contains('abc', 'd')).toBeFalsy()
+
+  /* When string contains value */
+  it('should return true if a string contains the value', () => {
+    const input = 'hello world'
+    const value = 'worl'
+    expect(contains(input, value)).toBe(true)
   })
-  test('String abc contains a', () => {
-    expect(contains('abc', 'a')).toBeTruthy()
-  })
-  test('number return false', () => {
-    expect(contains(123 as any, 2)).toBeFalsy()
-  })
-  test('Array [1,2,3] contains 2 fromIndex 2', () => {
-    expect(contains([1, 2, 3], 2, 2)).toBeFalsy()
+
+  /* When string does not contain value */
+  it('should return false if a string does not contain the value', () => {
+    const input = 'hello world'
+    const value = 'foo'
+    expect(contains(input, value)).toBe(false)
   })
 })

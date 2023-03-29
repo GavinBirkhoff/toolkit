@@ -1,29 +1,31 @@
-import isArrayLike from './is-array-like'
+import isArray from './is-array-like'
+import isNil from './is-nil'
 /**
- * Check whether the array or array like contains a value
- * @param {Array | string} arr Target array or string
- * @param {any} value Target value
- * @returns {boolean}
- * @since 1.0.0
+ * Determines whether an array or string contains a specified value.
+ *
+ * @param arr - The array or string to search through.
+ * @param value - The value to search for.
+ * @param position - Optional. The index to start searching from. Default is -1.
+ * @returns A boolean indicating whether the value was found.
+ *
  * @example
- * // returns true
- * contains([1,2,3],2)
- * @example
- * // returns true
- * contains("hello",'h')
- * @example
- * // returns false
- * contains([1,2,3],2,2)
+ *
+ * ```typescript
+ * const arr = [1, 2, 3, 4];
+ * contains(arr, 3); // Returns true
+ * contains('hello', 'w', 3); // Returns false
+ * ```
  */
-const contains = (arr: any[] | string, value: any, position?: number): boolean => {
-  const positionValue = position || -1
-  if (isArrayLike(arr)) {
-    if (arr.includes !== undefined) {
-      return arr.includes(value, position)
-    }
-    return arr.indexOf(value) > positionValue
+const contains = (arr: any[] | string, value: any, position = -1): boolean => {
+  if (!isArray(arr) && typeof arr !== 'string') {
+    return false
   }
-  return false
+
+  if (isNil(value)) {
+    return false
+  }
+
+  return position < 0 ? arr.indexOf(value) > -1 : arr.indexOf(value, position) > -1
 }
 
 export default contains

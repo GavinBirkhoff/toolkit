@@ -1,18 +1,16 @@
-import { ObjectType } from './types'
 /**
- * Freeze obj and keys
- * @param {Object} obj need to freeze target
+ * Freezes an object and recursively freezes its enumerable properties (but not their children).
+ *
+ * @param obj - The object to be frozen.
  * @since 1.0.0
- * @example
- * constantize(obj)
  */
-const constantize = (obj: ObjectType<any>): void => {
+const constantize = <T extends Record<string, any>>(obj: T): void => {
   Object.freeze(obj)
-  Object.keys(obj).forEach((key, i) => {
-    if (typeof obj[key] === 'object') {
-      constantize(obj[key])
+  Object.keys(obj).forEach((key) => {
+    const val = obj[key]
+    if (typeof val === 'object' && val !== null) {
+      Object.freeze(val)
     }
   })
 }
-
 export default constantize

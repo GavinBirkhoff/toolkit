@@ -1,12 +1,15 @@
 /**
- * Add two numbers with fixed precision.
- * @param {number} a The first number to add.
- * @param {number} b The second number to add.
- * @returns {number} The result of adding the two numbers.
+ * Adds two numbers with fixed precision.
+ *
+ * @param a - The first number to add.
+ * @param b - The second number to add.
+ * @returns The result of adding the two numbers.
  * @since 1.0.0
  * @example
  *
+ * ```typescript
  * add(0.1, 0.2) // returns 0.3
+ * ```
  */
 const add = (a: number, b: number): number => {
   /**
