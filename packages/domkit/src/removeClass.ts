@@ -1,16 +1,24 @@
-import setClass from './setClass'
-import getClass from './getClass'
 /**
- * remove class name
- * @param {HTMLElement} el target val
- * @param {String} name class name
- * @since 1.0.0
+ * Remove a class from an element.
+ *
+ * @param el - The target element.
+ * @param className - The class name to remove.
+ *
+ * @example
+ * // Removes the class "active" from an element with the "target" ID.
+ * const target = document.getElementById('target');
+ * removeClass(target, 'active');
  */
-const removeClass = (el: HTMLElement, name: string): void => {
-  if (el.classList !== undefined) {
-    el.classList.remove(name)
+const removeClass = (el: HTMLElement, className: string): void => {
+  if (!el || !className) {
+    return
+  }
+
+  if (el.classList && el.classList.remove) {
+    el.classList.remove(className)
   } else {
-    setClass(el, getClass(el).replace(' ' + name + ' ', ' '))
+    const reg = new RegExp(`(^|\\b)${className.split(' ').join('|')}($|\\b)`, 'gi')
+    el.className = el.className.replace(reg, ' ')
   }
 }
 

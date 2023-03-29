@@ -1,11 +1,41 @@
 # Toolkit
 
-**All kit modules**
+This's a toolkit has contained libraries such as dom, path and ts etc.
 
-- eskit Tool library of TS / JS that can be used in browser and nodejs
-- domkit The JS tool library used in the browser mainly operates DOM related APIs
+## ts-copilot
 
-## usage
+Workspace `./packages/eskit`
+
+### Usage
+
+```shell
+# npm
+npm i ts-copilot
+# yarn
+yarn add ts-copilot
+```
+
+## dom-copilot
+
+Workspace `./packages/domkit`
+
+### Usage
+
+```shell
+npm i path-copilot
+```
+
+## path-copilot
+
+Workspace `./packages/pathkit`
+
+### Usage
+
+```shell
+npm i path-copilot
+```
+
+# Usage
 
 - install
 
@@ -16,7 +46,7 @@ npm run test
 npm run build
 ```
 
-## Principles
+# Principles
 
 I hope that the excellent unit methods of the entire front-end community can be collected here.
 

@@ -8,7 +8,7 @@
  * setClass(myEl, 'my-class');
  * // The above call sets the class to "my-class" on #my-element.
  *
- * @since
+ * @since 1.0.0
  */
 export const setClass = (el: HTMLElement | SVGElement, className: string): void => {
   if ('classList' in el) {

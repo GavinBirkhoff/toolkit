@@ -1,31 +1,29 @@
 /**
- * Web require
- * @since 1.0.0
- * @param file
- * @param callback
- * @since 1.0.0
+ * Dynamically load a JavaScript file and execute a callback function.
+ *
+ * @param file - The URL of the JavaScript file to load.
+ * @param callback - The callback function to execute when the script is loaded.
+ *
  * @example
- * require('https://cdn.bootcdn.net/ajax/libs/react/18.2.0/umd/react.development.js', function () {})
+ *
+ * requireScript('path/to/script.js', () => {
+ *   console.log('Script loaded');
+ * });
+ *
+ * @since 1.0.0
  */
-const _require = (file: string, callback: () => any) => {
-  const script = document.getElementsByTagName('script')[0]
-  const newjs: any = document.createElement('script')
+const requireScript = (file: string, callback: (ev: Event) => any): void => {
+  // Create a new script element
+  const script = document.createElement('script')
 
-  // IE
-  newjs.onreadystatechange = function () {
-    if (newjs.readyState === 'loaded' || newjs.readyState === 'complete') {
-      newjs.onreadystatechange = null
-      callback()
-    }
-  }
+  // Add an onload event listener to the script element
+  script.addEventListener('load', callback)
 
-  // others
-  newjs.onload = function () {
-    callback()
-  }
+  // Add the script element to the document body
+  document.body.appendChild(script)
 
-  newjs.src = file
-  script?.parentNode?.insertBefore(newjs, script)
+  // Set the `src` attribute of the script element
+  script.src = file
 }
 
-export default _require
+export default requireScript

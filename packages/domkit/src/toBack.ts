@@ -1,13 +1,17 @@
 /**
- * Add ele to back
- * @param {HTMLElement} el
- * @since 1.0.0
+ * Moves the given element to the back of its parent's children.
  *
+ * @param el - The element to move to the back.
+ * @example
+ *
+ * // Move the first div to the back of its parent container
+ * const container = document.querySelector('.container');
+ * const firstDiv = container.firstElementChild;
+ * toBack(firstDiv);
  */
 const toBack = (el: HTMLElement): void => {
   const parent = el.parentNode
-  //insertBefore：insertBefore(newchild,refchild)
-  parent?.insertBefore(el, parent.firstChild)
+  parent?.appendChild(el)
 }
 
 export default toBack

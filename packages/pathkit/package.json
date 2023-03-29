@@ -22,7 +22,8 @@
     "script:gen-index": "node ./scripts/generate-index.js",
     "docs": "npm run build:esm && jsdoc -c jsdoc.json",
     "doc": "typedoc --tsconfig ./tsconfig.json",
-    "update:readme": "node ./scripts/update-docs.js"
+    "update:readme": "npm run doc && node ./scripts/update-docs.js",
+    "pub": "npm run test && npm run build && npm run update:readme && npm publish"
   },
   "keywords": [
     "path",

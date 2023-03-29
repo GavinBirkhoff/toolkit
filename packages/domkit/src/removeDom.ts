@@ -1,17 +1,17 @@
 /**
- * removeDom
- * @param {HTMLElement} el
- * @returns {boolean}
- * @since 1.0.0
+ * Remove a DOM element.
+ *
+ * @param el - The element to remove.
+ *
  * @example
- * removeDom(dom)
+ *
+ * removeDom(document.getElementById('my-element'));
+ *
+ * @since 1.0.0
  */
-const removeDom = (el: HTMLElement): boolean => {
-  const parent = el.parentNode
-  if (parent) {
-    parent.removeChild(el)
-    return true
+const removeDom = (el: Element): void => {
+  if (el && el.parentNode) {
+    el.parentNode.removeChild(el)
   }
-  return false
 }
 export default removeDom

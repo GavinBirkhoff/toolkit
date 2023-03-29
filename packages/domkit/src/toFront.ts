@@ -1,11 +1,22 @@
 /**
- * Add ele to front
- * @param {HTMLElement} el
- * @since 1.0.0
+ * Moves the given element to the front of its parent's children.
+ *
+ * @param el - The element to move to the front.
+ * @example
+ *
+ * // Create a new element and add it to the DOM
+ * const newDiv = document.createElement('div');
+ * document.body.appendChild(newDiv);
+ *
+ * // Move the new element to the front of the body
+ * toFront(newDiv);
  */
 const toFront = (el: HTMLElement): void => {
-  const parent = el.parentNode
-  parent?.appendChild(el)
+  const parent = el.parentNode!
+  const firstChild = parent.firstElementChild
+  if (firstChild !== el && !parent.contains(el)) {
+    parent.insertBefore(el, firstChild)
+  }
 }
 
 export default toFront

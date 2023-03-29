@@ -1,28 +1,38 @@
-/**
- * Remove event from target element
- * @param ele target element
- * @param type type of event
- * @param callBack listener callback
- * @param useCapture capture default false
- * @returns {void}
- * @since 1.0.0
- * @example
- * const callBack = addEvent(element, 'click', ()=>{})
- * removeEvent(element, 'click', callBack)
- */
+type Element = HTMLElement | SVGElement
 
-const removeEvent = (ele: HTMLElement | SVGElement, type: string, callBack: any, useCapture = false): void => {
-  if (!ele) return
-  if (ele.removeEventListener) {
-    ele.removeEventListener(type, callBack, useCapture)
-    //@ts-ignore
-  } else if (ele.detachEvent) {
-    //@ts-ignore
-    ele.detachEvent('on' + type, callBack)
-  } else {
-    //@ts-ignore
-    ele['on' + type] = null
-  }
+interface RemoveEventOptions {
+  useCapture?: boolean
+}
+
+/**
+ * Remove an event listener from an element.
+ *
+ * @param el - The element to remove the event listener from.
+ * @param type - The event type to remove.
+ * @param callback - The callback function to remove.
+ * @param options - The options object.
+ *
+ * @example
+ *
+ * const el = document.getElementById('my-element');
+ * const callback = () => {
+ *   console.log('Button clicked');
+ * };
+ *
+ * // Add the event listener
+ * addEvent(el, 'click', callback, { useCapture: false });
+ *
+ * // Remove the event listener
+ * removeEvent(el, 'click', callback, { useCapture: false });
+ *
+ * @since 1.0.0
+ */
+const removeEvent = (el: Element, type: string, callback: EventListener, options: RemoveEventOptions = {}): void => {
+  if (!el) return
+
+  const { useCapture = false } = options
+
+  el.removeEventListener(type, callback, useCapture)
 }
 
 export default removeEvent
