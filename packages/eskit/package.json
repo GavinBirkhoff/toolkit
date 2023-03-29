@@ -21,7 +21,10 @@
     "test:coverage": "jest --coverage",
     "script:gen-index": "node ./scripts/generate-index.js",
     "docs": "npm run build:esm && jsdoc -c jsdoc.json",
-    "md": "node ./scripts/jsdoc2md.js"
+    "md": "node ./scripts/jsdoc2md.js",
+    "doc": "typedoc --tsconfig ./tsconfig.json",
+    "update:readme": "npm run doc && node ./scripts/update-docs.js",
+    "pub": "npm run test && npm run build && npm run update:readme && npm publish"
   },
   "keywords": [
     "util",
@@ -41,6 +44,5 @@
   "devDependencies": {
     "docdash": "^1.2.0",
     "jsdoc-to-markdown": "^7.1.1"
-  },
-  "gitHead": "8066f445929a03bc27070f7eb4caea274ae2f92c"
+  }
 }

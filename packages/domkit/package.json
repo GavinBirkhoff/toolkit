@@ -42,7 +42,6 @@
   "dependencies": {
     "ts-copilot": "^1.0.0-Alpha"
   },
-  "gitHead": "8066f445929a03bc27070f7eb4caea274ae2f92c",
   "devDependencies": {
     "docdash": "^1.2.0"
   }
