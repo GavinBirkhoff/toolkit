@@ -58,12 +58,3 @@ memoize
 
 flatten
 
-compose
-
-```
-type Func<T> = (arg: T) => T;
-
-function compose<T>(...funcs: Array<Func<T>>): Func<T> {
-  return (arg: T): T => funcs.reduce((acc, func) => func(acc), arg);
-}
-```
