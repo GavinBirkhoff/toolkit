@@ -1,6 +1,6 @@
 {
   "name": "ts-copilot",
-  "version": "1.0.0-Alpha",
+  "version": "1.0.0-Beta",
   "description": "A rich and colorful toolkit about typescript and javascript.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

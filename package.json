@@ -17,6 +17,7 @@
     "script:gen-index": "lerna run script:gen-index",
     "gen": "npm run script:gen-index",
     "docs": "lerna run docs",
+    "readme": "lerna run update:readme",
     "pb": "lerna publish from-package",
     "dev": "webpack-dev-server --progress"
   },

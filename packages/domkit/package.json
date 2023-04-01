@@ -1,6 +1,6 @@
 {
   "name": "dom-copilot",
-  "version": "1.0.0-Alpha",
+  "version": "1.0.0-Beta",
   "description": "A rich and colorful toolkit about DOM.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -40,7 +40,7 @@
     "url": "https://github.com/GavinBirkhoff/toolkit/issues"
   },
   "dependencies": {
-    "ts-copilot": "^1.0.0-Alpha"
+    "ts-copilot": "^1.0.0-Beta"
   },
   "devDependencies": {
     "docdash": "^1.2.0"
