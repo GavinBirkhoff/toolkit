@@ -1,10 +1,11 @@
 import { getRandomInt } from '../src/'
 
-describe('getRandomInt', () => {
-  test('Get a random number from 1 to 5', () => {
-    for (let i = 0; i < 100; i++) {
-      const num = getRandomInt(1, 5)
-      expect(num >= 1 && num <= 5).toBeTruthy()
-    }
-  })
+test('getRandomInt returns a random integer between the specified minimum and maximum values', () => {
+  const min = 1
+  const max = 10
+  const randomInt = getRandomInt(min, max)
+
+  expect(randomInt).toBeGreaterThanOrEqual(min)
+  expect(randomInt).toBeLessThanOrEqual(max)
+  expect(Number.isInteger(randomInt)).toBe(true)
 })

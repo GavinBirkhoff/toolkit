@@ -1,7 +1,12 @@
 import { isArrayBuffer } from '../src'
-describe('isArguments', () => {
-  test('default', () => {
-    const ab = new ArrayBuffer(2)
-    expect(isArrayBuffer(ab)).toBeTruthy()
+
+describe('isArrayBuffer', () => {
+  it('returns false for an array', () => {
+    expect(isArrayBuffer([1, 2, 3])).toBe(false)
+  })
+
+  it('returns true for an `ArrayBuffer` object', () => {
+    const buffer = new ArrayBuffer(16)
+    expect(isArrayBuffer(buffer)).toBe(true)
   })
 })

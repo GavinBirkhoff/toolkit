@@ -1,7 +1,14 @@
-import { curry, add } from '../src'
+import { curry } from '../src'
+
 describe('curry', () => {
-  test('1 + 2 = 3', () => {
-    expect(curry(add)(1, 2)).toBe(3)
-    expect(curry(add)(1)(2)).toBe(3)
+  it('should curry a function', () => {
+    const add = (a: number, b: number) => a + b
+    const curriedAdd = curry(add)
+
+    const add5 = curriedAdd(5)
+    expect(add5(3)).toEqual(8)
+
+    const add2 = curriedAdd(2)
+    expect(add2(4)).toEqual(6)
   })
 })

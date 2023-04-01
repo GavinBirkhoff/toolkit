@@ -1,14 +1,14 @@
 import isType from './is-type'
 /**
- * Determine whether an object is of type RegExp
- * @param  {*} value Target value
- * @returns {boolean}  Is it of type RegExp
- * @since 1.0.0
+ * Determines whether the given value is a regular expression.
+ *
+ * @param value The value to check.
+ * @returns `true` if the value is a regular expression, else `false`.
+ *
  * @example
- * // returns true
- * isRegExp(/\d\D/)
+ * isRegExp(/ab+c/i) // => true
+ * isRegExp('hello') // => false
  */
-
-const isRegExp = (value: any): value is RegExp => isType('RegExp', value)
+const isRegExp = (value: unknown): value is RegExp => isType('RegExp', value)
 
 export default isRegExp

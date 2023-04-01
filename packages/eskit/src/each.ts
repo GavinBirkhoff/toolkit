@@ -1,39 +1,32 @@
-import hasOwnProperty from './hasOwnProperty'
 import isArray from './is-array'
-import isObject from './is-object'
 
 /**
- * Each array and object
- * @param {Array|Object} elements target
- * @param {Function} func a callback for item of elements
- * @since 1.0.0
+ * Iterates over elements of collection and invokes func for each element.
+ *
+ * @param {T[] | Record<string, T>} collection - The collection to iterate over.
+ * @param {(value: T, key: string | number, collection: Record<string, T> | T[]) => any} func - The function invoked per iteration.
+ *
  * @example
- * each(object, ()=>{})
- * each(array, ()=>{})
- * @todo Type optimization
+ * each([1, 2, 3], (value, index, collection) => console.log(value, index));
+ * each({ a: 1, b: 2, c: 3 }, (value, key, collection) => console.log(value, key));
  */
-
-const each = (elements: any[] | Record<string, any>, func: (v: any, k: any, ele: any) => any): void => {
-  if (!elements) {
+const each = <T>(
+  collection: T[] | Record<string, T>,
+  func: (value: T, key: string | number, collection: Record<string, T> | T[]) => any
+): void => {
+  if (!collection) {
     return
   }
-  let rst
-  if (isArray(elements)) {
-    for (let i = 0, len = elements.length; i < len; i++) {
-      rst = func(elements[i], i, elements)
-      if (rst === false) {
-        break
-      }
-    }
-  } else if (isObject(elements)) {
-    for (const k in elements) {
-      if (hasOwnProperty.call(elements, k)) {
-        rst = func(elements[k], k, elements)
-        if (rst === false) {
-          break
-        }
-      }
-    }
+
+  if (isArray(collection)) {
+    collection.forEach((value, index) => {
+      func(value, index, collection)
+    })
+  } else {
+    const entries = Object.entries(collection)
+    entries.forEach(([key, value]) => {
+      func(value, key, collection)
+    })
   }
 }
 

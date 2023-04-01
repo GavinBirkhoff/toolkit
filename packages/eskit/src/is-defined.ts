@@ -1,16 +1,17 @@
 /**
- * Checks if a value is defined (not undefined or null).
+ * Checks if a value is defined (not `undefined` or `null`).
  *
+ * @typeParam T - The type of the value to check.
  * @param val - The value to check.
- * @returns `true` if the value is defined, `false` otherwise.
- * @example
+ * @returns `true` if the value is defined, else `false`.
  *
- * ```typescript
- * if (isDefined(value)) {
- *   doSomethingWithValue(value)
- * }
+ * @example
  * ```
- * @since 1.0.0
+ * isDefined(1) // => true
+ * isDefined('hello') // => true
+ * isDefined(null) // => false
+ * isDefined(undefined) // => false
+ * ```
  */
 const isDefined = <T>(val: T | undefined | null): val is T => {
   return val !== undefined && val !== null

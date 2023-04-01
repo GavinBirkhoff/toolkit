@@ -1,15 +1,28 @@
 import copyProperties from './copy-properties'
 /**
- * Mixin
- * @param {Array} mixins
- * @returns {any}
+ * Creates a new class by combining multiple classes.
+ * @param mixins The classes to combine.
  * @example
- * class DistributedEdit extends mixin(Loggable, Serializable) {
- * //
+ * // Define some classes
+ * class Foo {
+ *   foo() {}
  * }
- * @todo Optimization Type
+ *
+ * class Bar {
+ *   bar() {}
+ * }
+ *
+ * // Create a new class by combining Foo and Bar
+ * const Baz = mixin(Foo, Bar);
+ *
+ * // Create an instance of Baz
+ * const baz = new Baz();
+ *
+ * // Call methods from both Foo and Bar
+ * baz.foo();
+ * baz.bar();
  */
-const mixin = function (...mixins: any[]): any {
+const mixin = (...mixins: any[]): any => {
   class Mixin {
     constructor() {
       for (const mixin of mixins) {

@@ -2,13 +2,19 @@ import isObjectLike from './is-object-like'
 import isArrayLike from './is-array-like'
 import isString from './is-string'
 /**
- * Are the two values equal?
- * @param {*} value  Target value
- * @param {*} other  Target value
- * @returns {boolean}
- * @since 1.0.0
+ * Determines if two values are equal. Supports objects, arrays, and primitives.
+ * @param value The value to compare.
+ * @param other The other value to compare.
+ * @returns True if the values are equal, false otherwise.
+ *
  * @example
- * isEqual(val1, val2)
+ * ```
+ * isEqual([1, 2, 3], [1, 2, 3]) // => true
+ * isEqual({a: 1, b: {c: 2}}, {a: 1, b: {c: 2}}) // => true
+ * isEqual('abc', 'abc') // => true
+ * isEqual(1, 2) // => false
+ * isEqual(null, undefined) // => false
+ * ```
  */
 const isEqual = (value: any, other: any): boolean => {
   if (value === other) {

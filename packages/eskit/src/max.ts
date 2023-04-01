@@ -1,12 +1,16 @@
 import isArray from './is-array'
 /**
- * Returns the larger of a array.
- * @param {number[]} arr Target array
- * @returns {number | undefined}
- * @since 1.0.0
+ * Returns the maximum value of a numeric array.
+ * If the input value is not an array or the array is empty, returns `undefined`.
+ *
+ * @param arr - The array of numbers to search for the maximum value.
+ * @returns The maximum value of the input array, or `undefined` if the input is not an array or the array is empty.
+ *
  * @example
- * // returns 3
- * max([1,2,3])
+ * max([1, 2, 3, 4, 5]) // 5
+ * max([]) // undefined
+ * max(null) // undefined
+ * max(undefined) // undefined
  */
 const max = (arr: number[]): number | undefined => {
   if (!isArray(arr)) {

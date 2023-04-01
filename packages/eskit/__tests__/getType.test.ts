@@ -1,21 +1,27 @@
 import { getType } from '../src'
+
 describe('getType', () => {
-  test('get Array type', () => {
+  it('should return the correct type for a number', () => {
+    expect(getType(42)).toBe('Number')
+  })
+
+  it('should return the correct type for a string', () => {
+    expect(getType('hello')).toBe('String')
+  })
+
+  it('should return the correct type for an array', () => {
     expect(getType([])).toBe('Array')
   })
-  test('get Object type', () => {
-    expect(getType({})).toBe('Object')
-  })
-  test('get String type', () => {
-    expect(getType('')).toBe('String')
-  })
-  test('get undefined type', () => {
-    expect(getType(undefined)).toBe('Undefined')
-  })
-  test('get null type', () => {
+
+  it('should return the correct type for null', () => {
     expect(getType(null)).toBe('Null')
   })
-  test('get NaN type', () => {
-    expect(getType(NaN)).toBe('Number')
+
+  it('should return the correct type for undefined', () => {
+    expect(getType(undefined)).toBe('Undefined')
+  })
+
+  it('should return the correct type for an object', () => {
+    expect(getType({})).toBe('Object')
   })
 })

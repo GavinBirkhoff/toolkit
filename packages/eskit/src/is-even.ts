@@ -1,15 +1,15 @@
 import isNumber from './is-number'
 
 /**
- * Is it an even number
- * @param {number} num Target value
- * @returns {boolean}
- * @since 1.0.0
+ * Checks if a number is even.
+ * @param num - The number to check.
+ * @returns Whether the number is even or not.
+ *
  * @example
- * // returns true
- * isEven(2)
+ * isEven(2); // true
+ * isEven(3); // false
  */
-const isEven = function (num: number): boolean {
+const isEven = (num: number): boolean => {
   return isNumber(num) && num % 2 === 0
 }
 

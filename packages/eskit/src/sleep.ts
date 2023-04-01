@@ -1,20 +1,17 @@
 /**
- * Sleep for the specified amount of time.
+ * Pauses the execution for the specified amount of time.
  *
- * @param {number} ms - The number of milliseconds to wait.
- * @returns {Promise<void>} A Promise that resolves after the specified time has elapsed.
+ * @param ms - The number of milliseconds to sleep.
+ *
+ * @returns A promise that resolves after the specified amount of time.
  *
  * @example
- * // Wait 2 seconds, then log a message
- * async function main() {
- *   console.log('Sleeping...');
- *   await sleep(2000);
- *   console.log('Waking up!');
- * }
+ * ```
+ * console.log('Start')
+ * await sleep(2000)
+ * console.log('End')
+ * ```
  *
- * main();
- *
- * @since 1.0.0
  */
 const sleep = (ms: number): Promise<void> => {
   return new Promise((resolve) => setTimeout(resolve, ms))

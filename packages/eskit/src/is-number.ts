@@ -1,12 +1,13 @@
 import isType from './is-type'
 /**
- * Determine whether an object is of type Number
- * @param {*} value  Target value
- * @returns {boolean}  Is it of type Number
- * @since 1.0.0
+ * Checks if a value is a number.
+ *
+ * @param value - The value to check.
+ * @returns Returns `true` if the value is a number, else `false`.
+ *
  * @example
- * // returns true
- * isNumber(1)
+ * isNumber(42); // true
+ * isNumber('42'); // false
  */
 const isNumber = (value: unknown): value is number => isType('Number', value)
 export default isNumber

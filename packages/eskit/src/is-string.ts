@@ -1,14 +1,14 @@
 import isType from './is-type'
 /**
- * Determine whether an object is of type String
- * @param {*} value  Target value
- * @returns {boolean}  Is it of type String
- * @since 1.0.0
+ * Checks if a given value is a string.
+ *
+ * @param value The value to check.
+ * @returns Returns `true` if the given value is a string, else `false`.
+ *
  * @example
- * // returns true
- * isString('')
+ * isString('hello') // => true
+ * isString(123) // => false
  */
-
 const isString = (value: unknown): value is string => {
   return isType('String', value)
 }

@@ -1,10 +1,18 @@
 /**
- * Copy properties
- * @param {Object} target
- * @param {Object} source
+ * Copies all properties of `source` to `target`, including non-enumerable ones.
+ *
  * @since 1.0.0
+ *
  * @example
- * copyProperties(t, s)
+ * const source = { a: 1, b: 2 };
+ * const target = { c: 3 };
+ *
+ * copyProperties(target, source);
+ *
+ * console.log(target); // {a: 1, b: 2, c: 3}
+ *
+ * @param target - The target object.
+ * @param source - The source object to copy from.
  */
 const copyProperties = <T, U extends Record<string, unknown>>(target: T, source: U): void => {
   for (const key of Reflect.ownKeys(source)) {

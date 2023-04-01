@@ -1,15 +1,20 @@
 import isFunction from './is-function'
 import isEqual from './is-equal'
 /**
- * Compare two values through a user-defined function.
- * @param {*} value The value to compare.
- * @param {*} other The other value to compare.
- * @param {Function} [fn] The function to customize comparisons.
- * @returns {boolean} Returns `true` if the values are equivalent, else `false`.
- * @since 1.0.0
+ * Performs a deep comparison between two values to determine if they are equivalent.
+ *
+ * @param value The value to compare.
+ * @param other The other value to compare.
+ * @param fn The customizer function to use to compare values.
+ * @returns Returns `true` if the values are equivalent, else `false`.
+ *
  * @example
- * // returns true or false
- * isEqualWith(array, other, customizer)
+ * isEqualWith([1, 2, 3], [1, 2, 3], (v1, v2) => {
+ *   if (Array.isArray(v1) && Array.isArray(v2)) {
+ *     return v1.length === v2.length;
+ *   }
+ *   return undefined;
+ * }); // => true
  */
 const isEqualWith = <T>(value: T, other: T, fn: (v1: T, v2: T) => boolean): boolean => {
   if (!isFunction(fn)) {

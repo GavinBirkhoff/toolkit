@@ -1,12 +1,18 @@
 /**
- * Curry a function
- * @param fn Target function
- * @returns A curried function
- * @since 1.0.0
+ * Curry a function with given arguments.
+ *
+ * @param fn - The function to be curried.
+ * @returns A curried function.
+ *
  * @example
- * // returns 3
- * curry(add).(1).(2)
- * @todo Type optimization
+ * const add = (a: number, b: number) => a + b;
+ * const curriedAdd = curry(add);
+ *
+ * const add5 = curriedAdd(5);
+ * console.log(add5(3)); // Output: 8
+ *
+ * const add2 = curriedAdd(2);
+ * console.log(add2(4)); // Output: 6
  */
 function curry(fn: (...args: any[]) => any) {
   return function curried(...args: any[]): (...args: any[]) => any {

@@ -1,19 +1,19 @@
 /**
- * JS digit thousandth formatting code
- * @param {number} value Numeric value to format
- * @param {string} separator Thousandth sign
- * @param {number} digitNum Keep several decimal places
- * @returns {string}
- * @since 1.0.0
+ * Formats a number with the specified decimal separator and digit number.
+ *
+ * This function formats a number with the specified decimal separator and digit number. If the input value is not a valid number, this function returns the input value as a string without formatting.
+ *
+ * @param val - The input number to be formatted.
+ * @param separator - The decimal separator to use for formatting the number.
+ * @param digitNum - The number of digits to appear after the decimal point (defaults to 0).
+ * @returns The formatted number as a string.
+ *
  * @example
- * // returns '1,000.00'
- * formatNumber(1000, ',', 2)
- * @example
- * // returns '10.0'
- * formatNumber(10, ',', 1)
- * @example
- * // returns '10'
- * formatNumber(10, ',')
+ * ```
+ * const formattedNumber = formatNumber(123456.789, ',', 2)
+ * console.log(formattedNumber)
+ * // Output: "123,456.79"
+ * ```
  */
 const formatNumber = (val: number, separator: string, digitNum = 0): string => {
   let value: any = val

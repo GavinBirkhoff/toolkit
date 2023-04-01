@@ -3,14 +3,18 @@ import isArray from './is-array'
 import { ObjectType } from './types'
 
 /**
- * Extend an object deeply
- * @param  {Object} parent
- * @param  {Object} child
- * @returns {Object}
- * @since 1.0.0
+ * Recursively extends an object or array.
+ *
+ * @typeparam T The type of the parent object.
+ * @param parent The parent object to extend.
+ * @param child The child object to merge into the parent object.
+ * @returns The extended object.
+ *
  * @example
- * // returns object
- * extendDeep(obj, sub)
+ * const parent = { a: { b: 1 } };
+ * const child = { a: { c: 2 } };
+ *
+ * extendDeep(parent, child); // { a: { b: 1, c: 2 } }
  */
 const extendDeep = (parent: ObjectType<any>, child: ObjectType<any> = {}): ObjectType<any> => {
   for (const i in parent) {

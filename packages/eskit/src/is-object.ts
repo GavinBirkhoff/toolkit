@@ -1,17 +1,17 @@
 /**
- * Determine whether an object is of type Object
- * @param {*} value  Target value
- * @returns {boolean}  Is it of type Object
- * @since 1.0.0
+ * Check if a value is an object.
+ *
+ * @param value - The value to check.
+ *
+ * @returns `true` if the value is an object, else `false`.
+ *
  * @example
- * // returns true
- * isObject({})
- * @example
- * // returns true
- * isObject(()=>void)
+ * isObject({}) // true
+ * isObject([]) // true
+ * isObject(null) // false
  */
 const isObject = (value: unknown): value is Record<string, unknown> => {
-  const type = typeof value
-  return (value !== null && type === 'object') || type === 'function'
+  return typeof value === 'object' && value !== null
 }
+
 export default isObject

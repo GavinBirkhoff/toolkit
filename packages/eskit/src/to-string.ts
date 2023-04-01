@@ -1,12 +1,16 @@
 import isNil from './is-nil'
 /**
- * To string
- * @param {*} value
- * @returns {string}
- * @since 1.0.0
+ * Converts a value to a string.
+ *
+ * @param value - The value to convert.
+ * @returns The string representation of the value, or an empty string if the value is null or undefined.
+ *
  * @example
- * // returns '1'
- * toString(1)
+ * ```
+ * toString(123); // '123'
+ * toString('hello'); // 'hello'
+ * toString(null); // ''
+ * ```
  */
 const toString = (value: any): string => {
   if (isNil(value)) return ''

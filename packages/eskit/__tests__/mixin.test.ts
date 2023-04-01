@@ -1,14 +1,21 @@
 import { mixin } from '../src'
 describe('mixin', () => {
-  test('mixin', () => {
-    class A {
-      a = 1
+  class MixinClass {
+    public mixinMethod() {
+      return 'Mixin method called.'
     }
-    class B {
-      b = 2
+  }
+
+  class BaseClass {
+    public baseMethod() {
+      return 'Base method called.'
     }
-    class C extends mixin(A, B) {}
-    const c = new C()
-    expect(c).toEqual({ a: 1, b: 2 })
+  }
+
+  it('should create a new class that combines the two classes', () => {
+    const CombinedClass = mixin(BaseClass, MixinClass)
+    const instance = new CombinedClass()
+    expect(instance.baseMethod()).toEqual('Base method called.')
+    expect(instance.mixinMethod()).toEqual('Mixin method called.')
   })
 })

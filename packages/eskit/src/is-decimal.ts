@@ -1,12 +1,16 @@
 import isNumber from './is-number'
 /**
- * Determine whether an object is of type Decimal
- * @param {any} num Target value
- * @returns {boolean}  Is it of type Decimal
- * @since 1.0.0
+ * Checks if a number is a decimal.
+ *
+ * @param num - The number to check.
+ * @returns `true` if the number is a decimal, else `false`.
+ *
  * @example
- * // returns true
- * isDecimal(1.1)
+ * ```
+ * isDecimal(1.5) // => true
+ * isDecimal(3) // => false
+ * isDecimal('1.23') // => false
+ * ```
  */
-const isDecimal = (num: any): boolean => isNumber(num) && num % 1 !== 0
+const isDecimal = (num: unknown): boolean => isNumber(num) && num % 1 !== 0
 export default isDecimal

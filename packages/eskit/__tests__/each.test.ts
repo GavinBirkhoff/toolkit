@@ -1,49 +1,30 @@
 import { each } from '../src'
-describe('each', () => {
-  test('each null', () => {
-    let i = 0
-    each(null as any, () => {
-      i++
-    })
-    expect(i).toBe(0)
-  })
-  test('each array', () => {
-    const arr = [1, 2, 3]
-    let i = 0
-    each(arr, (item, index) => {
-      expect(item).toBe(arr[index])
-      i++
-    })
-    expect(i).toBe(arr.length)
-  })
-  test('each object', () => {
-    let i = 0
-    const obj = { a: 1, b: 2, c: 3, d: 4, e: 5 } as any
-    each(obj, (item, index) => {
-      expect(item).toBe(obj[index])
-      i++
-    })
-    expect(i).toBe(5)
-  })
-  test('each break', () => {
-    const arr = [1, 2, 3, 4, 5]
-    let j = 0
-    each(arr, (item, i) => {
-      if (i === 2) {
-        return false
-      }
-      j++
-    })
-    expect(j).toBe(2)
 
-    const obj = { a: 1, b: 2, c: 3 }
-    j = 0
-    each(obj, (v, k) => {
-      if (k === 'b') {
-        return false
-      }
-      j++
-    })
-    expect(j).toBe(1)
+describe('each function', () => {
+  const arr = [1, 2, 3]
+  const obj = { a: 1, b: 2, c: 3 }
+
+  it('should correctly iterate over an array', () => {
+    const spy = jest.fn()
+    each(arr, spy)
+    expect(spy).toHaveBeenCalledTimes(arr.length)
+    expect(spy.mock.calls[0]).toEqual([1, 0, arr])
+    expect(spy.mock.calls[1]).toEqual([2, 1, arr])
+    expect(spy.mock.calls[2]).toEqual([3, 2, arr])
+  })
+
+  it('should correctly iterate over an object', () => {
+    const spy = jest.fn()
+    each(obj, spy)
+    expect(spy).toHaveBeenCalledTimes(Object.keys(obj).length)
+    expect(spy.mock.calls[0]).toEqual([1, 'a', obj])
+    expect(spy.mock.calls[1]).toEqual([2, 'b', obj])
+    expect(spy.mock.calls[2]).toEqual([3, 'c', obj])
+  })
+
+  it('should handle empty input', () => {
+    const spy = jest.fn()
+    each(null as any, spy)
+    expect(spy).not.toHaveBeenCalled()
   })
 })

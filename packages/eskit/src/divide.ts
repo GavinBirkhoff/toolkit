@@ -1,12 +1,17 @@
 /**
- * Division operation
- * @param {number} a Numerator
- * @param {number} b Denominator
- * @returns {number} Result
- * @since 1.0.0
+ * Divides two numbers and returns the quotient.
+ *
+ * @param {number} a The dividend.
+ * @param {number} b The divisor.
+ * @returns {number} The quotient.
+ *
  * @example
- * // returns 3
- * divide(0.3, 0.1)
+ * // Returns 2
+ * divide(4, 2);
+ *
+ * @example
+ * // Returns 2.5
+ * divide(5, 2);
  */
 const divide = (a: number, b: number): number => {
   let t1, t2

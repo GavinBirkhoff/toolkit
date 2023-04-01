@@ -52,9 +52,3 @@ I hope that the excellent unit methods of the entire front-end community can be 
 
 ## TODO
 
-**ts-copilot**
-
-memoize
-
-flatten
-

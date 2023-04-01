@@ -1,29 +1,50 @@
-import hasOwnProperty from './hasOwnProperty'
+import isArray from './is-array'
+import isDate from './is-date'
+import isObject from './is-object'
+import isRegExp from './is-reg-exp'
 
-/**
- * Deep clone obj
- * @param obj Target object
- * @returns Return A new object
- * @since 1.0.0
- * @example
- * // returns object
- * deepClone(object)
- * @todo Type optimization, Algorithm optimization
- */
-const deepClone = <T>(obj: T): Partial<T> => {
-  const objClone: any = Array.isArray(obj) ? [] : {}
-  if (obj && typeof obj === 'object') {
-    for (const key in obj) {
-      if (hasOwnProperty.call(obj, key)) {
-        if (obj[key] && typeof obj[key] === 'object') {
-          objClone[key] = deepClone(obj[key])
-        } else {
-          objClone[key] = obj[key]
+function deepClone<T>(obj: T): T {
+  const clonedMap = new Map<any, any>()
+
+  const cloneValue = (value: any): any => {
+    if (!isObject(value)) {
+      return value
+    }
+
+    if (clonedMap.has(value)) {
+      return clonedMap.get(value)
+    }
+
+    let clonedObj: any
+
+    if (isArray(value)) {
+      clonedObj = []
+      clonedMap.set(value, clonedObj)
+
+      for (let i = 0; i < value.length; i++) {
+        clonedObj[i] = cloneValue(value[i])
+      }
+    } else if (isDate(value)) {
+      clonedObj = new Date(value.getTime())
+      clonedMap.set(value, clonedObj)
+    } else if (isRegExp(value)) {
+      clonedObj = new RegExp(value.source, value.flags)
+      clonedMap.set(value, clonedObj)
+    } else {
+      clonedObj = Object.create(null)
+      clonedMap.set(value, clonedObj)
+
+      for (const key in value) {
+        if (Object.prototype.hasOwnProperty.call(value, key)) {
+          clonedObj[key] = cloneValue(value[key])
         }
       }
     }
+
+    return clonedObj
   }
-  return objClone
+
+  return cloneValue(obj)
 }
 
 export default deepClone

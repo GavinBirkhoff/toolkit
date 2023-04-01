@@ -1,28 +1,24 @@
 import each from './each'
-import hasOwnProperty from './hasOwnProperty'
-import { ObjectType } from './types'
 
 /**
- * Creates an object composed of the picked `object` properties.
- * @category Object
- * @param {Object} object The source object.
- * @param {T[]} [paths] The property paths to pick.
- * @returns {Object} Returns the new object.
- * @since 1.0.0
+ * Creates an object composed of the picked `obj` properties.
+ *
  * @example
- * const object = { 'a': 1, 'b': '2', 'c': 3 }
- * // returns => { 'a': 1, 'c': 3 }
- * pick(object, ['a', 'c'])
+ *
+ * const object = { 'a': 1, 'b': '2', 'c': 3 };
+ * pick(object, 'a', 'c');
+ * // => { 'a': 1, 'c': 3 }
+ *
+ * @param obj - The source object.
+ * @param keys - The property keys to pick.
+ * @returns The new object.
  */
-const pick = <T>(object: ObjectType<T>, ...paths: T[]): ObjectType<T> => {
-  if (object === null) return {}
-  const result: ObjectType<T> = {}
-  each(paths, (path) => {
-    if (hasOwnProperty.call(object, path)) {
-      result[path] = object[path]
-    }
+const pick = <T, K extends keyof T>(obj: T, ...keys: K[]): Pick<T, K> => {
+  const newObj = {} as Pick<T, K>
+  each(keys, (key) => {
+    newObj[key] = obj[key]
   })
-  return result
+  return newObj
 }
 
 export default pick

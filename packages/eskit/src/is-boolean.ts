@@ -1,12 +1,17 @@
 import isType from './is-type'
 /**
- * Determine whether an object is of type Boolean
- * @param {*} value Target value
- * @returns {boolean}
- * @since 1.0.0
+ * Checks if a value is a boolean.
+ *
+ * @param value - The value to check.
+ * @returns `true` if the value is a boolean, else `false`.
+ *
  * @example
- * // returns true
- * isBoolean(false)
+ * ```
+ * isBoolean(true) // => true
+ * isBoolean(false) // => true
+ * isBoolean(0) // => false
+ * isBoolean('true') // => false
+ * ```
  */
 const isBoolean = (value: unknown): value is boolean => value === true || value === false || isType('boolean', value)
 export default isBoolean

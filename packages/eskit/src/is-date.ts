@@ -1,12 +1,16 @@
 import isType from './is-type'
 /**
- * Determine whether an object is of type Date
- * @param {*} value Target value
- * @returns {boolean}  Is it of type Date
- * @since 1.0.0
+ * Checks if a value is a Date object.
+ *
+ * @param value - The value to check.
+ * @returns `true` if the value is a Date object, else `false`.
+ *
  * @example
- * // returns true
- * isDate(new Date())
+ * ```
+ * isDate(new Date()) // => true
+ * isDate(Date.now()) // => false
+ * isDate('2022-03-30') // => false
+ * ```
  */
 const isDate = (value: unknown): value is Date => isType('Date', value)
 export default isDate

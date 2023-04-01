@@ -1,14 +1,20 @@
 import isType from './is-type'
 /**
- * Determine whether an object is of type Error
- * @param {*} value Target value
- * @return {boolean}
- * @since 1.0.0
+ * Determines whether the given value is an instance of `Error`.
+ *
+ * @param value - The value to check.
+ * @returns Whether the given value is an instance of `Error`.
+ *
  * @example
- * // return true
- * isError(new Error())
+ * const err = new Error('Example error');
+ * isError(err); // true
+ *
+ * const obj = { error: new Error('Example error') };
+ * isError(obj.error); // true
+ *
+ * isError('Error'); // false
  */
-const isError = function (value: unknown): value is Error {
+const isError = (value: unknown): value is Error => {
   return isType('Error', value)
 }
 

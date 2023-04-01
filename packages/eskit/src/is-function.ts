@@ -1,12 +1,12 @@
 import isType from './is-type'
 /**
- * Determine whether an object is of type Function
- * @param {*} value Target value
- * @return {boolean} Is it of type Function
- * @since 1.0.0
+ * Checks if a given value is a function
+ * @param value The value to check
+ * @returns True if the value is a function, false otherwise
  * @example
- * // returns true
- * isFunction(()=>{})
+ * isFunction(() => {}) // true
+ * isFunction(function() {}) // true
+ * isFunction(42) // false
  */
 const isFunction = (value: unknown): value is () => void => {
   return isType('Function', value)

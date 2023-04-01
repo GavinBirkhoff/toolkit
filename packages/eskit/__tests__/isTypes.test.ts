@@ -88,6 +88,7 @@ describe('isTypes', () => {
     // eslint-disable-next-line @typescript-eslint/no-empty-function
     expect(isFunction(() => {})).toBeTruthy()
     expect(isFunction(func)).toBeTruthy()
+    expect(isFunction({})).toBeFalsy()
   })
   test('isNil', () => {
     expect(isNil(null)).toBeTruthy()
@@ -108,7 +109,6 @@ describe('isTypes', () => {
   test('isObject', () => {
     expect(isObject({})).toBeTruthy()
     expect(isObject(arr)).toBeTruthy()
-    expect(isObject(func)).toBeTruthy()
     expect(isObject(null)).toBeFalsy()
   })
   test('isPrototype', () => {

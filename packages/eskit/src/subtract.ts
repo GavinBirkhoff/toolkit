@@ -1,12 +1,12 @@
 /**
- * Subtraction operation
- * @param {number} a
- * @param {number} b
- * @returns {number}
- * @since 1.0.0
+ * Returns the result of subtracting the second number from the first number.
+ * @param a - The first number to subtract.
+ * @param b - The second number to subtract from the first number.
+ * @returns The result of subtracting the second number from the first number.
  * @example
- * // returns 0.2
- * subtract(0.3, 0.1)
+ * ```typescript
+ * subtract(3, 1); // 2
+ * ```
  */
 const subtract = (a: number, b: number): number => {
   let r1, r2

@@ -2,16 +2,15 @@
  * Creates a throttled function that only invokes the original function at most once per every `delay` milliseconds.
  * The throttled function has optional leading or trailing invocation.
  *
- * @param {Function} fn - The original function to be throttled.
- * @param {number} delay - The number of milliseconds to throttle.
- * @param {Object} [options] - Optional configuration for leading and/or trailing invocation.
- * @param {boolean} [options.leading=false] - Specify invoking the original function on the leading edge of the throttle.
- * @param {boolean} [options.trailing=true] - Specify invoking the original function on the trailing edge of the throttle.
- * @returns {Function} - Throttled function that delays invoking the original function
+ * @param fn - The original function to be throttled.
+ * @param delay - The number of milliseconds to throttle.
+ * @param options - Optional configuration for leading and/or trailing invocation.
+ * @param options.leading - Specify invoking the original function on the leading edge of the throttle. Default is `false`.
+ * @param options.trailing - Specify invoking the original function on the trailing edge of the throttle. Default is `true`.
+ * @returns - Throttled function that delays invoking the original function
  * at most once per every `delay` milliseconds.
  *
  * @example
- * // Usage
  * const throttledFn = throttle((x, y) => {
  *   console.log(x + y);
  * }, 1000, { leading: true });

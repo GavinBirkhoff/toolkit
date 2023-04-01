@@ -1,9 +1,22 @@
 /**
- * Get global this
- * @returns global this
- * @since 1.0.0
+ * Returns the global object for the current runtime environment.
+ *
+ * This function returns the global object for the current runtime environment. It works in both browser and Node.js environments.
+ *
+ * @returns The global object for the current runtime environment.
+ *
+ * @throws An error if the global object cannot be located.
+ *
  * @example
- * getGlobal()
+ * ```
+ * const globalObj = getGlobal()
+ *
+ * if (typeof globalObj.process === 'object') {
+ *   console.log('Running in Node.js')
+ * } else {
+ *   console.log('Running in browser')
+ * }
+ * ```
  */
 const getGlobal = (): unknown => {
   if (typeof self !== 'undefined') {

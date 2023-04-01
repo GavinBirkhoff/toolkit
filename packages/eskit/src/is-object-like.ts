@@ -1,20 +1,13 @@
 /**
- * Determine whether an object is of type ObjectLike
- * @param {*} value Target value
- * @returns {boolean}  Is it of type ObjectLike
- * @since 1.0.0
+ * Checks if a value is object-like, which means it's not null and its type is 'object'.
+ * @param value The value to check.
+ * @returns {boolean} True if the value is object-like, false otherwise.
+ *
  * @example
- * // returns true
- * isObjectLike({})
- * @example
- * // returns true
- * isObjectLike([1, 2, 3])
- * @example
- * // returns false
- * isObjectLike(Function)
- * @example
- * // returns false
- * isObjectLike(null)
+ * isObjectLike({}); // true
+ * isObjectLike([]); // true
+ * isObjectLike(null); // false
+ * isObjectLike(42); // false
  */
 
 const isObjectLike = (value: unknown): boolean => {

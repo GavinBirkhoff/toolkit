@@ -1,30 +1,15 @@
 /**
- * Generate array
- * @param {number} start The start of the range.
- * @param {number|undefined} end The end of the range.
- * @param {number|undefined} [step=1] The value to increment or decrement by.
- * @returns {Array} Returns the range of numbers.
+ * Creates an array of numbers progressing from start up to, but not including, end.
+ * A step of -1 is used if a negative start is specified without an end or step.
+ * @param start - The start of the range.
+ * @param end - The end of the range.
+ * @param step - The value to increment or decrement by.
+ * @returns Returns the range of numbers.
  * @example
- * // returns [0, 1, 2, 3]
- * range(4)
- * @example
- * // returns [0, -1, -2, -3]
- * range(-4)
- * @example
- * // returns [1, 2, 3, 4]
- * range(1, 5)
- * @example
- * // returns [0, 5, 10, 15]
- * range(0, 20, 5)
- * @example
- * // returns [0, -1, -2, -3]
- * range(0, -4, -1)
- * @example
- * // returns [1, 1, 1]
- * range(1, 4, 0)
- * @example
- * // returns []
- * range(0)
+ * range(4); => [0, 1, 2, 3]
+ * range(-4); => [0, -1, -2, -3]
+ * range(1, 5); => [1, 2, 3, 4]
+ * range(0, 20, 5); => [0, 5, 10, 15]
  */
 
 const range = (start: number, end?: number, step?: number): number[] => {

@@ -1,11 +1,16 @@
 /**
- * Determine whether an object is of type Element
- * @param {*} o Target value
- * @returns {boolean}  Is it of type Element
- * @since 1.0.0
+ * Checks if a value is an Element or HTMLDocument object.
+ *
+ * @param o - The value to check.
+ * @returns `true` if the value is an Element or HTMLDocument object, else `false`.
+ *
  * @example
- * //return true
- * isElement(dom)
+ * ```
+ * isElement(document.body) // => true
+ * isElement(document.querySelector('.my-class')) // => true
+ * isElement(window) // => false
+ * isElement('not an element') // => false
+ * ```
  */
 const isElement = (o: unknown): boolean => o instanceof Element || o instanceof HTMLDocument
 export default isElement

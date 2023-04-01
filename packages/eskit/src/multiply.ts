@@ -1,12 +1,11 @@
 /**
- * Multiplication operation
- * @param {number} a One of number
- * @param {number} b One of number
- * @returns {number} Result
- * @since 1.0.0
+ * Multiply two numbers accurately.
+ * @param a - The first number to multiply.
+ * @param b - The second number to multiply.
+ * @returns The result of the multiplication.
  * @example
- * // returns 0.02
- * multiply(0.1,0.2)
+ * const result = multiply(2.3, 4.5);
+ * console.log(result); // Output: 10.35
  */
 const multiply = (a: number, b: number): number => {
   let m = 0

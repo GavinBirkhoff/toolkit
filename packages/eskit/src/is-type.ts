@@ -1,14 +1,12 @@
 /**
- * Determine whether a value is of argument type
- * @param  {string} type Type you in
- * @param  {unknown} value Target value
- * @returns {boolean}  Is it of the type
- * @since 1.0.0
+ * Checks if a value's type matches the specified type string.
+ * @param type - The type string to check against.
+ * @param value - The value to check the type of.
+ * @returns True if the value's type matches the specified type string, false otherwise.
  * @example
- * // returns true
- * isType('String', '')
+ * isType('String', 'hello'); // true
+ * isType('Array', {}); // false
  */
-
 const isType = (type: string, value: unknown): boolean =>
   Object.prototype.toString.call(value) === '[object ' + type + ']'
 export default isType

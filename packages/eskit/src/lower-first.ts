@@ -1,14 +1,13 @@
 import toString from './to-string'
 /**
- * Make first letters lower
- * @param  {string} value Target value
- * @returns {string}
- * @since 1.0.0
+ * Converts the first character of `value` to lower case.
+ *
+ * @param value The string to convert.
+ * @returns Returns the converted string.
+ *
  * @example
- * // returns 'aB'
- * lowerFirst('AB')
+ * lowerFirst('Apple'); // => 'apple'
  */
-
 const lowerFirst = (value: string): string => {
   const str = toString(value)
   return str.charAt(0).toLowerCase() + str.substring(1)

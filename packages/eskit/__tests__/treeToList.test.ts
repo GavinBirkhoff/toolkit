@@ -1,23 +1,43 @@
 import { treeToList } from '../src'
 describe('treeToList', () => {
-  test('list to tree', () => {
-    const arr = [
-      { id: 1, label: 'a1', pid: null },
-      { id: 2, label: 'b1', pid: 1 },
-      { id: 3, label: 'b2', pid: 1 }
+  interface IItem<T> {
+    children?: T[]
+  }
+
+  class Item implements IItem<Item> {
+    constructor(public value: string, public children?: Item[]) {}
+  }
+
+  it('should flatten a tree into a list', () => {
+    const tree = [
+      new Item('a', [new Item('b', [new Item('d')]), new Item('c', [new Item('e'), new Item('f')])]),
+      new Item('g')
     ]
-    const arrTree = [
-      {
-        children: [
-          { children: [], id: 2, label: 'b1', pid: 1 },
-          { children: [], id: 3, label: 'b2', pid: 1 }
-        ],
-        id: 1,
-        label: 'a1',
-        pid: null
-      }
+
+    const expected = [
+      new Item('d'),
+      new Item('b'),
+      new Item('e'),
+      new Item('f'),
+      new Item('c'),
+      new Item('a'),
+      new Item('g')
     ]
-    const newTree = treeToList<any>(arrTree)
-    expect(newTree).toEqual(arr)
+
+    const result = treeToList(tree)
+
+    expect(result).toEqual(expected)
+  })
+
+  it('should handle an empty tree', () => {
+    const tree: Item[] = []
+    const result = treeToList(tree)
+    expect(result).toEqual([])
+  })
+
+  it('should handle a tree with a single node', () => {
+    const tree = [new Item('a')]
+    const result = treeToList(tree)
+    expect(result).toEqual(tree)
   })
 })

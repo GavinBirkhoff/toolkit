@@ -1,14 +1,19 @@
 const objectProto = Object.prototype
 /**
- * Determine whether an object is of type Prototype
- * @param {*} value Target value
- * @returns {boolean}  Is it of type Prototype
- * @since 1.0.0
+ * Checks if `value` is likely a prototype object.
+ *
+ * @param value - The value to check.
+ * @returns Whether `value` is a prototype object.
  * @example
- * // returns true
- * isPrototype(Reflect.getPrototypeOf({}))
+ *
+ * function Foo() {}
+ * isPrototype(Foo.prototype)
+ * // => true
+ *
+ * isPrototype({})
+ * // => false
  */
-const isPrototype = (value: any): boolean => {
+const isPrototype = (value: unknown): boolean => {
   const Ctor = value && value.constructor
   const proto = (typeof Ctor === 'function' && Ctor.prototype) || objectProto
   return value === proto

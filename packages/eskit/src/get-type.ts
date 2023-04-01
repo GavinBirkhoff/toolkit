@@ -1,13 +1,20 @@
 const toString = Object.prototype.toString
 
 /**
- * @description getType
- * @param  {*} value
- * @returns {string}
- * @since 1.0.0
+ * Get the type of a value
+ *
+ * @param value - The value to get the type of
+ * @returns The type of the value
+ *
  * @example
- * // returns Array
- * getType([])
+ * ```
+ * getType(42) // "Number"
+ * getType("hello") // "String"
+ * getType([]) // "Array"
+ * getType(null) // "Null"
+ * getType(undefined) // "Undefined"
+ * getType({}) // "Object"
+ * ```
  */
 const getType = (value: any): string => {
   let val

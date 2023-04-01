@@ -1,15 +1,10 @@
 import { formatNumber } from '../src'
-describe('formatNumber', () => {
-  test(' should be 1,000.00', () => {
-    expect(formatNumber(1000, ',', 2)).toBe('1,000.00')
-  })
-  test(' should be 1,000,000.00', () => {
-    expect(formatNumber(1000000, ',', 2)).toBe('1,000,000.00')
-  })
-  test(' should be 10.0', () => {
-    expect(formatNumber(10, ',', 1)).toBe('10.0')
-  })
-  test(' should be 10', () => {
-    expect(formatNumber(10, ',')).toBe('10')
-  })
+test('formatNumber formats a number with the specified decimal separator and digit number', () => {
+  expect(formatNumber(123456.789, ',', 2)).toBe('123,456.79')
+  expect(formatNumber(123456.789, '', 2)).toBe('123456.79')
+  expect(formatNumber(123456.789, '.', 2)).toBe('123.456.79')
+  expect(formatNumber(123456.789, ',', 0)).toBe('123,457')
+  expect(formatNumber(123456.789, ',', -1)).toBe('123,456.789')
+  // @ts-expect-error
+  expect(formatNumber('abc', ',', 2)).toBe('abc')
 })

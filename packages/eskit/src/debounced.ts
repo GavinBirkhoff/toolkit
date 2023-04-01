@@ -1,11 +1,3 @@
-/**
- * The type of a function that has been debounced.
- *
- * @typedef {{
- *   (...args: any[]): void,
- *   cancel: () => void
- * }} DebouncedFn
- */
 type DebouncedFn = {
   (...args: any[]): void
   cancel: () => void
@@ -14,11 +6,10 @@ type DebouncedFn = {
 /**
  * Creates a debounced function that waits for the specified delay after the last call before executing.
  *
- * @template Args The type of the function arguments list.
- * @param {Function} fn= The function to wrap.
- * @param {number} delay The delay time (in milliseconds) before the function is executed.
- * @param {boolean} [immediate=false] Whether to execute the function immediately on the first call.
- * @returns {DebouncedFn} The wrapped debounced function.
+ * @param fn The function to wrap.
+ * @param delay The delay time (in milliseconds) before the function is executed.
+ * @param immediate Whether to execute the function immediately on the first call.
+ * @returns The wrapped debounced function.
  */
 const debounced = <Args extends any[]>(
   fn: (...args: Args) => void,
