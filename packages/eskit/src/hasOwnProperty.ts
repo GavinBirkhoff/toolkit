@@ -15,5 +15,5 @@
  * hasOwnProperty(obj, 'toString') // false
  * ```
  */
-const hasOwnProperty = Object.prototype.hasOwnProperty
+const hasOwnProperty = (obj: unknown, key: PropertyKey): boolean => Object.prototype.hasOwnProperty.call(obj, key)
 export default hasOwnProperty

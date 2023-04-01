@@ -1,3 +1,4 @@
+import hasOwnProperty from './hasOwnProperty'
 import isArray from './is-array'
 import isDate from './is-date'
 import isObject from './is-object'
@@ -35,7 +36,7 @@ function deepClone<T>(obj: T): T {
       clonedMap.set(value, clonedObj)
 
       for (const key in value) {
-        if (Object.prototype.hasOwnProperty.call(value, key)) {
+        if (hasOwnProperty(value, key)) {
           clonedObj[key] = cloneValue(value[key])
         }
       }

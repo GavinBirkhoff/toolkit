@@ -44,7 +44,7 @@ const isEmpty = (value: any): boolean => {
     return !Object.keys(value).length
   }
   for (const key in value) {
-    if (hasOwnProperty.call(value, key)) {
+    if (hasOwnProperty(value, key)) {
       return false
     }
   }

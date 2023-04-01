@@ -18,7 +18,7 @@ import { ObjectType } from './types'
  */
 const extendDeep = (parent: ObjectType<any>, child: ObjectType<any> = {}): ObjectType<any> => {
   for (const i in parent) {
-    if (hasOwnProperty.call(parent, i)) {
+    if (hasOwnProperty(parent, i)) {
       if (typeof parent[i] === 'object') {
         child[i] = isArray(parent[i]) ? [] : {}
         extendDeep(parent[i], child[i])

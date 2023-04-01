@@ -12,7 +12,7 @@ import isArray from './is-array'
  */
 const each = <T>(
   collection: T[] | Record<string, T>,
-  func: (value: T, key: string | number, collection: Record<string, T> | T[]) => any
+  func: (value: T, key?: string | number, collection?: Record<string, T> | T[]) => any
 ): void => {
   if (!collection) {
     return

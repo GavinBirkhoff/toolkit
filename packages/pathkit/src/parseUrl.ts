@@ -20,7 +20,7 @@ const parseQueryString = (str: string): { [key: string]: string | string[] } => 
     const decodedValue = decodeURIComponent(value ?? '')
 
     if (decodedKey && decodedValue !== undefined) {
-      if (hasOwnProperty.call(result, decodedKey)) {
+      if (hasOwnProperty(result, decodedKey)) {
         result[decodedKey] = ([] as string[]).concat(result[decodedKey], decodedValue)
       } else {
         result[decodedKey] = decodedValue

@@ -1,4 +1,4 @@
-import { each, isEmpty, hasOwnProperty } from 'ts-copilot'
+import { each, isEmpty } from 'ts-copilot'
 
 /**
  * Sets the style properties of an HTML element.
@@ -20,7 +20,7 @@ const setStyleProps = <T extends HTMLElement>(element: T | null, props: Partial<
     return
   }
 
-  each(props, (value: string, key: string) => {
+  each(props as Record<string, string>, (value: any, key: any) => {
     let cssName = key.replace(/([A-Z])/g, '-$1').toLowerCase()
     const { style } = element
     if (cssName in style) {
