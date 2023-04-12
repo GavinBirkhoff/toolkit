@@ -30,9 +30,11 @@ dom-copilot - v1.0.0-Beta
 - [getClass](README.md#getclass)
 - [getCssVariable](README.md#getcssvariable)
 - [getOffsetPosition](README.md#getoffsetposition)
+- [getScrollPosition](README.md#getscrollposition)
 - [getStyleProps](README.md#getstyleprops)
 - [getTextPixelWidth](README.md#gettextpixelwidth)
 - [hasClass](README.md#hasclass)
+- [isBrowser](README.md#isbrowser)
 - [preload](README.md#preload)
 - [rem](README.md#rem)
 - [removeClass](README.md#removeclass)
@@ -41,6 +43,7 @@ dom-copilot - v1.0.0-Beta
 - [removeEvent](README.md#removeevent)
 - [requestAnimationFrame](README.md#requestanimationframe)
 - [require](README.md#require)
+- [scrollTo](README.md#scrollto)
 - [setClass](README.md#setclass)
 - [setCssVariable](README.md#setcssvariable)
 - [setOpacity](README.md#setopacity)
@@ -80,7 +83,7 @@ addClass(el, 'new-class-1', 'new-class-2', 'example-class');
 
 #### Defined in
 
-[addClass.ts:15](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/addClass.ts#L15)
+[addClass.ts:15](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/addClass.ts#L15)
 
 ___
 
@@ -115,7 +118,7 @@ addCss('.my-class', { color: 'red', backgroundColor: 'blue' }, 'my-stylesheet')
 
 #### Defined in
 
-[addCss.ts:23](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/addCss.ts#L23)
+[addCss.ts:23](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/addCss.ts#L23)
 
 ___
 
@@ -162,7 +165,7 @@ A function to remove the event listener.
 
 #### Defined in
 
-[addEvent.ts:19](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/addEvent.ts#L19)
+[addEvent.ts:19](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/addEvent.ts#L19)
 
 ___
 
@@ -178,7 +181,7 @@ Returns a boolean indicating if the current environment is a browser environment
 
 #### Defined in
 
-[canUseDom.ts:4](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/canUseDom.ts#L4)
+[canUseDom.ts:4](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/canUseDom.ts#L4)
 
 ___
 
@@ -215,7 +218,7 @@ jest
 
 #### Defined in
 
-[cancelAnimationFrame.ts:10](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/cancelAnimationFrame.ts#L10)
+[cancelAnimationFrame.ts:10](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/cancelAnimationFrame.ts#L10)
 
 ___
 
@@ -260,7 +263,7 @@ The newly created element.
 
 #### Defined in
 
-[createDom.ts:24](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/createDom.ts#L24)
+[createDom.ts:24](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/createDom.ts#L24)
 
 ___
 
@@ -297,7 +300,7 @@ downloadByBlob(buffer, 'my-file');
 
 #### Defined in
 
-[downloadByBlob.ts:13](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/downloadByBlob.ts#L13)
+[downloadByBlob.ts:13](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/downloadByBlob.ts#L13)
 
 ___
 
@@ -326,7 +329,7 @@ downloadByUrl('https://example.com/my-file.xlsx', 'application/vnd.openxmlformat
 
 #### Defined in
 
-[downloadByUrl.ts:8](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/downloadByUrl.ts#L8)
+[downloadByUrl.ts:8](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/downloadByUrl.ts#L8)
 
 ___
 
@@ -356,7 +359,7 @@ emptyDom(el)
 
 #### Defined in
 
-[emptyDom.ts:11](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/emptyDom.ts#L11)
+[emptyDom.ts:11](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/emptyDom.ts#L11)
 
 ___
 
@@ -389,7 +392,7 @@ The client (x, y) coordinates of the element.
 
 #### Defined in
 
-[getBoundingClient.ts:18](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/getBoundingClient.ts#L18)
+[getBoundingClient.ts:18](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/getBoundingClient.ts#L18)
 
 ___
 
@@ -425,7 +428,7 @@ A string containing class names
 
 #### Defined in
 
-[getClass.ts:15](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/getClass.ts#L15)
+[getClass.ts:15](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/getClass.ts#L15)
 
 ___
 
@@ -461,7 +464,7 @@ The value of the CSS variable.
 
 #### Defined in
 
-[getCssVariable.ts:14](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/getCssVariable.ts#L14)
+[getCssVariable.ts:14](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/getCssVariable.ts#L14)
 
 ___
 
@@ -499,7 +502,56 @@ The offset (left, top) position of the element relative to its parent.
 
 #### Defined in
 
-[getOffsetPosition.ts:13](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/getOffsetPosition.ts#L13)
+[getOffsetPosition.ts:13](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/getOffsetPosition.ts#L13)
+
+___
+
+### getScrollPosition
+
+▸ **getScrollPosition**(`el`): `Position`
+
+Gets the scroll position of the specified target element.
+
+**`Remarks`**
+
+This function returns the horizontal and vertical scroll position of the specified target element, which can be
+an HTML element or the window or document object.
+
+**`Example`**
+
+```typescript
+import { getScrollPosition } from "dom-copilot";
+
+// Get scroll position for window object
+const windowScrollPosition = getScrollPosition(window);
+console.log(`Window scroll position: left = ${windowScrollPosition.left}, top = ${windowScrollPosition.top}`);
+
+// Get scroll position for document object
+const documentScrollPosition = getScrollPosition(document);
+console.log(`Document scroll position: left = ${documentScrollPosition.left}, top = ${documentScrollPosition.top}`);
+
+// Get scroll position for HTML element
+const element = document.getElementById("my-element");
+const elementScrollPosition = getScrollPosition(element);
+console.log(`Element scroll position: left = ${elementScrollPosition.left}, top = ${elementScrollPosition.top}`);
+```
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `el` | `TargetType` | The target element to get the scroll position for. |
+
+#### Returns
+
+`Position`
+
+A `Position` object that contains the horizontal and vertical scroll position of the specified target
+element.
+
+#### Defined in
+
+[getScrollPosition.ts:35](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/getScrollPosition.ts#L35)
 
 ___
 
@@ -544,7 +596,7 @@ If `propName` is specified, returns the value of that property. Otherwise, retur
 
 #### Defined in
 
-[getStyleProps.ts:38](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/getStyleProps.ts#L38)
+[getStyleProps.ts:38](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/getStyleProps.ts#L38)
 
 ___
 
@@ -584,7 +636,7 @@ The pixel width of the text in the specified font.
 
 #### Defined in
 
-[getTextPixelWidth.ts:21](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/getTextPixelWidth.ts#L21)
+[getTextPixelWidth.ts:21](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/getTextPixelWidth.ts#L21)
 
 ___
 
@@ -622,7 +674,42 @@ If the element has the specified CSS class, returns true; otherwise, returns fal
 
 #### Defined in
 
-[hasClass.ts:17](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/hasClass.ts#L17)
+[hasClass.ts:17](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/hasClass.ts#L17)
+
+___
+
+### isBrowser
+
+▸ **isBrowser**(): `boolean`
+
+Check if the code is running in a browser environment.
+
+**`Remarks`**
+
+This function detects if the code is running in a browser by checking for the presence of `window` and `document`
+objects, and whether `document.createElement` function is available.
+
+**`Example`**
+
+```typescript
+import { isBrowser } from "./browserDetection";
+
+if (isBrowser()) {
+    console.log("This is running in a browser!");
+} else {
+    console.log("This is not a browser environment!");
+}
+```
+
+#### Returns
+
+`boolean`
+
+A boolean value indicating whether the code is running in a browser environment.
+
+#### Defined in
+
+[isBrowser.ts:21](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/isBrowser.ts#L21)
 
 ___
 
@@ -642,7 +729,7 @@ ___
 
 #### Defined in
 
-[preload.ts:23](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/preload.ts#L23)
+[preload.ts:23](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/preload.ts#L23)
 
 ___
 
@@ -673,7 +760,7 @@ rem(750, { maxWith: 2000, minWith: 375 });
 
 #### Defined in
 
-[rem.ts:17](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/rem.ts#L17)
+[rem.ts:17](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/rem.ts#L17)
 
 ___
 
@@ -704,7 +791,7 @@ removeClass(target, 'active');
 
 #### Defined in
 
-[removeClass.ts:12](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/removeClass.ts#L12)
+[removeClass.ts:12](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/removeClass.ts#L12)
 
 ___
 
@@ -738,7 +825,7 @@ removeCssVariable('--main-bg-color', element);
 
 #### Defined in
 
-[removeCssVariable.ts:13](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/removeCssVariable.ts#L13)
+[removeCssVariable.ts:13](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/removeCssVariable.ts#L13)
 
 ___
 
@@ -770,7 +857,7 @@ removeDom(document.getElementById('my-element'));
 
 #### Defined in
 
-[removeDom.ts:12](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/removeDom.ts#L12)
+[removeDom.ts:12](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/removeDom.ts#L12)
 
 ___
 
@@ -814,7 +901,7 @@ removeEvent(el, 'click', callback, { useCapture: false });
 
 #### Defined in
 
-[removeEvent.ts:30](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/removeEvent.ts#L30)
+[removeEvent.ts:30](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/removeEvent.ts#L30)
 
 ___
 
@@ -865,7 +952,7 @@ A numeric ID which can be passed to cancelAnimationFrame() to cancel the request
 
 #### Defined in
 
-[requestAnimationFrame.ts:31](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/requestAnimationFrame.ts#L31)
+[requestAnimationFrame.ts:31](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/requestAnimationFrame.ts#L31)
 
 ___
 
@@ -900,7 +987,27 @@ requireScript('path/to/script.js', () => {
 
 #### Defined in
 
-[require.ts:15](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/require.ts#L15)
+[require.ts:15](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/require.ts#L15)
+
+___
+
+### scrollTo
+
+▸ **scrollTo**(`«destructured»`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `«destructured»` | `ScrollToOptions` |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+scrollTo.ts:34
 
 ___
 
@@ -935,7 +1042,7 @@ setClass(myEl, 'my-class');
 
 #### Defined in
 
-[setClass.ts:13](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/setClass.ts#L13)
+[setClass.ts:13](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/setClass.ts#L13)
 
 ___
 
@@ -970,7 +1077,7 @@ setCssVariable('--main-bg-color', '#ffffff', element);
 
 #### Defined in
 
-[setCssVariable.ts:14](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/setCssVariable.ts#L14)
+[setCssVariable.ts:14](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/setCssVariable.ts#L14)
 
 ___
 
@@ -1004,7 +1111,7 @@ setOpacity(element, 0.5);
 
 #### Defined in
 
-[setOpacity.ts:14](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/setOpacity.ts#L14)
+[setOpacity.ts:14](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/setOpacity.ts#L14)
 
 ___
 
@@ -1046,7 +1153,7 @@ void
 
 #### Defined in
 
-[setStyleProps.ts:18](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/setStyleProps.ts#L18)
+[setStyleProps.ts:18](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/setStyleProps.ts#L18)
 
 ___
 
@@ -1077,7 +1184,7 @@ toBack(firstDiv);
 
 #### Defined in
 
-[toBack.ts:12](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/toBack.ts#L12)
+[toBack.ts:12](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/toBack.ts#L12)
 
 ___
 
@@ -1110,4 +1217,4 @@ toFront(newDiv);
 
 #### Defined in
 
-[toFront.ts:14](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/domkit/src/toFront.ts#L14)
+[toFront.ts:14](https://github.com/GavinBirkhoff/toolkit/blob/c5d04aa/packages/domkit/src/toFront.ts#L14)
