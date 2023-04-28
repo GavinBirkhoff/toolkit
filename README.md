@@ -55,3 +55,7 @@ I hope that the excellent unit methods of the entire front-end community can be 
 each parameter type
 
 idleIterator test
+
+getBrowser
+
+getPlatform
