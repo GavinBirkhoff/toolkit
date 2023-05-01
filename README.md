@@ -58,4 +58,4 @@ idleIterator test
 
 getBrowser
 
-getPlatform
+getPlatform test
