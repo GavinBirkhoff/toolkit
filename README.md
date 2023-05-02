@@ -56,6 +56,6 @@ each parameter type
 
 idleIterator test
 
-getBrowser
+getBrowser test
 
 getPlatform test
