@@ -1,8 +1,7 @@
 {
   "name": "toolkit",
-  "version": "1.0.0-beta.0",
+  "private": "true",
   "description": "Store more front-end related tool Libraries",
-  "main": "index.js",
   "scripts": {
     "prebuild": "npm install && lerna bootstrap",
     "bootstrap": "lerna bootstrap",
@@ -32,10 +31,6 @@
       "prettier .prettierrc.js --write"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GavinBirkhoff/toolkit.git"
-  },
   "keywords": [
     "util",
     "toolkit",
@@ -49,10 +44,6 @@
   ],
   "author": "Gavin Birkhoff <gavinbirkhoff@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/GavinBirkhoff/toolkit/issues"
-  },
-  "homepage": "https://github.com/GavinBirkhoff/toolkit#readme",
   "devDependencies": {
     "@babel/cli": "^7.14.5",
     "@babel/core": "^7.21.0",

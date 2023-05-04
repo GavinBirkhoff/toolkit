@@ -41,6 +41,11 @@
   "bugs": {
     "url": "https://github.com/GavinBirkhoff/toolkit/issues"
   },
+  "homepage": "https://github.com/GavinBirkhoff/toolkit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GavinBirkhoff/toolkit.git"
+  },
   "devDependencies": {
     "docdash": "^1.2.0",
     "jsdoc-to-markdown": "^7.1.1"

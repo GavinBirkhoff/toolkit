@@ -39,6 +39,11 @@
   "bugs": {
     "url": "https://github.com/GavinBirkhoff/toolkit/issues"
   },
+  "homepage": "https://github.com/GavinBirkhoff/toolkit#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GavinBirkhoff/toolkit.git"
+  },
   "dependencies": {
     "ts-copilot": "^1.0.0-Beta"
   },
