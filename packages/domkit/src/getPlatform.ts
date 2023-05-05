@@ -1,10 +1,3 @@
-/**
- * Get the platform string of the user's operating system.
- * @returns {Platform} The platform string.
- * @example
- * const platform = getPlatform();
- * console.log(platform); // Outputs: Windows / MacOS / Linux / Android / iOS / Unknown
- */
 type Platform = 'Windows' | 'MacOS' | 'Linux' | 'Android' | 'iOS' | 'Unknown'
 type PlatformKeywords = {
   win: Platform
@@ -16,8 +9,13 @@ type PlatformKeywords = {
   ipod: Platform
 }
 /**
- * Gets the platform string of the user's operating system.
+ * Get the platform string of the user's operating system.
+ * @experimental
  * @returns {Platform} The platform string.
+ * @example
+ * const platform = getPlatform();
+ * console.log(platform); // Outputs: Windows / MacOS / Linux / Android / iOS / Unknown
+ *
  */
 const getPlatform = (): Platform => {
   // Get the user agent string and convert it to lowercase.

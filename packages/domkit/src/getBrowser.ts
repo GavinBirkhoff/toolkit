@@ -13,11 +13,13 @@ enum BrowserName {
 
 /**
  * Gets the name of the current user's web browser.
+ * @experimental
  * @returns {BrowserName} An enumerated value representing the current browser.
  *
  * @example
  * const browser: BrowserName = getBrowser();
  * console.log(`Your browser is: ${browser}`);
+ *
  */
 const getBrowser = (): BrowserName => {
   const ua = navigator.userAgent.toLowerCase()

@@ -60,7 +60,7 @@ True if it's an absolute path, false otherwise.
 
 #### Defined in
 
-[isAbsolute.ts:18](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/pathkit/src/isAbsolute.ts#L18)
+[isAbsolute.ts:18](https://github.com/GavinBirkhoff/toolkit/blob/7fa8b86/packages/pathkit/src/isAbsolute.ts#L18)
 
 ___
 
@@ -95,7 +95,7 @@ A combined path string.
 
 #### Defined in
 
-[join.ts:13](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/pathkit/src/join.ts#L13)
+[join.ts:13](https://github.com/GavinBirkhoff/toolkit/blob/7fa8b86/packages/pathkit/src/join.ts#L13)
 
 ___
 
@@ -131,7 +131,7 @@ The normalized path.
 
 #### Defined in
 
-[normalize.ts:17](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/pathkit/src/normalize.ts#L17)
+[normalize.ts:17](https://github.com/GavinBirkhoff/toolkit/blob/7fa8b86/packages/pathkit/src/normalize.ts#L17)
 
 ___
 
@@ -186,4 +186,4 @@ An object containing the query and hash parameters of the URL.
 
 #### Defined in
 
-[parseUrl.ts:64](https://github.com/GavinBirkhoff/toolkit/blob/00f8cfc/packages/pathkit/src/parseUrl.ts#L64)
+[parseUrl.ts:64](https://github.com/GavinBirkhoff/toolkit/blob/7fa8b86/packages/pathkit/src/parseUrl.ts#L64)
