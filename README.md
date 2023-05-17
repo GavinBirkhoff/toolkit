@@ -61,3 +61,5 @@ getBrowser test
 getPlatform test
 
 isScrollEnd test
+
+observeScroll test
