@@ -59,3 +59,5 @@ idleIterator test
 getBrowser test
 
 getPlatform test
+
+isScrollEnd test
