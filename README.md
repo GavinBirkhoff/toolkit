@@ -63,3 +63,5 @@ getPlatform test
 isScrollEnd test
 
 observeScroll test
+
+isIE test
