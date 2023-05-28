@@ -26,7 +26,7 @@ dom-copilot - v1.0.0-Beta
 - [downloadByBlob](README.md#downloadbyblob)
 - [downloadByUrl](README.md#downloadbyurl)
 - [emptyDom](README.md#emptydom)
-- [getBoundingClient](README.md#getboundingclient)
+- [getBoundingClientPosition](README.md#getboundingclient)
 - [getBrowser](README.md#getbrowser)
 - [getClass](README.md#getclass)
 - [getCssVariable](README.md#getcssvariable)
@@ -365,9 +365,9 @@ emptyDom(el)
 
 ___
 
-### getBoundingClient
+### getBoundingClientPosition
 
-▸ **getBoundingClient**(`ele`): `ClientXY`
+▸ **getBoundingClientPosition**(`ele`): `ClientXY`
 
 Gets the client (x, y) coordinates of the specified element relative to the viewport.
 
@@ -376,7 +376,7 @@ Gets the client (x, y) coordinates of the specified element relative to the view
 ```ts
 // get the bounding client of the element with id "my-ele"
 const el = document.getElementById('my-ele')
-const bounds = getBoundingClient(el)
+const bounds = getBoundingClientPosition(el)
 console.log(bounds.x, bounds.y)
 ```
 
@@ -394,7 +394,7 @@ The client (x, y) coordinates of the element.
 
 #### Defined in
 
-[getBoundingClient.ts:18](https://github.com/GavinBirkhoff/toolkit/blob/7fa8b86/packages/domkit/src/getBoundingClient.ts#L18)
+[getBoundingClientPosition.ts:18](https://github.com/GavinBirkhoff/toolkit/blob/7fa8b86/packages/domkit/src/getBoundingClientPosition.ts#L18)
 
 ___
 

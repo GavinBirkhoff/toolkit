@@ -1,6 +1,6 @@
-import { getBoundingClient, createDom, setStyleProps } from '../src'
+import { getBoundingClientPosition, createDom, setStyleProps } from '../src'
 
-describe('getBoundingClient', () => {
+describe('getBoundingClientPosition', () => {
   let container: HTMLElement
   let child: HTMLElement
 
@@ -26,7 +26,7 @@ describe('getBoundingClient', () => {
   })
 
   test('returns the correct bounding client for an element', () => {
-    const bounds = getBoundingClient(child)
+    const bounds = getBoundingClientPosition(child)
     // 浏览器环境TODO
     // expect(bounds.x).toBe(75)
     // expect(bounds.y).toBe(75)
