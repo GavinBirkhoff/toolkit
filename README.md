@@ -65,3 +65,7 @@ isScrollEnd test
 observeScroll test
 
 isIE test
+
+getScrollTop
+
+getScrollLeft
