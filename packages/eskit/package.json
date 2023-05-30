@@ -36,7 +36,10 @@
     "js-toolkit",
     "ts-toolkit"
   ],
-  "author": "Gavin Birkhoff <gavinbirkhoff@gmail.com>",
+  "author": {
+    "name": "GavinBirkhoff",
+    "email": "gavinbirkhoff@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/GavinBirkhoff/toolkit/issues"
