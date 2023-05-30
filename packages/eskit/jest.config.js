@@ -1,10 +1,10 @@
-export default {
+module.exports = {
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
-    '\\.[j]sx?$': 'babel-jest',
+    '\\.[j]sx?$': 'babel-jest'
   },
   testRegex: '(/__test__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node']
   // collectCoverageFrom: ['src/**/!(*.d).{js,ts}'],
   // reporters: [
   //   'default',
@@ -16,4 +16,4 @@ export default {
   //     }
   //   ]
   // ]
-};
+}
