@@ -66,6 +66,8 @@ observeScroll test
 
 isIE test
 
-getScrollTop
+getScrollTop test
 
-getScrollLeft
+getScrollLeft test
+
+getScrollPosition test
