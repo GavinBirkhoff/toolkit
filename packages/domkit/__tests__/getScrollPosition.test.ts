@@ -1,6 +1,11 @@
 import { getScrollPosition } from '../src'
 
 describe('getScrollPosition', () => {
+  beforeAll(() => {
+    const scrollToMock = jest.fn()
+    window.scrollTo = scrollToMock
+  })
+
   test('returns the correct scroll position for window object', () => {
     // expect(getScrollPosition(window)).toEqual({ left: 0, top: 0 })
     window.scrollTo(500, 500)
