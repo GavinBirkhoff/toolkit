@@ -1,6 +1,6 @@
 # Toolkit
 
-This's a toolkit has contained libraries such as dom, path and ts etc.
+🧰 Toolkit which including libraries dom (dom-copilot), path (path-copilot) add ts (ts-copilot), etc.🪛🔧🔨
 
 ## ts-copilot
 
@@ -22,7 +22,7 @@ Workspace `./packages/domkit`
 ### Usage
 
 ```shell
-npm i path-copilot
+npm i dom-copilot
 ```
 
 ## path-copilot
@@ -52,22 +52,22 @@ I hope that the excellent unit methods of the entire front-end community can be 
 
 ## TODO
 
-each parameter type
+- [ ] each parameter type
 
-idleIterator test
+- [ ] idleIterator test
 
-getBrowser test
+- [ ] getBrowser test
 
-getPlatform test
+- [ ] getPlatform test
 
-isScrollEnd test
+- [ ] isScrollEnd test
 
-observeScroll test
+- [ ] observeScroll test
 
-isIE test
+- [ ] isIE test
 
-getScrollTop test
+- [ ] getScrollTop test
 
-getScrollLeft test
+- [ ] getScrollLeft test
 
-getScrollPosition test
+- [ ] getScrollPosition test
