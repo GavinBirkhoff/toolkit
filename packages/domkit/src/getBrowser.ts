@@ -2,7 +2,7 @@
  * Enumerated type representing browser names.
  * Each value corresponds to a specific browser.
  */
-enum BrowserName {
+export enum BrowserName {
   CHROME = 'Chrome',
   FIREFOX = 'Firefox',
   EDGE = 'Edge',
@@ -22,7 +22,7 @@ enum BrowserName {
  *
  */
 const getBrowser = (): BrowserName => {
-  const ua = navigator.userAgent.toLowerCase()
+  const ua = window.navigator.userAgent.toLowerCase()
 
   if (~ua.indexOf('chrome')) {
     return BrowserName.CHROME
