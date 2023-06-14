@@ -64,8 +64,6 @@ I hope that the excellent unit methods of the entire front-end community can be 
 
 - [ ] observeScroll test
 
-- [ ] isIE test
-
 - [ ] getScrollTop test
 
 - [ ] getScrollLeft test
