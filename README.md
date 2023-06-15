@@ -52,13 +52,7 @@ I hope that the excellent unit methods of the entire front-end community can be 
 
 ## TODO
 
-- [ ] each parameter type
-
 - [ ] idleIterator test
-
-- [ ] getBrowser test
-
-- [ ] getPlatform test
 
 - [ ] isScrollEnd test
 
