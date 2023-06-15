@@ -1,5 +1,5 @@
-type Platform = 'Windows' | 'MacOS' | 'Linux' | 'Android' | 'iOS' | 'Unknown'
-type PlatformKeywords = {
+export type Platform = 'Windows' | 'MacOS' | 'Linux' | 'Android' | 'iOS' | 'Unknown'
+export type PlatformKeywords = {
   win: Platform
   mac: Platform
   linux: Platform
@@ -22,13 +22,13 @@ const getPlatform = (): Platform => {
   const userAgent = window.navigator.userAgent.toLowerCase()
   // Define an object of platform keywords and their corresponding platform strings.
   const platformKeywords: PlatformKeywords = {
+    iphone: 'iOS',
+    ipad: 'iOS',
+    ipod: 'iOS',
     win: 'Windows',
     mac: 'MacOS',
     linux: 'Linux',
-    android: 'Android',
-    iphone: 'iOS',
-    ipad: 'iOS',
-    ipod: 'iOS'
+    android: 'Android'
   }
 
   // Find the first platform keyword that appears in the user agent string.
