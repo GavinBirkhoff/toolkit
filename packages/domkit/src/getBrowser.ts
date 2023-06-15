@@ -23,19 +23,19 @@ export enum BrowserName {
  */
 const getBrowser = (): BrowserName => {
   const ua = window.navigator.userAgent.toLowerCase()
-
-  if (~ua.indexOf('chrome')) {
-    return BrowserName.CHROME
-  } else if (~ua.indexOf('firefox')) {
-    return BrowserName.FIREFOX
-  } else if (~ua.indexOf('edge')) {
-    return BrowserName.EDGE
-  } else if (~ua.indexOf('safari')) {
-    return BrowserName.SAFARI
-  } else if (~ua.indexOf('opera') || ~ua.indexOf('opr')) {
-    return BrowserName.OPERA
-  } else {
-    return BrowserName.UNKNOWN
+  switch (true) {
+    case ua.includes('edg'):
+      return BrowserName.EDGE
+    case ua.includes('opera') || ua.includes('opr'):
+      return BrowserName.OPERA
+    case ua.includes('chrome'):
+      return BrowserName.CHROME
+    case ua.includes('firefox'):
+      return BrowserName.FIREFOX
+    case ua.includes('safari'):
+      return BrowserName.SAFARI
+    default:
+      return BrowserName.UNKNOWN
   }
 }
 
