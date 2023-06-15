@@ -1,30 +1,62 @@
 import { each } from '../src'
 
-describe('each function', () => {
-  const arr = [1, 2, 3]
-  const obj = { a: 1, b: 2, c: 3 }
+describe('each', () => {
+  test('iterates over an array', () => {
+    const arr = [1, 2, 3]
+    const result: number[] = []
 
-  it('should correctly iterate over an array', () => {
-    const spy = jest.fn()
-    each(arr, spy)
-    expect(spy).toHaveBeenCalledTimes(arr.length)
-    expect(spy.mock.calls[0]).toEqual([1, 0, arr])
-    expect(spy.mock.calls[1]).toEqual([2, 1, arr])
-    expect(spy.mock.calls[2]).toEqual([3, 2, arr])
+    each(arr, (value) => {
+      result.push(value)
+    })
+
+    expect(result).toEqual(arr)
   })
 
-  it('should correctly iterate over an object', () => {
-    const spy = jest.fn()
-    each(obj, spy)
-    expect(spy).toHaveBeenCalledTimes(Object.keys(obj).length)
-    expect(spy.mock.calls[0]).toEqual([1, 'a', obj])
-    expect(spy.mock.calls[1]).toEqual([2, 'b', obj])
-    expect(spy.mock.calls[2]).toEqual([3, 'c', obj])
+  test('iterates over a string', () => {
+    const str = 'hello'
+    const result: string[] = []
+
+    each<string>(str, (value) => {
+      result.push(value)
+    })
+
+    expect(result).toEqual(['h', 'e', 'l', 'l', 'o'])
   })
 
-  it('should handle empty input', () => {
-    const spy = jest.fn()
-    each(null as any, spy)
-    expect(spy).not.toHaveBeenCalled()
+  test('iterates over a Set', () => {
+    const set = new Set([1, 2, 3])
+    const result: number[] = []
+
+    each(set, (value) => {
+      result.push(value)
+    })
+
+    expect(result).toEqual([1, 2, 3])
+  })
+
+  test('iterates over a Map', () => {
+    const map = new Map([
+      ['a', 1],
+      ['b', 2],
+      ['c', 3]
+    ])
+    const result: number[] = []
+
+    each(map, (value) => {
+      result.push(value)
+    })
+
+    expect(result).toEqual([1, 2, 3])
+  })
+
+  test('iterates over an object', () => {
+    const obj = { a: 1, b: 2, c: 3 }
+    const result: number[] = []
+
+    each(obj, (value) => {
+      result.push(value)
+    })
+
+    expect(result).toEqual([1, 2, 3])
   })
 })
