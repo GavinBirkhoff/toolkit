@@ -7,7 +7,7 @@ export type Collection<V, K extends string | number = number> = V | V[] | Set<V>
  * @typeParam V - The type of values in the collection.
  * @typeParam K - The type of keys in the collection.
  * @param collection - The collection to iterate over.
- * @param func - The function to apply to each element.
+ * @param callbackfn - The function to apply to each element.
  * @returns Returns `true` if all iterations pass, or `false` if any iteration returns `false`.
  *
  * @example
@@ -34,7 +34,7 @@ export type Collection<V, K extends string | number = number> = V | V[] | Set<V>
  */
 const each = <V, K extends string | number = number>(
   collection: Collection<V, K>,
-  func: (value: V, key: K, collection: Collection<V, K>) => boolean | undefined | void
+  callbackfn: (value: V, key: K, collection: Collection<V, K>) => boolean | undefined | void
 ): boolean => {
   if (!collection) {
     return false
@@ -43,19 +43,19 @@ const each = <V, K extends string | number = number>(
   if (isArray(collection) || isString(collection) || collection instanceof Set) {
     let i = 0
     for (const item of collection) {
-      const re = func(item as V, i as K, collection)
+      const re = callbackfn(item as V, i as K, collection)
       i++
       if (re === false) return false
     }
   } else if (collection instanceof Map) {
     for (const [key, value] of collection) {
-      const re = func(value, key, collection)
+      const re = callbackfn(value, key, collection)
       if (re === false) return false
     }
   } else {
     const entries = Object.entries<V>(collection)
     for (const [key, value] of entries) {
-      const re = func(value, key as K, collection)
+      const re = callbackfn(value, key as K, collection)
       if (re === false) return false
     }
   }
