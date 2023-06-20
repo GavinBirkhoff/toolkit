@@ -1,7 +1,7 @@
 /**
- * Traverses an array and calls a callback on each item, only executing when the browser is idle.
+ * Traverses an array and calls a callbackfn on each item, only executing when the browser is idle.
  * @param array The array to iterate over.
- * @param callback The function to execute on each item. It is passed the item and its index as arguments.
+ * @param callbackfn The function to execute on each item. It is passed the item and its index as arguments.
  *
  * @example
  *
@@ -13,12 +13,12 @@
  * });
  * ```
  */
-const idleIterator = <T>(array: T[], callback: (item: T, index: number) => void): void => {
+const idleIterator = <T>(array: T[], callbackfn: (item: T, index: number) => void): void => {
   let index = 0
   const iterator = () => {
     const start = Date.now()
     while (index < array.length && Date.now() - start < 16) {
-      callback(array[index], index)
+      callbackfn(array[index], index)
       index++
     }
     if (index >= array.length) return
