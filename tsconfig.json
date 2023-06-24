@@ -1,19 +1,27 @@
 {
+  "extends": "lavy/tsconfig.base.json",
   "compilerOptions": {
-    "target": "ES2015",
-    "module": "CommonJS",
-    "declaration": true,
-    "outDir": "lib",
-    "downlevelIteration": true,
-    "strict": true,
-    "moduleResolution": "node",
+    "target": "ESNEXT",
+    "module": "commonjs",
+    "outDir": "dist",
     "baseUrl": "./",
     "paths": {
       "@/*": ["packages/*"]
     },
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    // "outFile": "./",
+    // "allowJs": true,
+    // "checkJs": true,
+    // "jsx": "react-jsxdev",
+    // "declaration": false,
+    // "declarationMap": false,
+    // "sourceMap": false,
+    "downlevelIteration": true
+    // "importHelpers": true,
+    // "lib": [],
+    // "rootDirs": [],
+    // "typeRoots": [],
+    // "types": [],
   },
+  // "include": [""],
   "exclude": ["node_modules", "**/node_modules/*"]
 }

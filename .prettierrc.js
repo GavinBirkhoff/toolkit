@@ -5,7 +5,8 @@ module.exports = {
   bracketSpacing: true,
   printWidth: 120,
   tabWidth: 2,
+  useTabs: false,
   arrowParens: 'always',
   endOfLine: 'auto',
-  quoteProps: 'consistent'
+  quoteProps: 'as-needed'
 }
