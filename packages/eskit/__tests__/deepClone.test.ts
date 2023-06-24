@@ -54,11 +54,11 @@ describe('deepClone', () => {
   it('should clone an object with functions', () => {
     const obj = {
       a: 1,
-      b: function () {
+      b() {
         return 'hello'
       },
       c: {
-        d: function (x: number, y: number) {
+        d(x: number, y: number) {
           return x + y
         }
       }

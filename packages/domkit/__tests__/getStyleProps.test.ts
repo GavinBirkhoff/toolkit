@@ -12,10 +12,10 @@ describe('getStyleProps', () => {
     const styleProps = getStyleProps(element)
 
     expect(styleProps).toEqual({
-      'color': 'red',
+      color: 'red',
       'font-size': '16px',
-      'display': 'block',
-      'visibility': 'visible'
+      display: 'block',
+      visibility: 'visible'
     })
   })
 

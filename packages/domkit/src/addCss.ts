@@ -39,7 +39,7 @@ function addCss(selector: string, cssRules: StyleProps, title = 'sheet'): void {
   }
 
   const ruleStr = Object.entries(cssRules)
-    .map(([prop, value]) => `${prop.replace(/[A-Z]/g, (value) => '-' + value.toLowerCase())}:${value}`)
+    .map(([prop, value]) => `${prop.replace(/[A-Z]/g, (value) => `-${value.toLowerCase()}`)}:${value}`)
     .join(';')
 
   if (styleSheet.insertRule) {

@@ -7,12 +7,12 @@ import {
   addEvent,
   removeEvent,
   canUseDom,
-  getTextPixelWith,
+  getTextPixelWidth,
   setStyleProps,
   requestAnimationFrame,
-  clearAnimationFrame,
-  setC3Var,
-  getC3Var,
+  cancelAnimationFrame,
+  setCssVariable,
+  getCssVariable,
   getBoundingClientPosition,
   getOffsetPosition,
   hasClass,
@@ -52,23 +52,23 @@ if (!canUseDom()) {
   throw Error('canUseDom')
 }
 
-console.log(getTextPixelWith('hello word'), 'getTextPixelWith')
+console.log(getTextPixelWidth('hello word', {}), 'getTextPixelWidth')
 
 // test requestAnimationFrame
 
 function changeHeight() {
-  setStyleProps(dom, { height: `${parseInt(getStyleProps(dom, 'height') || '0') + 1}px` })
+  setStyleProps(dom, { height: `${parseInt(getStyleProps(dom, 'height') as string) + 1}px` })
   animation = requestAnimationFrame(changeHeight)
 }
 
 let animation = requestAnimationFrame(changeHeight)
 
-setTimeout(() => clearAnimationFrame(animation), 3000)
+setTimeout(() => cancelAnimationFrame(animation), 3000)
 
 // end
 
-setC3Var('--theme', 'green')
-console.log(getC3Var('--theme'), 'getC3Var')
+setCssVariable('--theme', 'green')
+console.log(getCssVariable('--theme'), 'getCssVariable')
 ;(function () {
   const div = createDom({ tagName: 'div', container: document.body })
   setStyleProps(div, { width: '200px', padding: '100px', margin: '100px' })
@@ -85,7 +85,7 @@ console.log(hasClass(dom, 'my-class'), 'hasClass')
 
 rem(1200, { scale: 100 })
 
-_require('https://cdn.bootcdn.net/ajax/libs/react/18.2.0/umd/react.development.js', function () {
+_require('https://cdn.bootcdn.net/ajax/libs/react/18.2.0/umd/react.development.js', () => {
   // @ts-ignore
   console.log(window?.React, '_require')
 })

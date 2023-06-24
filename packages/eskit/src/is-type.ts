@@ -7,6 +7,5 @@
  * isType('String', 'hello'); // true
  * isType('Array', {}); // false
  */
-const isType = (type: string, value: unknown): boolean =>
-  Object.prototype.toString.call(value) === '[object ' + type + ']'
+const isType = (type: string, value: unknown): boolean => Object.prototype.toString.call(value) === `[object ${type}]`
 export default isType

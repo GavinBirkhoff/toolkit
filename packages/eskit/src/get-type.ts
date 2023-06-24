@@ -1,4 +1,4 @@
-const toString = Object.prototype.toString
+const { toString } = Object.prototype
 
 /**
  * Get the type of a value

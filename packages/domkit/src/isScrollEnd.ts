@@ -12,9 +12,9 @@
  */
 const isScrollEnd = (element?: HTMLElement): boolean => {
   const targetElement = element || document.documentElement
-  const scrollTop = targetElement.scrollTop
-  const scrollHeight = targetElement.scrollHeight
-  const clientHeight = targetElement.clientHeight
+  const { scrollTop } = targetElement
+  const { scrollHeight } = targetElement
+  const { clientHeight } = targetElement
 
   return scrollTop + clientHeight >= scrollHeight
 }

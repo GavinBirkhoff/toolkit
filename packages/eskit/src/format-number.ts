@@ -18,9 +18,9 @@
 const formatNumber = (val: number, separator: string, digitNum = 0): string => {
   let value: any = val
 
-  if ((value = (value = value + '').replace(/^\s*|\s*$|,*/g, '')).match(/^\d*\.?\d*$/) == null) return val.toString()
+  if ((value = (value = `${value}`).replace(/^\s*|\s*$|,*/g, '')).match(/^\d*\.?\d*$/) == null) return val.toString()
 
-  value = (digitNum as number) >= 0 ? Number(value).toFixed(digitNum) + '' : value
+  value = (digitNum as number) >= 0 ? `${Number(value).toFixed(digitNum)}` : value
 
   let r: string[] | string = [],
     tl = value.split('.')[0],
@@ -41,7 +41,7 @@ const formatNumber = (val: number, separator: string, digitNum = 0): string => {
 
     r = r.join(separator)
 
-    return tr == '' ? r : r + '.' + tr
+    return tr == '' ? r : `${r}.${tr}`
   }
 
   return value as string
