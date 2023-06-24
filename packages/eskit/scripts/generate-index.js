@@ -1,13 +1,15 @@
 const fs = require('fs')
+const { exit } = require('process')
 const hyphen2Hump = function (sName) {
-  return sName.replace(/^\-/, '').replace(/\-(\w)(\w+)/g, function (a, b, c) {
+  return sName.replace(/^-/, '').replace(/-(\w)(\w+)/g, (a, b, c) => {
+    console.log(a, b, c)
     return b.toUpperCase() + c.toLowerCase()
   })
 }
 let components = []
 const files = fs.readdirSync('./src/')
-files.forEach(function (item, index) {
-  const stat = fs.lstatSync('./src/' + item)
+files.forEach((item, index) => {
+  const stat = fs.lstatSync(`./src/${item}`)
   if (stat.isFile() === true) {
     components.push(item)
   }
@@ -22,11 +24,10 @@ components = components
     } } from './${fileName}'`
     return str
   })
+const str = `${components.join('\n')}\n`
 
-let str = components.join('\n') + '\n'
-
-fs.writeFile('./src/index.ts', str, function (err) {
+fs.writeFile('./src/index.ts', str, (err) => {
   if (err) {
-    res.status(500).send('Server is error...')
+    exit(1)
   }
 })
