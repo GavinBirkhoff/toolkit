@@ -10,7 +10,7 @@
  *
  * @since 1.0.0
  */
-export const setClass = (el: HTMLElement | SVGElement, className: string): void => {
+const setClass = (el: HTMLElement | SVGElement, className: string): void => {
   if ('classList' in el) {
     el.setAttribute('class', className)
   } else if ('className' in el) {

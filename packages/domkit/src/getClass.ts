@@ -12,7 +12,7 @@
  *
  * @since 1.0.0
  */
-export function getClass(el: HTMLElement | SVGElement): string {
+const getClass = (el: HTMLElement | SVGElement): string => {
   if (el instanceof SVGElement) {
     return el.getAttribute('class') || ''
   }

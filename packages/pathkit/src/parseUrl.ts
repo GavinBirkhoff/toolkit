@@ -63,11 +63,12 @@ const parseQueryString = (str: string): { [key: string]: string | string[] } => 
  */
 const parseUrl = (
   url: string
-): { query: Record<string, string | string[]>; hash: Record<string, string | string[]> } => {
+): { query: Record<string, string | string[]>; hash: Record<string, string | string[]>; baseUrl: string } => {
   // eslint-disable-next-line no-useless-escape
   const [baseUrl, queryStr, hashStr] = url.split(/[\?#]/)
 
   return {
+    baseUrl,
     query: parseQueryString(queryStr),
     hash: parseQueryString(hashStr)
   }
