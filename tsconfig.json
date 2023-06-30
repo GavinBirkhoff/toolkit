@@ -1,8 +1,8 @@
 {
   "extends": "lavy/tsconfig.base.json",
   "compilerOptions": {
-    "target": "ESNEXT",
-    "module": "commonjs",
+    "target": "ESNext",
+    "module": "ES2020",
     "outDir": "dist",
     "baseUrl": "./",
     "paths": {
