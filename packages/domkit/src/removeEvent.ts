@@ -27,7 +27,12 @@ interface RemoveEventOptions {
  *
  * @since 1.0.0
  */
-const removeEvent = (el: Element, type: string, callback: EventListener, options: RemoveEventOptions = {}): void => {
+const removeEvent = (
+  el: Element,
+  type: string,
+  callback: EventListener = () => {},
+  options: RemoveEventOptions = {}
+): void => {
   if (!el) return
 
   const { useCapture = false } = options
