@@ -17,7 +17,8 @@ import {
   getOffsetPosition,
   hasClass,
   rem,
-  removeDom
+  removeDom,
+  loadScript
 } from '@/domkit/src'
 import _require from '@/domkit/src/require'
 
@@ -88,4 +89,8 @@ rem(1200, { scale: 100 })
 _require('https://cdn.bootcdn.net/ajax/libs/react/18.2.0/umd/react.development.js', () => {
   // @ts-ignore
   console.log(window?.React, '_require')
+})
+
+loadScript('https://www.unpkg.com/react@16.7.0/umd/react.production.min.js', (err) => {
+  console.log(err, 'loadScript')
 })
