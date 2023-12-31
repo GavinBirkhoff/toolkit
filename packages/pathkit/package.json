@@ -1,6 +1,6 @@
 {
   "name": "path-copilot",
-  "version": "1.0.0-Beta",
+  "version": "1.0.0",
   "description": "A rich and colorful toolkit about Path.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
