@@ -63,3 +63,5 @@ I hope that the excellent unit methods of the entire front-end community can be 
 - [ ] getScrollLeft test
 
 - [ ] getScrollPosition test
+- [ ] pipe
+- [ ] compose

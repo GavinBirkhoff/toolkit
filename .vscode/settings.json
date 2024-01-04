@@ -9,10 +9,10 @@
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "javascriptvue"],
   "eslint.execArgv": null,
   "editor.codeActionsOnSave": {
-    "source.fixAll.prettier": true,
-    "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true,
-    "source.fixAll.markdownlint": true
+    "source.fixAll.prettier": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit",
+    "source.fixAll.markdownlint": "explicit"
   },
   "editor.guides.highlightActiveIndentation": true
 }
